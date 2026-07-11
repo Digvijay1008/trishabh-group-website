@@ -124,10 +124,10 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
               {isSanity && project.fullDescription ? (
                 <div className="prose prose-lg text-[#3F3F46]/70 max-w-none" style={{ fontFamily: "var(--font-inter)" }}>
                   {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                  {project.fullDescription.map((block: any, i: number) => (
-                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                    <p key={i} className="mb-4">{block.children?.map((c: any) => c.text).join('')}</p>
-                  ))}
+                  {project.fullDescription.map((block: any, i: number) => {
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    return <p key={i} className="mb-4">{block.children?.map((c: any) => c.text).join('')}</p>;
+                  })}
                 </div>
               ) : (
                 <p className="text-[#3F3F46]/70 leading-relaxed text-lg" style={{ fontFamily: "var(--font-inter)" }}>
