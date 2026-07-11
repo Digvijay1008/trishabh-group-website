@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+/* ─── Trishabh Group — Design System ─── */
+
+@layer base {
+  :root {
+    /* Brand Colours */
+    --color-orange: #E86F16;
+    --color-orange-light: #F08B3A;
+    --color-charcoal: #161616;
+    --color-graphite: #3F3F46;
+    --color-warm-white: #FAF9F7;
+    --color-soft-stone: #F3F1EC;
+    --color-white: #FFFFFF;
+    --color-border: #E7E2D9;
+
+    /* Typography */
+    --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+    --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+
+    /* Spacing */
+    --section-padding: clamp(80px, 10vw, 160px);
+    --container-max: 1440px;
+
+    /* Transitions */
+    --ease-premium: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --duration-fast: 200ms;
+    --duration-mid: 400ms;
+    --duration-slow: 700ms;
+
+    /* Shadows */
+    --shadow-card: 0 4px 32px -4px rgba(22, 22, 22, 0.08), 0 1px 4px -1px rgba(22, 22, 22, 0.04);
+    --shadow-elevated: 0 16px 64px -16px rgba(22, 22, 22, 0.14), 0 4px 16px -4px rgba(22, 22, 22, 0.06);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: auto; /* Lenis handles this */
+  }
+
+  /* Prevent font from getting too large on huge screens */
+  @media (min-width: 1600px) {
+    html { font-size: 17px; }
+  }
+  @media (min-width: 1920px) {
+    html { font-size: 18px; }
+  }
+
+  body {
+    background-color: var(--color-warm-white);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-orange);
+    color: var(--color-white);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--color-soft-stone); }
+  ::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-graphite); }
+}
+
+@layer utilities {
+  .font-serif { font-family: var(--font-serif); }
+  .font-sans  { font-family: var(--font-sans); }
+
+  /* Editorial text sizes */
+  .text-display {
+    font-size: clamp(3rem, 6vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    font-weight: 400;
+  }
+  .text-headline {
+    font-size: clamp(2rem, 4vw, 4.5rem);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    font-weight: 400;
+  }
+  .text-title {
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+  .text-label {
+    font-size: 0.6875rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .text-caption {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--color-graphite);
+  }
+
+  /* Premium divider */
+  .divider {
+    width: 48px;
+    height: 1px;
+    background: var(--color-orange);
+    display: block;
+  }
+
+  /* Container */
+  .container-luxury {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 5vw, 7rem);
+  }
+
+  /* Mobile-first section padding */
+  .section-py {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+
+  /* Animate in */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity var(--duration-slow) var(--ease-out-expo),
+                transform var(--duration-slow) var(--ease-out-expo);
+  }
+}
