@@ -44,7 +44,7 @@ export default function AboutPageClient() {
                 className="text-[#3F3F46] leading-relaxed max-w-lg mb-6"
                 style={{ fontFamily: "var(--font-inter)", fontSize: "1.125rem" }}
               >
-                Since our inception in 1999, the Trishabh philosophy has remained unchanged: to build not just homes, but intergenerational legacies marked by uncompromised quality and trust.
+                Established in 1999, Trishabh Group, a renowned real estate developer in Mumbai and Navi Mumbai, was founded by the visionary Jain family. Over the years, we have been dedicated to creating architectural marvels and luxurious living spaces, establishing a remarkable track record of achieving 100% Occupation Certificates (OC) for all our projects to date.
               </motion.p>
             </div>
             
@@ -80,11 +80,43 @@ export default function AboutPageClient() {
             The 100% OC Promise
           </span>
           <h2 className="text-[#161616] mb-10" style={{ fontFamily: "var(--font-cormorant)", fontSize: "3rem", lineHeight: 1.1 }}>
-            We measure our success not in square feet, but in the trust of the families we house.
+            Exemplary Excellence in Every Project.
           </h2>
           <p className="text-[#3F3F46]/70 leading-relaxed text-lg" style={{ fontFamily: "var(--font-inter)" }}>
-            In an industry where delays are common, Trishabh Group stands as a beacon of certainty. Every single project we have ever undertaken has been delivered with a full Occupancy Certificate. We believe that true luxury is peace of mind.
+            Our epitomes of excellence are a testament to our teamwork and sound management. We adhere to strict ethical standards and strive to deliver benchmark quality, breathing life into dreams and erecting high-rises that epitomize class and sophistication. Our unwavering commitment to quality and timely delivery has fostered a strong bond of trust with our clients for over 25 years.
           </p>
+        </div>
+      </section>
+
+      {/* Mission, Vision, Values */}
+      <section className="py-[120px] bg-[#161616] text-white">
+        <div className="container-luxury">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+              <h3 className="text-2xl mb-6 text-[#E86F16]" style={{ fontFamily: "var(--font-cormorant)" }}>Our Mission</h3>
+              <ul className="text-white/70 space-y-4 text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+                <li>&bull; Providing superior developments to our customers through leadership, experience and knowledge.</li>
+                <li>&bull; Engaging in honest, loyal and ethical business practices.</li>
+                <li>&bull; Committing to passionately exceed our customer&apos;s expectations.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-2xl mb-6 text-[#E86F16]" style={{ fontFamily: "var(--font-cormorant)" }}>Our Vision</h3>
+              <ul className="text-white/70 space-y-4 text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+                <li>&bull; To serve our customers&apos; needs and consistently produce developments of lasting value.</li>
+                <li>&bull; To be flexible, entrepreneurial, and aggressive, both as individuals and as a company.</li>
+                <li>&bull; To believe in teamwork, innovation, professionalism, and long-term decision-making.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-2xl mb-6 text-[#E86F16]" style={{ fontFamily: "var(--font-cormorant)" }}>Core Values</h3>
+              <ul className="text-white/70 space-y-4 text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+                <li>&bull; <strong>Honesty:</strong> We always do what is right, fair, and ethical.</li>
+                <li>&bull; <strong>Integrity:</strong> Respect and value all individuals, maintaining client confidentiality.</li>
+                <li>&bull; <strong>Teamwork:</strong> We encourage and reward teamwork to deliver the best.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </div>

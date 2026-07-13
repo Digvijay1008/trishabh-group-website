@@ -93,7 +93,7 @@ export default function AboutSection() {
                   fontWeight: 400,
                 }}
               >
-                Rajesh Trishabh
+                Jain Family
               </div>
               <div
                 className="text-[#3F3F46]/50 mt-1"
