@@ -19,7 +19,7 @@ const projects = [
     bgBase: "#EDE9E2",
     towerColor: "#8C7B6B",
     highlight: "#C8A870",
-    image: "/images/BLDG A B C-01.jpg",
+    image: "/images/1.jpg",
   },
   {
     name: "Trishabh Greens",
@@ -34,7 +34,7 @@ const projects = [
     bgBase: "#E8E2D8",
     towerColor: "#7A6B5B",
     highlight: "#B89860",
-    image: "/images/1.jpg",
+    image: "/images/BLDG A B C-01.jpg",
   },
   {
     name: "Tulsi Meadows",
