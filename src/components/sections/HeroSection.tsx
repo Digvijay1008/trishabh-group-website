@@ -82,7 +82,7 @@ export default function HeroSection() {
             <span
               className="uppercase text-white/70"
               style={{
-                fontFamily: "var(--font-inter)",
+                fontFamily: "var(--font-josefin)",
                 fontSize: "clamp(9px, 0.9vw, 11px)",
                 letterSpacing: "0.22em",
               }}
@@ -96,11 +96,11 @@ export default function HeroSection() {
             variants={item}
             className="text-white drop-shadow-lg"
             style={{
-              fontFamily: "var(--font-cormorant)",
-              fontSize: "clamp(2.5rem, 5.5vw, 6rem)",
-              lineHeight: 1.02,
-              letterSpacing: "-0.025em",
-              fontWeight: 400,
+              fontFamily: "var(--font-cinzel)",
+              fontSize: "clamp(3rem, 10vw, 9rem)",
+              lineHeight: 0.95,
+              letterSpacing: "-0.05em",
+              fontWeight: 600,
             }}
           >
             Building Mumbai&apos;s<br />
@@ -117,7 +117,7 @@ export default function HeroSection() {
             variants={item}
             className="text-white/72 leading-relaxed drop-shadow-md"
             style={{
-              fontFamily: "var(--font-inter)",
+              fontFamily: "var(--font-josefin)",
               fontSize: "clamp(0.8125rem, 1.1vw, 1rem)",
               maxWidth: "min(400px, 100%)",
             }}
@@ -132,7 +132,7 @@ export default function HeroSection() {
               href="/projects"
               className="inline-flex items-center gap-2.5 bg-[#E86F16] text-white rounded-full hover:bg-[#D4610F] transition-all duration-300 group"
               style={{
-                fontFamily: "var(--font-inter)",
+                fontFamily: "var(--font-josefin)",
                 fontSize: "clamp(9px, 0.9vw, 11px)",
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
@@ -148,7 +148,7 @@ export default function HeroSection() {
               href="/contact"
               className="inline-flex items-center gap-2 text-white/65 hover:text-white transition-colors duration-300 group"
               style={{
-                fontFamily: "var(--font-inter)",
+                fontFamily: "var(--font-josefin)",
                 fontSize: "clamp(9px, 0.9vw, 11px)",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",

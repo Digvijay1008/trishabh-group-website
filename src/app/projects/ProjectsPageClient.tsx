@@ -7,46 +7,49 @@ import { EASE_OUT_EXPO } from "@/lib/easing";
 
 const projects = [
   {
-    name: "Trishabh Greens",
-    slug: "trishabh-greens",
+    name: "Trishabh Miraya",
+    slug: "trishabh-miraya",
     location: "Chembur, Mumbai",
-    type: "2 & 3 BHK Premium Residences",
+    type: "3 & 4 BHK Luxury Residences",
     price: "Price on Request",
-    status: "Completed" as const,
+    status: "Ongoing" as const,
     area: "2.1 Acres",
     units: "120",
-    completion: "Dec 2022",
+    completion: "Dec 2026",
     bgBase: "#EDE9E2",
     towerColor: "#8C7B6B",
     highlight: "#C8A870",
+    image: "/images/BLDG A B C-01.jpg",
   },
   {
-    name: "Trishabh Elegance",
-    slug: "trishabh-elegance",
+    name: "Trishabh Greens",
+    slug: "trishabh-greens",
     location: "Chembur East, Mumbai",
-    type: "3 & 4 BHK Luxury Apartments",
+    type: "2 & 3 BHK Premium Apartments",
     price: "Price on Request",
-    status: "Ongoing" as const,
+    status: "Completed" as const,
     area: "1.5 Acres",
     units: "85",
-    completion: "Mar 2026",
+    completion: "Mar 2022",
     bgBase: "#E8E2D8",
     towerColor: "#7A6B5B",
     highlight: "#B89860",
+    image: "/images/1.jpg",
   },
   {
-    name: "Trishabh Prestige",
-    slug: "trishabh-prestige",
+    name: "Tulsi Meadows",
+    slug: "tulsi-meadows",
     location: "Sion-Trombay Road, Chembur",
     type: "4 BHK Ultra-Luxury Deck Residences",
     price: "Price on Request",
-    status: "Launching Soon" as const,
+    status: "Completed" as const,
     area: "3.0 Acres",
     units: "60",
-    completion: "Dec 2027",
+    completion: "Dec 2020",
     bgBase: "#E4DED4",
     towerColor: "#9A8A7A",
     highlight: "#D4B888",
+    image: "/images/Tulsi Meadows Photo for Picture frame.jpg",
   },
   {
     name: "Trishabh Signature",
@@ -57,10 +60,11 @@ const projects = [
     status: "Completed" as const,
     area: "0.8 Acres",
     units: "35",
-    completion: "Jan 2020",
+    completion: "Jan 2018",
     bgBase: "#DFE3E0",
     towerColor: "#6B7A75",
     highlight: "#98B8AC",
+    image: "/images/2.jpg",
   }
 ];
 
@@ -116,7 +120,7 @@ export default function ProjectsPageClient({ category, initialProjects = [] }: P
             <span
               className="text-[#3F3F46]/50"
               style={{
-                fontFamily: "var(--font-inter)",
+                fontFamily: "var(--font-josefin)",
                 fontSize: "0.625rem",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
@@ -131,7 +135,7 @@ export default function ProjectsPageClient({ category, initialProjects = [] }: P
             transition={{ duration: 0.8, delay: 0.08, ease: EASE_OUT_EXPO }}
             className="text-[#161616]"
             style={{
-              fontFamily: "var(--font-cormorant)",
+              fontFamily: "var(--font-cinzel)",
               fontSize: "clamp(3rem, 5vw, 5rem)",
               fontWeight: 400,
               lineHeight: 1.05,
@@ -161,6 +165,8 @@ export default function ProjectsPageClient({ category, initialProjects = [] }: P
                     <div className="h-[360px] relative overflow-hidden" style={{ background: project.bgBase || "#EDE9E2" }}>
                       {isSanity && project.mainImage?.asset?.url ? (
                         <img src={project.mainImage.asset.url} alt={project.title} className="w-full h-full object-cover" />
+                      ) : project.image ? (
+                        <img src={project.image} alt={project.name} className="w-full h-full object-cover" />
                       ) : (
                       <svg className="w-full h-full" viewBox="0 0 500 360" preserveAspectRatio="xMidYMid slice">
                         {/* Dynamic SVG graphic matching the project colors */}
@@ -208,7 +214,7 @@ export default function ProjectsPageClient({ category, initialProjects = [] }: P
                           style={{
                             background: s.bg,
                             color: s.text,
-                            fontFamily: "var(--font-inter)",
+                            fontFamily: "var(--font-josefin)",
                             fontSize: "0.5625rem",
                             letterSpacing: "0.12em",
                             textTransform: "uppercase",
@@ -231,11 +237,11 @@ export default function ProjectsPageClient({ category, initialProjects = [] }: P
                         <div>
                           <h3
                             className="text-[#161616]"
-                            style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.75rem", fontWeight: 400, lineHeight: 1.1 }}
+                            style={{ fontFamily: "var(--font-cinzel)", fontSize: "1.75rem", fontWeight: 400, lineHeight: 1.1 }}
                           >
                             {project.title || project.name}
                           </h3>
-                          <div className="flex items-center gap-1.5 text-[#3F3F46]/50 mt-2" style={{ fontFamily: "var(--font-inter)", fontSize: "0.8125rem" }}>
+                          <div className="flex items-center gap-1.5 text-[#3F3F46]/50 mt-2" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.8125rem" }}>
                             <MapPin size={12} />
                             {project.location}
                           </div>
@@ -249,18 +255,18 @@ export default function ProjectsPageClient({ category, initialProjects = [] }: P
                       
                       <div className="grid grid-cols-2 gap-4 pt-6 border-t border-[#E7E2D9]">
                         <div>
-                          <div className="text-[#3F3F46]/40 mb-1" style={{ fontFamily: "var(--font-inter)", fontSize: "0.5625rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+                          <div className="text-[#3F3F46]/40 mb-1" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.5625rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
                             Residences
                           </div>
-                          <div className="text-[#161616]" style={{ fontFamily: "var(--font-inter)", fontSize: "0.875rem" }}>
+                          <div className="text-[#161616]" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.875rem" }}>
                             {project.configurations || project.type || project.shortDescription}
                           </div>
                         </div>
                         <div>
-                          <div className="text-[#3F3F46]/40 mb-1" style={{ fontFamily: "var(--font-inter)", fontSize: "0.5625rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+                          <div className="text-[#3F3F46]/40 mb-1" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.5625rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
                             Starting Price
                           </div>
-                          <div className="text-[#E86F16]" style={{ fontFamily: "var(--font-inter)", fontSize: "0.875rem", fontWeight: 500 }}>
+                          <div className="text-[#E86F16]" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.875rem", fontWeight: 500 }}>
                             {project.price || "Price on Request"}
                           </div>
                         </div>

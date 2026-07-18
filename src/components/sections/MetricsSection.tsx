@@ -55,7 +55,7 @@ export default function MetricsSection() {
               <span
                 className="text-white/30"
                 style={{
-                  fontFamily: "var(--font-inter)",
+                  fontFamily: "var(--font-josefin)",
                   fontSize: "0.625rem",
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
@@ -70,7 +70,7 @@ export default function MetricsSection() {
               transition={{ duration: 0.8, delay: 0.08, ease: EASE_OUT_EXPO }}
               className="text-white"
               style={{
-                fontFamily: "var(--font-cormorant)",
+                fontFamily: "var(--font-cinzel)",
                 fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
                 fontWeight: 400,
                 lineHeight: 1.05,
@@ -86,7 +86,7 @@ export default function MetricsSection() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.18, ease: EASE_OUT_EXPO }}
             className="text-white/40 leading-relaxed"
-            style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
+            style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
           >
             Two and a half decades of delivering on every promise.
             Every project completed on time, every OC received, every family settled.
@@ -106,7 +106,7 @@ export default function MetricsSection() {
               <div
                 className="text-white leading-none mb-4"
                 style={{
-                  fontFamily: "var(--font-cormorant)",
+                  fontFamily: "var(--font-cinzel)",
                   fontSize: "clamp(2.5rem,4.5vw,4rem)",
                   fontWeight: 300,
                 }}
@@ -117,7 +117,7 @@ export default function MetricsSection() {
               <div
                 className="text-white/35 whitespace-pre-line leading-relaxed"
                 style={{
-                  fontFamily: "var(--font-inter)",
+                  fontFamily: "var(--font-josefin)",
                   fontSize: "0.6875rem",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",

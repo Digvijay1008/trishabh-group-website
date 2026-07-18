@@ -59,7 +59,7 @@ export default function ContactSection() {
               <span
                 className="text-[#3F3F46]/50"
                 style={{
-                  fontFamily: "var(--font-inter)",
+                  fontFamily: "var(--font-josefin)",
                   fontSize: "0.625rem",
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
@@ -75,7 +75,7 @@ export default function ContactSection() {
               transition={{ duration: 0.8, delay: 0.08, ease: EASE_OUT_EXPO }}
               className="text-[#161616] mb-8"
               style={{
-                fontFamily: "var(--font-cormorant)",
+                fontFamily: "var(--font-cinzel)",
                 fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
                 fontWeight: 400,
                 lineHeight: 1.05,
@@ -91,7 +91,7 @@ export default function ContactSection() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.16, ease: EASE_OUT_EXPO }}
               className="text-[#3F3F46]/60 leading-relaxed mb-12 max-w-sm"
-              style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
+              style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
             >
               Share your details and our relationship manager will connect
               with you within 24 hours to schedule a personalised site visit.
@@ -115,7 +115,7 @@ export default function ContactSection() {
                   </div>
                   <span
                     className="text-[#3F3F46] pt-2 leading-snug"
-                    style={{ fontFamily: "var(--font-inter)", fontSize: "0.875rem" }}
+                    style={{ fontFamily: "var(--font-josefin)", fontSize: "0.875rem" }}
                   >
                     {text}
                   </span>
@@ -137,13 +137,13 @@ export default function ContactSection() {
                 </div>
                 <h3
                   className="text-[#161616]"
-                  style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.75rem", fontWeight: 400 }}
+                  style={{ fontFamily: "var(--font-cinzel)", fontSize: "1.75rem", fontWeight: 400 }}
                 >
                   Thank You
                 </h3>
                 <p
                   className="text-[#3F3F46]/60"
-                  style={{ fontFamily: "var(--font-inter)", fontSize: "0.875rem" }}
+                  style={{ fontFamily: "var(--font-josefin)", fontSize: "0.875rem" }}
                 >
                   Our team will reach out within 24 hours.
                 </p>
@@ -155,7 +155,7 @@ export default function ContactSection() {
                   <label
                     className="text-[#3F3F46]/50 block"
                     style={{
-                      fontFamily: "var(--font-inter)",
+                      fontFamily: "var(--font-josefin)",
                       fontSize: "0.625rem",
                       letterSpacing: "0.15em",
                       textTransform: "uppercase",
@@ -167,10 +167,10 @@ export default function ContactSection() {
                     {...register("name")}
                     className={inputCls}
                     placeholder="Your full name"
-                    style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
+                    style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
                   />
                   {errors.name && (
-                    <p className="text-[#E86F16]" style={{ fontFamily: "var(--font-inter)", fontSize: "0.75rem" }}>
+                    <p className="text-[#E86F16]" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.75rem" }}>
                       {errors.name.message}
                     </p>
                   )}
@@ -180,7 +180,7 @@ export default function ContactSection() {
                 <div className="space-y-2">
                   <label
                     className="text-[#3F3F46]/50 block"
-                    style={{ fontFamily: "var(--font-inter)", fontSize: "0.625rem", letterSpacing: "0.15em", textTransform: "uppercase" }}
+                    style={{ fontFamily: "var(--font-josefin)", fontSize: "0.625rem", letterSpacing: "0.15em", textTransform: "uppercase" }}
                   >
                     Email Address
                   </label>
@@ -189,10 +189,10 @@ export default function ContactSection() {
                     type="email"
                     className={inputCls}
                     placeholder="your@email.com"
-                    style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
+                    style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
                   />
                   {errors.email && (
-                    <p className="text-[#E86F16]" style={{ fontFamily: "var(--font-inter)", fontSize: "0.75rem" }}>
+                    <p className="text-[#E86F16]" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.75rem" }}>
                       {errors.email.message}
                     </p>
                   )}
@@ -202,7 +202,7 @@ export default function ContactSection() {
                 <div className="space-y-2">
                   <label
                     className="text-[#3F3F46]/50 block"
-                    style={{ fontFamily: "var(--font-inter)", fontSize: "0.625rem", letterSpacing: "0.15em", textTransform: "uppercase" }}
+                    style={{ fontFamily: "var(--font-josefin)", fontSize: "0.625rem", letterSpacing: "0.15em", textTransform: "uppercase" }}
                   >
                     Phone Number
                   </label>
@@ -211,10 +211,10 @@ export default function ContactSection() {
                     type="tel"
                     className={inputCls}
                     placeholder="+91 98XXX XXXXX"
-                    style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
+                    style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
                   />
                   {errors.phone && (
-                    <p className="text-[#E86F16]" style={{ fontFamily: "var(--font-inter)", fontSize: "0.75rem" }}>
+                    <p className="text-[#E86F16]" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.75rem" }}>
                       {errors.phone.message}
                     </p>
                   )}
@@ -224,7 +224,7 @@ export default function ContactSection() {
                 <div className="space-y-2">
                   <label
                     className="text-[#3F3F46]/50 block"
-                    style={{ fontFamily: "var(--font-inter)", fontSize: "0.625rem", letterSpacing: "0.15em", textTransform: "uppercase" }}
+                    style={{ fontFamily: "var(--font-josefin)", fontSize: "0.625rem", letterSpacing: "0.15em", textTransform: "uppercase" }}
                   >
                     Select Project
                   </label>
@@ -232,7 +232,7 @@ export default function ContactSection() {
                     <select
                       {...register("project")}
                       className={`${inputCls} appearance-none pr-8 cursor-pointer`}
-                      style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
+                      style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
                     >
                       <option value="">Choose a project</option>
                       {projects.map((p) => <option key={p} value={p}>{p}</option>)}
@@ -240,7 +240,7 @@ export default function ContactSection() {
                     <ChevronDown size={14} className="absolute right-0 top-1/2 -translate-y-1/2 text-[#3F3F46]/40 pointer-events-none" />
                   </div>
                   {errors.project && (
-                    <p className="text-[#E86F16]" style={{ fontFamily: "var(--font-inter)", fontSize: "0.75rem" }}>
+                    <p className="text-[#E86F16]" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.75rem" }}>
                       {errors.project.message}
                     </p>
                   )}
@@ -250,7 +250,7 @@ export default function ContactSection() {
                 <div className="space-y-2">
                   <label
                     className="text-[#3F3F46]/50 block"
-                    style={{ fontFamily: "var(--font-inter)", fontSize: "0.625rem", letterSpacing: "0.15em", textTransform: "uppercase" }}
+                    style={{ fontFamily: "var(--font-josefin)", fontSize: "0.625rem", letterSpacing: "0.15em", textTransform: "uppercase" }}
                   >
                     Message (Optional)
                   </label>
@@ -259,7 +259,7 @@ export default function ContactSection() {
                     rows={3}
                     className={`${inputCls} resize-none`}
                     placeholder="Any specific requirements or questions?"
-                    style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
+                    style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
                   />
                 </div>
 
@@ -268,7 +268,7 @@ export default function ContactSection() {
                   disabled={isSubmitting}
                   className="w-full inline-flex items-center justify-center gap-2.5 bg-[#E86F16] text-white rounded-full py-4 hover:bg-[#D4610F] transition-all duration-300 disabled:opacity-60"
                   style={{
-                    fontFamily: "var(--font-inter)",
+                    fontFamily: "var(--font-josefin)",
                     fontSize: "0.625rem",
                     letterSpacing: "0.18em",
                     textTransform: "uppercase",
@@ -285,7 +285,7 @@ export default function ContactSection() {
 
                 <p
                   className="text-center text-[#3F3F46]/30"
-                  style={{ fontFamily: "var(--font-inter)", fontSize: "0.6875rem" }}
+                  style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem" }}
                 >
                   We respect your privacy. Your data is never shared.
                 </p>

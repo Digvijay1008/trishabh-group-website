@@ -17,6 +17,9 @@ const navItems = [
     ],
   },
   { label: "The Legacy", href: "/about" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Redevelop With Us", href: "/redevelopment" },
+  { label: "Careers", href: "/careers" },
   { label: "Blogs", href: "/blogs" },
   { label: "Contact", href: "/contact" },
 ];

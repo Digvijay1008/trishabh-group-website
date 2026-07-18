@@ -61,14 +61,14 @@ export default function Footer() {
           <div>
             <p
               className="text-white/40 text-[10px] tracking-[0.2em] uppercase mb-2"
-              style={{ fontFamily: "var(--font-inter)" }}
+              style={{ fontFamily: "var(--font-josefin)" }}
             >
               Ready to Begin?
             </p>
             <p
               className="text-white"
               style={{
-                fontFamily: "var(--font-cormorant)",
+                fontFamily: "var(--font-cinzel)",
                 fontSize: "clamp(1.5rem, 2.5vw, 2.2rem)",
                 fontWeight: 400,
                 letterSpacing: "-0.01em",
@@ -81,7 +81,7 @@ export default function Footer() {
             href="/contact"
             className="inline-flex items-center gap-2.5 bg-[#E86F16] text-white rounded-full hover:bg-[#D4610F] transition-all duration-300 group flex-shrink-0"
             style={{
-              fontFamily: "var(--font-inter)",
+              fontFamily: "var(--font-josefin)",
               fontSize: "10px",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
@@ -113,7 +113,7 @@ export default function Footer() {
             </Link>
             <p
               className="text-white/50 leading-relaxed text-sm"
-              style={{ fontFamily: "var(--font-inter)", maxWidth: "280px" }}
+              style={{ fontFamily: "var(--font-josefin)", maxWidth: "280px" }}
             >
               Since 1999, Trishabh Group has been crafting Mumbai&apos;s most prestigious addresses with unmatched trust, 100% OC delivery, and precision engineering.
             </p>
@@ -136,7 +136,7 @@ export default function Footer() {
           <div className="lg:col-span-3 flex flex-col gap-5">
             <h4
               className="text-white/35 text-[10px] tracking-[0.2em] uppercase"
-              style={{ fontFamily: "var(--font-inter)" }}
+              style={{ fontFamily: "var(--font-josefin)" }}
             >
               Navigation
             </h4>
@@ -146,7 +146,7 @@ export default function Footer() {
                   <Link
                     href={link.href}
                     className="text-white/60 hover:text-white text-sm transition-colors duration-200 inline-flex items-center gap-2 group"
-                    style={{ fontFamily: "var(--font-inter)" }}
+                    style={{ fontFamily: "var(--font-josefin)" }}
                   >
                     <span className="w-0 group-hover:w-3 h-px bg-[#E86F16] transition-all duration-300 flex-shrink-0" />
                     {link.label}
@@ -160,7 +160,7 @@ export default function Footer() {
           <div className="lg:col-span-5 flex flex-col gap-5">
             <h4
               className="text-white/35 text-[10px] tracking-[0.2em] uppercase"
-              style={{ fontFamily: "var(--font-inter)" }}
+              style={{ fontFamily: "var(--font-josefin)" }}
             >
               Get In Touch
             </h4>
@@ -169,7 +169,7 @@ export default function Footer() {
                 <MapPin size={14} className="text-[#E86F16] mt-0.5 flex-shrink-0" />
                 <span
                   className="text-white/55 text-sm leading-relaxed"
-                  style={{ fontFamily: "var(--font-inter)" }}
+                  style={{ fontFamily: "var(--font-josefin)" }}
                 >
                   Trishabh Group,<br />
                   Mumbai, Maharashtra<br />
@@ -180,7 +180,7 @@ export default function Footer() {
                 <a
                   href="tel:+919999999999"
                   className="flex items-center gap-3.5 text-white/55 hover:text-white text-sm transition-colors duration-200"
-                  style={{ fontFamily: "var(--font-inter)" }}
+                  style={{ fontFamily: "var(--font-josefin)" }}
                 >
                   <Phone size={14} className="text-[#E86F16] flex-shrink-0" />
                   +91 XXXXX XXXXX
@@ -191,7 +191,7 @@ export default function Footer() {
                 <a
                   href="mailto:info@trishabhgroup.com"
                   className="flex items-center gap-3.5 text-white/55 hover:text-white text-sm transition-colors duration-200"
-                  style={{ fontFamily: "var(--font-inter)" }}
+                  style={{ fontFamily: "var(--font-josefin)" }}
                 >
                   <Mail size={14} className="text-[#E86F16] flex-shrink-0" />
                   info@trishabhgroup.com
@@ -208,13 +208,13 @@ export default function Footer() {
           <div className="flex flex-col gap-1.5">
             <p
               className="text-white/30 text-xs"
-              style={{ fontFamily: "var(--font-inter)" }}
+              style={{ fontFamily: "var(--font-josefin)" }}
             >
               © {year} Trishabh Group. All Rights Reserved.
             </p>
             <p
               className="text-white/20 text-[10px] leading-relaxed"
-              style={{ fontFamily: "var(--font-inter)", maxWidth: "520px" }}
+              style={{ fontFamily: "var(--font-josefin)", maxWidth: "520px" }}
             >
               This project is registered under MahaRERA. Registration details are available on the website maharera.mahaonline.gov.in. The images shown are for representational purposes only.
             </p>
@@ -225,7 +225,7 @@ export default function Footer() {
                 key={item}
                 href="#"
                 className="text-white/25 hover:text-white/55 text-[10px] transition-colors duration-200 whitespace-nowrap"
-                style={{ fontFamily: "var(--font-inter)" }}
+                style={{ fontFamily: "var(--font-josefin)" }}
               >
                 {item}
               </Link>

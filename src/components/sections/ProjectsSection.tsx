@@ -187,7 +187,7 @@ function ProjectCard({
             style={{
               background: s.bg,
               color: s.text,
-              fontFamily: "var(--font-inter)",
+              fontFamily: "var(--font-josefin)",
               fontSize: "0.5625rem",
               letterSpacing: "0.12em",
               textTransform: "uppercase",
@@ -215,7 +215,7 @@ function ProjectCard({
             <h3
               className="text-[#161616]"
               style={{
-                fontFamily: "var(--font-cormorant)",
+                fontFamily: "var(--font-cinzel)",
                 fontSize: "1.375rem",
                 fontWeight: 400,
                 lineHeight: 1.2,
@@ -225,7 +225,7 @@ function ProjectCard({
             </h3>
             <div
               className="flex items-center gap-1 text-[#3F3F46]/50 mt-1"
-              style={{ fontFamily: "var(--font-inter)", fontSize: "0.75rem" }}
+              style={{ fontFamily: "var(--font-josefin)", fontSize: "0.75rem" }}
             >
               <MapPin size={10} />
               {project.location}
@@ -235,7 +235,7 @@ function ProjectCard({
 
         <p
           className="text-[#3F3F46]/60 mb-4"
-          style={{ fontFamily: "var(--font-inter)", fontSize: "0.8125rem" }}
+          style={{ fontFamily: "var(--font-josefin)", fontSize: "0.8125rem" }}
         >
           {project.configurations || project.type || project.shortDescription}
         </p>
@@ -253,14 +253,14 @@ function ProjectCard({
               <div key={lbl}>
                 <div
                   className="text-[#161616] font-medium"
-                  style={{ fontFamily: "var(--font-inter)", fontSize: "0.8125rem" }}
+                  style={{ fontFamily: "var(--font-josefin)", fontSize: "0.8125rem" }}
                 >
                   {val}
                 </div>
                 <div
                   className="text-[#3F3F46]/40 mt-0.5"
                   style={{
-                    fontFamily: "var(--font-inter)",
+                    fontFamily: "var(--font-josefin)",
                     fontSize: "0.5625rem",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
@@ -279,7 +279,7 @@ function ProjectCard({
             <div
               className="text-[#3F3F46]/40"
               style={{
-                fontFamily: "var(--font-inter)",
+                fontFamily: "var(--font-josefin)",
                 fontSize: "0.5625rem",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
@@ -290,7 +290,7 @@ function ProjectCard({
             <div
               className="text-[#E86F16] mt-0.5"
               style={{
-                fontFamily: "var(--font-cormorant)",
+                fontFamily: "var(--font-cinzel)",
                 fontSize: "1.375rem",
                 fontWeight: 400,
               }}
@@ -302,7 +302,7 @@ function ProjectCard({
             href="#contact"
             className="inline-flex items-center gap-1.5 group-hover:text-[#E86F16] text-[#161616] transition-colors duration-300"
             style={{
-              fontFamily: "var(--font-inter)",
+              fontFamily: "var(--font-josefin)",
               fontSize: "0.625rem",
               letterSpacing: "0.14em",
               textTransform: "uppercase",
@@ -341,7 +341,7 @@ export default function ProjectsSection({ initialProjects = [] }: { initialProje
               <span
                 className="text-[#3F3F46]/50"
                 style={{
-                  fontFamily: "var(--font-inter)",
+                  fontFamily: "var(--font-josefin)",
                   fontSize: "0.625rem",
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
@@ -356,7 +356,7 @@ export default function ProjectsSection({ initialProjects = [] }: { initialProje
               transition={{ duration: 0.8, delay: 0.08, ease: EASE_OUT_EXPO }}
               className="text-[#161616]"
               style={{
-                fontFamily: "var(--font-cormorant)",
+                fontFamily: "var(--font-cinzel)",
                 fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
                 fontWeight: 400,
                 lineHeight: 1.05,
@@ -377,7 +377,7 @@ export default function ProjectsSection({ initialProjects = [] }: { initialProje
               href="/projects"
               className="inline-flex items-center gap-2 text-[#161616] border-b border-[#161616]/25 pb-0.5 hover:text-[#E86F16] hover:border-[#E86F16] transition-colors duration-200"
               style={{
-                fontFamily: "var(--font-inter)",
+                fontFamily: "var(--font-josefin)",
                 fontSize: "0.6875rem",
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",

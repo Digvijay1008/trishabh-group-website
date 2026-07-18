@@ -82,7 +82,7 @@ export default function BlogDetailClient({ post }: { post: Post }) {
             <Link
               href="/blogs"
               className="inline-flex items-center gap-2 text-[#3F3F46]/60 hover:text-[#E86F16] transition-colors duration-200 text-[11px] tracking-widest uppercase"
-              style={{ fontFamily: "var(--font-inter)" }}
+              style={{ fontFamily: "var(--font-josefin)" }}
             >
               <ArrowLeft size={13} />
               Back to Journal
@@ -96,12 +96,12 @@ export default function BlogDetailClient({ post }: { post: Post }) {
             transition={{ duration: 0.7, delay: 0.1, ease: EASE_OUT_EXPO }}
             className="flex items-center gap-5 mb-6"
           >
-            <span className="inline-flex items-center gap-1.5 text-[#E86F16] text-[10px] tracking-widest uppercase" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="inline-flex items-center gap-1.5 text-[#E86F16] text-[10px] tracking-widest uppercase" style={{ fontFamily: "var(--font-josefin)" }}>
               <Tag size={11} />
               {post.category}
             </span>
             <span className="text-[#3F3F46]/40 text-[10px]">·</span>
-            <span className="inline-flex items-center gap-1.5 text-[#3F3F46]/50 text-[10px] tracking-wider" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="inline-flex items-center gap-1.5 text-[#3F3F46]/50 text-[10px] tracking-wider" style={{ fontFamily: "var(--font-josefin)" }}>
               <CalendarDays size={11} />
               {formattedDate}
             </span>
@@ -114,7 +114,7 @@ export default function BlogDetailClient({ post }: { post: Post }) {
             transition={{ duration: 0.9, delay: 0.15, ease: EASE_OUT_EXPO }}
             className="text-[#161616] mb-6"
             style={{
-              fontFamily: "var(--font-cormorant)",
+              fontFamily: "var(--font-cinzel)",
               fontSize: "clamp(2.2rem, 4vw, 3.8rem)",
               fontWeight: 400,
               lineHeight: 1.08,
@@ -131,7 +131,7 @@ export default function BlogDetailClient({ post }: { post: Post }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: EASE_OUT_EXPO }}
               className="text-[#3F3F46]/70 text-lg leading-relaxed mb-10 pb-10 border-b border-[#E7E2D9]"
-              style={{ fontFamily: "var(--font-inter)" }}
+              style={{ fontFamily: "var(--font-josefin)" }}
             >
               {post.excerpt}
             </motion.p>
@@ -156,7 +156,7 @@ export default function BlogDetailClient({ post }: { post: Post }) {
               href="/contact"
               className="inline-flex items-center gap-2 bg-[#E86F16] text-white rounded-full hover:bg-[#D4610F] transition-all duration-300 flex-shrink-0"
               style={{
-                fontFamily: "var(--font-inter)",
+                fontFamily: "var(--font-josefin)",
                 fontSize: "10px",
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",

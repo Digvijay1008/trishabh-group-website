@@ -44,7 +44,7 @@ export default function BlogsPageClient({ posts }: { posts: Post[] }) {
             transition={{ duration: 1, delay: 0.1, ease: EASE_OUT_EXPO }}
             className="text-[#161616]"
             style={{
-              fontFamily: "var(--font-cormorant)",
+              fontFamily: "var(--font-cinzel)",
               fontSize: "clamp(3rem, 5vw, 4.5rem)",
               fontWeight: 400,
               lineHeight: 1.05,

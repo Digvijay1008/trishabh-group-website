@@ -7,6 +7,7 @@ import MetricsSection from "@/components/sections/MetricsSection";
 import WhySection from "@/components/sections/WhySection";
 import NeighborhoodsSection from "@/components/sections/NeighborhoodsSection";
 import ContactSection from "@/components/sections/ContactSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import { client } from "@/sanity/lib/client";
 
 async function getFeaturedProjects() {
@@ -41,6 +42,7 @@ export default async function Home() {
       <MetricsSection />
       <WhySection />
       <NeighborhoodsSection />
+      <TestimonialsSection />
       <ContactSection />
     </>
   );

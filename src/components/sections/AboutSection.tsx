@@ -26,7 +26,7 @@ export default function AboutSection() {
               <span
                 className="text-[#3F3F46]/50"
                 style={{
-                  fontFamily: "var(--font-inter)",
+                  fontFamily: "var(--font-josefin)",
                   fontSize: "0.625rem",
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
@@ -42,11 +42,11 @@ export default function AboutSection() {
               transition={{ duration: 0.8, delay: 0.08, ease: EASE_OUT_EXPO }}
               className="text-[#161616] mb-8"
               style={{
-                fontFamily: "var(--font-cormorant)",
-                fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
-                fontWeight: 400,
-                lineHeight: 1.05,
-                letterSpacing: "-0.02em",
+                fontFamily: "var(--font-cinzel)",
+                fontSize: "clamp(2rem, 5vw, 5.5rem)",
+                fontWeight: 500,
+                lineHeight: 1.0,
+                letterSpacing: "-0.04em",
               }}
             >
               Welcome to<br />
@@ -58,7 +58,7 @@ export default function AboutSection() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.16, ease: EASE_OUT_EXPO }}
               className="text-[#3F3F46] leading-relaxed mb-6"
-              style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
+              style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
             >
               With our pillars of dedication, commitment and discipline, we have created sheer
               architectural marvels and stunning spaces of luxury living in Mumbai &amp; Navi Mumbai
@@ -71,7 +71,7 @@ export default function AboutSection() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.22, ease: EASE_OUT_EXPO }}
               className="text-[#3F3F46]/70 leading-relaxed"
-              style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
+              style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
             >
               Every residence carries our ironclad promise — 100% OC delivery, flawless
               craftsmanship, and a white-glove service relationship that extends well beyond handover.
@@ -87,7 +87,7 @@ export default function AboutSection() {
               <div
                 className="text-[#161616]"
                 style={{
-                  fontFamily: "var(--font-cormorant)",
+                  fontFamily: "var(--font-cinzel)",
                   fontSize: "1.5rem",
                   fontStyle: "italic",
                   fontWeight: 400,
@@ -98,7 +98,7 @@ export default function AboutSection() {
               <div
                 className="text-[#3F3F46]/50 mt-1"
                 style={{
-                  fontFamily: "var(--font-inter)",
+                  fontFamily: "var(--font-josefin)",
                   fontSize: "0.6875rem",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
