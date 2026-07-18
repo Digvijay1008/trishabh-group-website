@@ -2,18 +2,19 @@ import { client } from "./client";
 
 export async function getProjects() {
   const query = `*[_type == "project"] | order(_createdAt desc) {
-    title,
+    "name": title,
     "slug": slug.current,
     status,
     location,
-    shortDescription,
-    configurations,
-    "area": configurations,
-    "units": configurations,
-    "completion": configurations,
-    mainImage {
-      asset -> { url }
-    }
+    type,
+    price,
+    area,
+    units,
+    completion,
+    bgBase,
+    towerColor,
+    highlight,
+    "image": mainImage.asset->url
   }`;
   try {
     return await client.fetch(query, {}, { next: { revalidate: 60 } });
@@ -24,25 +25,22 @@ export async function getProjects() {
 
 export async function getProject(slug: string) {
   const query = `*[_type == "project" && slug.current == $slug][0] {
-    title,
+    "name": title,
     "slug": slug.current,
     status,
     location,
-    shortDescription,
-    fullDescription,
-    configurations,
+    type,
+    price,
+    area,
+    units,
+    completion,
+    bgBase,
+    towerColor,
+    highlight,
+    vision,
     amenities,
     mahareraNumber,
-    "area": configurations,
-    "units": configurations,
-    "completion": configurations,
-    "price": "Price on Request",
-    mainImage {
-      asset -> { url }
-    },
-    gallery[] {
-      asset -> { url }
-    },
+    "image": mainImage.asset->url,
     seo
   }`;
   try {

@@ -9,18 +9,19 @@ export const metadata: Metadata = {
 
 async function getProjects() {
   const query = `*[_type == "project"] | order(_createdAt desc) {
-    title,
+    "name": title,
     "slug": slug.current,
     status,
     location,
-    shortDescription,
-    configurations,
-    "area": configurations,
-    "units": configurations,
-    "completion": configurations,
-    mainImage {
-      asset -> { url }
-    }
+    type,
+    price,
+    area,
+    units,
+    completion,
+    bgBase,
+    towerColor,
+    highlight,
+    "image": mainImage.asset->url
   }`;
   try {
     return await client.fetch(query, {}, { next: { revalidate: 60 } });

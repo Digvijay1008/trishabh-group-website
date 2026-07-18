@@ -123,9 +123,7 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
     <div className="bg-white min-h-screen">
       {/* Immersive Hero */}
       <div className="relative h-[80vh] min-h-[600px] w-full flex items-end pb-24" style={{ background: project.bgBase || "#EDE9E2" }}>
-        {isSanity && project.mainImage?.asset?.url ? (
-          <img src={project.mainImage.asset.url} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />
-        ) : project.image ? (
+        {project.image ? (
           <img src={project.image} alt={project.name} className="absolute inset-0 w-full h-full object-cover" />
         ) : (
           <div className="absolute inset-0 opacity-20 flex items-center justify-center">

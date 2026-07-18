@@ -8,8 +8,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (sanityProject && sanityProject.seo) {
     return {
-      title: sanityProject.seo.metaTitle || `${sanityProject.title} | Trishabh Group`,
-      description: sanityProject.seo.metaDescription || sanityProject.shortDescription,
+      title: sanityProject.seo.metaTitle || `${sanityProject.name} | Trishabh Group`,
+      description: sanityProject.seo.metaDescription || sanityProject.vision,
+      openGraph: {
+        images: sanityProject.image ? [sanityProject.image] : [],
+      }
     };
   }
   

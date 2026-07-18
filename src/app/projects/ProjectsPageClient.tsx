@@ -108,13 +108,19 @@ const statusStyles: Record<string, { bg: string; text: string; dot: boolean }> =
 };
 
 type SanityProject = {
-  title: string;
+  name: string;
   slug: string;
   status: string;
   location: string;
-  shortDescription?: string;
-  configurations?: string;
-  mainImage?: { asset: { url: string } };
+  type?: string;
+  price?: string;
+  area?: string;
+  units?: string;
+  completion?: string;
+  bgBase?: string;
+  towerColor?: string;
+  highlight?: string;
+  image?: string;
 };
 
 interface ProjectsPageProps {
@@ -123,8 +129,11 @@ interface ProjectsPageProps {
 }
 
 export default function ProjectsPageClient({ category, initialProjects = [] }: ProjectsPageProps) {
-  const isSanity = initialProjects.length > 0;
-  const sourceProjects = isSanity ? initialProjects : projects;
+  // Intelligently merge: use Sanity project if it exists, otherwise use hardcoded fallback
+  const sourceProjects = [
+    ...initialProjects,
+    ...projects.filter((p) => !initialProjects.some((sp) => sp.slug === p.slug))
+  ];
 
   const filteredProjects = category 
     ? sourceProjects.filter(p => {
@@ -193,9 +202,7 @@ export default function ProjectsPageClient({ category, initialProjects = [] }: P
                   <div className="bg-white border border-[#E7E2D9] rounded-sm overflow-hidden hover:border-[#E86F16]/25 transition-colors duration-500 shadow-[0_4px_32px_-4px_rgba(22,22,22,0.04)]">
                     {/* Visual Area */}
                     <div className="h-[360px] relative overflow-hidden" style={{ background: project.bgBase || "#EDE9E2" }}>
-                      {isSanity && project.mainImage?.asset?.url ? (
-                        <img src={project.mainImage.asset.url} alt={project.title} className="w-full h-full object-cover" />
-                      ) : project.image ? (
+                      {project.image ? (
                         <img src={project.image} alt={project.name} className="w-full h-full object-cover" />
                       ) : (
                       <svg className="w-full h-full" viewBox="0 0 500 360" preserveAspectRatio="xMidYMid slice">
