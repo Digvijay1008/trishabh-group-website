@@ -18,7 +18,7 @@ const navItems = [
   },
   { label: "The Legacy", href: "/about" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Redevelop With Us", href: "/redevelopment" },
+  { label: "Redevelopment", href: "/redevelopment" },
   { label: "Careers", href: "/careers" },
   { label: "Blogs", href: "/blogs" },
   { label: "Contact", href: "/contact" },
@@ -71,7 +71,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center" style={{ gap: "clamp(1.5rem, 3vw, 3rem)" }}>
+          <nav className="hidden lg:flex items-center" style={{ gap: "clamp(1rem, 1.5vw, 2rem)" }}>
             {navItems.map((item) => (
               <div
                 key={item.label}
@@ -82,7 +82,7 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   className="flex items-center gap-1 transition-colors duration-200 text-[#3F3F46] hover:text-[#161616]"
-                  style={{ fontSize: "clamp(10px, 1vw, 12px)", letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 500 }}
+                  style={{ fontSize: "11px", letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 500 }}
                 >
                   {item.label}
                   {item.dropdown && (
@@ -127,11 +127,11 @@ export default function Navbar() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-[#E86F16] text-white rounded-full hover:bg-[#D4610F] transition-all duration-300 hover:gap-3 group flex-shrink-0"
               style={{
-                fontSize: "clamp(9px, 0.85vw, 11px)",
-                letterSpacing: "0.16em",
+                fontSize: "11px",
+                letterSpacing: "0.08em",
                 textTransform: "uppercase",
                 fontWeight: 500,
-                padding: "clamp(9px, 1vh, 13px) clamp(16px, 2vw, 26px)",
+                padding: "10px 20px",
               }}
             >
               Schedule Site Visit

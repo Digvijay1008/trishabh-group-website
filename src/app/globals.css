@@ -15,8 +15,8 @@
     --color-border: #E7E2D9;
 
     /* Typography */
-    --font-serif: var(--font-cinzel), 'Cinzel', Georgia, serif;
-    --font-sans: var(--font-josefin), 'Josefin Sans', system-ui, sans-serif;
+    --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+    --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
 
     /* Spacing */
     --section-padding: clamp(80px, 10vw, 160px);
@@ -83,21 +83,21 @@
 
   /* Editorial text sizes */
   .text-display {
-    font-size: clamp(3rem, 10vw, 9rem);
-    line-height: 0.95;
-    letter-spacing: -0.05em;
-    font-weight: 600;
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 400;
   }
   .text-headline {
-    font-size: clamp(2rem, 5vw, 5.5rem);
-    line-height: 1.0;
-    letter-spacing: -0.04em;
-    font-weight: 500;
+    font-size: clamp(1.8rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    font-weight: 400;
   }
   .text-title {
-    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: 0em;
     font-weight: 400;
   }
   .text-label {
