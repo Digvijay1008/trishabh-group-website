@@ -26,9 +26,9 @@ export default function AmenitiesSection() {
   const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
 
   return (
-    <section ref={containerRef} className="bg-[#161616] text-white py-32 lg:py-48 relative overflow-hidden">
+    <section ref={containerRef} className="bg-[#161616] text-white py-16 lg:py-24 relative overflow-hidden">
       <div className="container-luxury">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           
           {/* Image */}
           <div className="order-1">

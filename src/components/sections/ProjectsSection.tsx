@@ -8,43 +8,49 @@ import { EASE_OUT_EXPO } from "@/lib/easing";
 
 const projects = [
   {
-    name: "Trishabh Park View",
+    name: "Trishabh Miraya",
+    slug: "trishabh-miraya",
     location: "Chembur, Mumbai",
-    type: "2, 3 & 4 BHK Residences",
-    price: "₹ 2.45 Cr*",
+    type: "3 & 4 BHK Luxury Residences",
+    price: "Price on Request",
     status: "Ongoing" as const,
     area: "2.1 Acres",
-    units: "240",
+    units: "120",
     completion: "Dec 2026",
     bgBase: "#EDE9E2",
     towerColor: "#8C7B6B",
     highlight: "#C8A870",
+    image: "/images/Trishabh Miraya View.jpg",
   },
   {
-    name: "Trishabh Serenity",
-    location: "Powai, Mumbai",
-    type: "3 & 4 BHK Sky Residences",
-    price: "₹ 4.20 Cr*",
-    status: "Launching Soon" as const,
-    area: "3.4 Acres",
-    units: "180",
-    completion: "Mar 2027",
+    name: "Trishabh Greens",
+    slug: "trishabh-greens",
+    location: "Chembur East, Mumbai",
+    type: "2 & 3 BHK Premium Apartments",
+    price: "Price on Request",
+    status: "Completed" as const,
+    area: "1.5 Acres",
+    units: "85",
+    completion: "Mar 2022",
     bgBase: "#E8E2D8",
     towerColor: "#7A6B5B",
     highlight: "#B89860",
+    image: "/images/1.jpg",
   },
   {
-    name: "Trishabh Estancia",
-    location: "Thane West",
-    type: "2 & 3 BHK Residences",
-    price: "₹ 1.80 Cr*",
+    name: "Tulsi Meadows",
+    slug: "tulsi-meadows",
+    location: "Sion-Trombay Road, Chembur",
+    type: "4 BHK Ultra-Luxury Deck Residences",
+    price: "Price on Request",
     status: "Completed" as const,
-    area: "1.8 Acres",
-    units: "320",
-    completion: "Dec 2023",
+    area: "3.0 Acres",
+    units: "60",
+    completion: "Dec 2020",
     bgBase: "#E4DED4",
     towerColor: "#9A8A7A",
     highlight: "#D4B888",
+    image: "/images/Tulsi Meadows Photo for Picture frame.jpg",
   },
 ];
 
@@ -90,230 +96,233 @@ function ProjectCard({
       className="group bg-white border border-[#E7E2D9] rounded-sm overflow-hidden hover:border-[#E86F16]/25 transition-colors duration-500"
       style={{ boxShadow: "0 4px 32px -4px rgba(22,22,22,0.06)" }}
     >
-      {/* Image panel — architectural illustration */}
-      <div className="h-[260px] relative overflow-hidden" style={{ background: project.bgBase }}>
-        {isSanity && project.mainImage?.asset?.url ? (
-          <img src={project.mainImage.asset.url} alt={project.title} className="w-full h-full object-cover" />
-        ) : (
-          <svg className="w-full h-full" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <linearGradient id={`tg${index}`} x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor={project.towerColor || "#8C7B6B"} stopOpacity="0.9" />
-                <stop offset="100%" stopColor={project.towerColor || "#8C7B6B"} stopOpacity="1" />
-              </linearGradient>
-              <linearGradient id={`wg${index}`} x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor={project.highlight || "#C8A870"} stopOpacity="0.8" />
-                <stop offset="100%" stopColor={project.highlight || "#C8A870"} stopOpacity="0.4" />
-              </linearGradient>
-              <linearGradient id={`sky${index}`} x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#C8B89A" stopOpacity="0.3" />
-                <stop offset="100%" stopColor={project.bgBase || "#EDE9E2"} stopOpacity="0" />
-              </linearGradient>
-            </defs>
+      <Link href={project.slug ? `/projects/${project.slug}` : "#"} className="block h-full">
+        {/* Image panel — architectural illustration */}
+        <div className="h-[260px] relative overflow-hidden" style={{ background: project.bgBase }}>
+          {isSanity && project.mainImage?.asset?.url ? (
+            <img src={project.mainImage.asset.url} alt={project.title} className="w-full h-full object-cover" />
+          ) : project.image ? (
+            <img src={project.image} alt={project.name} className="w-full h-full object-cover" />
+          ) : (
+            <svg className="w-full h-full" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id={`tg${index}`} x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor={project.towerColor || "#8C7B6B"} stopOpacity="0.9" />
+                  <stop offset="100%" stopColor={project.towerColor || "#8C7B6B"} stopOpacity="1" />
+                </linearGradient>
+                <linearGradient id={`wg${index}`} x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor={project.highlight || "#C8A870"} stopOpacity="0.8" />
+                  <stop offset="100%" stopColor={project.highlight || "#C8A870"} stopOpacity="0.4" />
+                </linearGradient>
+                <linearGradient id={`sky${index}`} x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#C8B89A" stopOpacity="0.3" />
+                  <stop offset="100%" stopColor={project.bgBase || "#EDE9E2"} stopOpacity="0" />
+                </linearGradient>
+              </defs>
 
-            <rect width="400" height="260" fill={`url(#sky${index})`} />
+              <rect width="400" height="260" fill={`url(#sky${index})`} />
 
-            {/* Main tower */}
-            <rect x="140" y="30" width="120" height="210" fill={`url(#tg${index})`} />
-            {/* Highlight strip */}
-            <rect x="140" y="30" width="28" height="210" fill={project.highlight || "#C8A870"} opacity="0.2" />
-            {/* Top cap */}
-            <rect x="130" y="16" width="140" height="20" fill={project.towerColor || "#8C7B6B"} opacity="0.9" />
+              {/* Main tower */}
+              <rect x="140" y="30" width="120" height="210" fill={`url(#tg${index})`} />
+              {/* Highlight strip */}
+              <rect x="140" y="30" width="28" height="210" fill={project.highlight || "#C8A870"} opacity="0.2" />
+              {/* Top cap */}
+              <rect x="130" y="16" width="140" height="20" fill={project.towerColor || "#8C7B6B"} opacity="0.9" />
 
-            {/* Side wing */}
-            <rect x="40" y="90" width="108" height="150" fill={project.towerColor || "#8C7B6B"} opacity="0.75" />
-            <rect x="40" y="90" width="20" height="150" fill={project.highlight || "#C8A870"} opacity="0.12" />
-            <rect x="252" y="90" width="108" height="150" fill={project.towerColor || "#8C7B6B"} opacity="0.75" />
-            <rect x="340" y="90" width="20" height="150" fill={project.highlight || "#C8A870"} opacity="0.12" />
+              {/* Side wing */}
+              <rect x="40" y="90" width="108" height="150" fill={project.towerColor || "#8C7B6B"} opacity="0.75" />
+              <rect x="40" y="90" width="20" height="150" fill={project.highlight || "#C8A870"} opacity="0.12" />
+              <rect x="252" y="90" width="108" height="150" fill={project.towerColor || "#8C7B6B"} opacity="0.75" />
+              <rect x="340" y="90" width="20" height="150" fill={project.highlight || "#C8A870"} opacity="0.12" />
 
-            {/* Windows — tower */}
-            {[...Array(6)].map((_, row) =>
-              [0, 1, 2].map((col) => (
-                <rect
-                  key={`w${index}-${row}-${col}`}
-                  x={158 + col * 34}
-                  y={50 + row * 30}
-                  width={22}
-                  height={18}
-                  fill={`url(#wg${index})`}
-                  opacity={0.5 + col * 0.1}
-                  rx="1"
-                />
-              ))
-            )}
+              {/* Windows — tower */}
+              {[...Array(6)].map((_, row) =>
+                [0, 1, 2].map((col) => (
+                  <rect
+                    key={`w${index}-${row}-${col}`}
+                    x={158 + col * 34}
+                    y={50 + row * 30}
+                    width={22}
+                    height={18}
+                    fill={`url(#wg${index})`}
+                    opacity={0.5 + col * 0.1}
+                    rx="1"
+                  />
+                ))
+              )}
 
-            {/* Windows — wings */}
-            {[...Array(4)].map((_, row) =>
-              [0, 1].map((col) => (
-                <rect
-                  key={`wl${index}-${row}-${col}`}
-                  x={55 + col * 40}
-                  y={108 + row * 34}
-                  width={26}
-                  height={18}
-                  fill={`url(#wg${index})`}
-                  opacity={0.35}
-                  rx="1"
-                />
-              ))
-            )}
-            {[...Array(4)].map((_, row) =>
-              [0, 1].map((col) => (
-                <rect
-                  key={`wr${index}-${row}-${col}`}
-                  x={268 + col * 40}
-                  y={108 + row * 34}
-                  width={26}
-                  height={18}
-                  fill={`url(#wg${index})`}
-                  opacity={0.35}
-                  rx="1"
-                />
-              ))
-            )}
+              {/* Windows — wings */}
+              {[...Array(4)].map((_, row) =>
+                [0, 1].map((col) => (
+                  <rect
+                    key={`wl${index}-${row}-${col}`}
+                    x={55 + col * 40}
+                    y={108 + row * 34}
+                    width={26}
+                    height={18}
+                    fill={`url(#wg${index})`}
+                    opacity={0.35}
+                    rx="1"
+                  />
+                ))
+              )}
+              {[...Array(4)].map((_, row) =>
+                [0, 1].map((col) => (
+                  <rect
+                    key={`wr${index}-${row}-${col}`}
+                    x={268 + col * 40}
+                    y={108 + row * 34}
+                    width={26}
+                    height={18}
+                    fill={`url(#wg${index})`}
+                    opacity={0.35}
+                    rx="1"
+                  />
+                ))
+              )}
 
-            {/* Ground */}
-            <rect x="0" y="240" width="400" height="20" fill={project.towerColor || "#8C7B6B"} opacity="0.25" />
-            {/* Trees */}
-            <ellipse cx="30" cy="252" rx="35" ry="45" fill="#5A6B4A" opacity="0.3" />
-            <ellipse cx="370" cy="256" rx="30" ry="38" fill="#5A6B4A" opacity="0.25" />
-          </svg>
-        )}
+              {/* Ground */}
+              <rect x="0" y="240" width="400" height="20" fill={project.towerColor || "#8C7B6B"} opacity="0.25" />
+              {/* Trees */}
+              <ellipse cx="30" cy="252" rx="35" ry="45" fill="#5A6B4A" opacity="0.3" />
+              <ellipse cx="370" cy="256" rx="30" ry="38" fill="#5A6B4A" opacity="0.25" />
+            </svg>
+          )}
 
-        {/* Status badge */}
-        <div className="absolute top-4 right-4">
-          <span
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full"
-            style={{
-              background: s.bg,
-              color: s.text,
-              fontFamily: "var(--font-josefin)",
-              fontSize: "0.5625rem",
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              fontWeight: 500,
-            }}
-          >
-            {s.dot && (
-              <span
-                className="w-1.5 h-1.5 rounded-full bg-[#E86F16] animate-pulse"
-                style={{ display: "inline-block" }}
-              />
-            )}
-            {project.status}
-          </span>
-        </div>
-
-        {/* Orange reveal line on hover */}
-        <div className="absolute top-0 left-0 w-[3px] h-0 bg-[#E86F16] group-hover:h-full transition-all duration-700" />
-      </div>
-
-      {/* Card body */}
-      <div className="p-6">
-        <div className="flex items-start justify-between mb-3">
-          <div>
-            <h3
-              className="text-[#161616]"
+          {/* Status badge */}
+          <div className="absolute top-4 right-4">
+            <span
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full"
               style={{
-                fontFamily: "var(--font-cinzel)",
-                fontSize: "1.375rem",
-                fontWeight: 400,
-                lineHeight: 1.2,
-              }}
-            >
-              {project.title || project.name}
-            </h3>
-            <div
-              className="flex items-center gap-1 text-[#3F3F46]/50 mt-1"
-              style={{ fontFamily: "var(--font-josefin)", fontSize: "0.75rem" }}
-            >
-              <MapPin size={10} />
-              {project.location}
-            </div>
-          </div>
-        </div>
-
-        <p
-          className="text-[#3F3F46]/60 mb-4"
-          style={{ fontFamily: "var(--font-josefin)", fontSize: "0.8125rem" }}
-        >
-          {project.configurations || project.type || project.shortDescription}
-        </p>
-
-        {/* Specs */}
-        {!isSanity && (
-          <div
-            className="grid grid-cols-3 gap-3 py-4 border-y border-[#E7E2D9] mb-4"
-          >
-            {[
-              { val: project.area, lbl: "Land Area" },
-              { val: project.units, lbl: "Homes" },
-              { val: project.completion, lbl: "Completion" },
-            ].map(({ val, lbl }) => (
-              <div key={lbl}>
-                <div
-                  className="text-[#161616] font-medium"
-                  style={{ fontFamily: "var(--font-josefin)", fontSize: "0.8125rem" }}
-                >
-                  {val}
-                </div>
-                <div
-                  className="text-[#3F3F46]/40 mt-0.5"
-                  style={{
-                    fontFamily: "var(--font-josefin)",
-                    fontSize: "0.5625rem",
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {lbl}
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Price + CTA */}
-        <div className="flex items-end justify-between">
-          <div>
-            <div
-              className="text-[#3F3F46]/40"
-              style={{
-                fontFamily: "var(--font-josefin)",
+                background: s.bg,
+                color: s.text,
+                fontFamily: "var(--font-inter)",
                 fontSize: "0.5625rem",
-                letterSpacing: "0.1em",
+                letterSpacing: "0.12em",
                 textTransform: "uppercase",
+                fontWeight: 500,
               }}
             >
-              Starting From
-            </div>
-            <div
-              className="text-[#E86F16] mt-0.5"
-              style={{
-                fontFamily: "var(--font-cinzel)",
-                fontSize: "1.375rem",
-                fontWeight: 400,
-              }}
-            >
-              {project.price || "Price on Request"}
+              {s.dot && (
+                <span
+                  className="w-1.5 h-1.5 rounded-full bg-[#E86F16] animate-pulse"
+                  style={{ display: "inline-block" }}
+                />
+              )}
+              {project.status}
+            </span>
+          </div>
+
+          {/* Orange reveal line on hover */}
+          <div className="absolute top-0 left-0 w-[3px] h-0 bg-[#E86F16] group-hover:h-full transition-all duration-700" />
+        </div>
+
+        {/* Card body */}
+        <div className="p-6">
+          <div className="flex items-start justify-between mb-3">
+            <div>
+              <h3
+                className="text-[#161616]"
+                style={{
+                  fontFamily: "var(--font-cormorant)",
+                  fontSize: "1.375rem",
+                  fontWeight: 400,
+                  lineHeight: 1.2,
+                }}
+              >
+                {project.title || project.name}
+              </h3>
+              <div
+                className="flex items-center gap-1 text-[#3F3F46]/50 mt-1"
+                style={{ fontFamily: "var(--font-inter)", fontSize: "0.75rem" }}
+              >
+                <MapPin size={10} />
+                {project.location}
+              </div>
             </div>
           </div>
-          <Link
-            href="#contact"
-            className="inline-flex items-center gap-1.5 group-hover:text-[#E86F16] text-[#161616] transition-colors duration-300"
-            style={{
-              fontFamily: "var(--font-josefin)",
-              fontSize: "0.625rem",
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-              fontWeight: 500,
-            }}
+
+          <p
+            className="text-[#3F3F46]/60 mb-4"
+            style={{ fontFamily: "var(--font-inter)", fontSize: "0.8125rem" }}
           >
-            Enquire Now
-            <ArrowRight size={10} className="transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
+            {project.configurations || project.type || project.shortDescription}
+          </p>
+
+          {/* Specs */}
+          {!isSanity && (
+            <div
+              className="grid grid-cols-3 gap-3 py-4 border-y border-[#E7E2D9] mb-4"
+            >
+              {[
+                { val: project.area, lbl: "Land Area" },
+                { val: project.units, lbl: "Homes" },
+                { val: project.completion, lbl: "Completion" },
+              ].map(({ val, lbl }) => (
+                <div key={lbl}>
+                  <div
+                    className="text-[#161616] font-medium"
+                    style={{ fontFamily: "var(--font-inter)", fontSize: "0.8125rem" }}
+                  >
+                    {val}
+                  </div>
+                  <div
+                    className="text-[#3F3F46]/40 mt-0.5"
+                    style={{
+                      fontFamily: "var(--font-inter)",
+                      fontSize: "0.5625rem",
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {lbl}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Price + CTA */}
+          <div className="flex items-end justify-between">
+            <div>
+              <div
+                className="text-[#3F3F46]/40"
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontSize: "0.5625rem",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Starting From
+              </div>
+              <div
+                className="text-[#E86F16] mt-0.5"
+                style={{
+                  fontFamily: "var(--font-cormorant)",
+                  fontSize: "1.375rem",
+                  fontWeight: 400,
+                }}
+              >
+                {project.price || "Price on Request"}
+              </div>
+            </div>
+            <div
+              className="inline-flex items-center gap-1.5 group-hover:text-[#E86F16] text-[#161616] transition-colors duration-300"
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontSize: "0.625rem",
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Enquire Now
+              <ArrowRight size={10} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </div>
+          </div>
         </div>
-      </div>
+      </Link>
     </motion.div>
   );
 }
@@ -326,7 +335,7 @@ export default function ProjectsSection({ initialProjects = [] }: { initialProje
   const isSanity = initialProjects.length > 0;
 
   return (
-    <section ref={ref} id="projects" className="bg-[#FAF9F7] py-[120px] border-t border-[#E7E2D9]">
+    <section ref={ref} id="projects" className="bg-[#FAF9F7] py-16 lg:py-24 border-t border-[#E7E2D9]">
       <div className="container-luxury">
         {/* Header */}
         <div className="flex items-start justify-between mb-16 flex-wrap gap-6">

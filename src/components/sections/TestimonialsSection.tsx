@@ -27,7 +27,7 @@ export default function TestimonialsSection() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-[120px] bg-[#161616] text-white overflow-hidden relative">
+    <section ref={ref} className="py-16 lg:py-24 bg-[#161616] text-white overflow-hidden relative">
       <div className="absolute inset-0 bg-gradient-to-br from-[#161616] to-[#2A2A2A] opacity-50" />
       <div className="container-luxury relative z-10">
         <div className="text-center mb-16">

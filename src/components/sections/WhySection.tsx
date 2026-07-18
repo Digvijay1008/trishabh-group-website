@@ -32,7 +32,7 @@ export default function WhySection() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} id="why" className="bg-[#FAF9F7] py-[120px] border-t border-[#E7E2D9]">
+    <section ref={ref} id="why" className="bg-[#FAF9F7] py-16 lg:py-24 border-t border-[#E7E2D9]">
       <div className="container-luxury">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           {/* Left — sticky heading */}

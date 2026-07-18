@@ -40,7 +40,7 @@ export default function MetricsSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} id="trust" className="bg-[#161616] py-[120px]">
+    <section ref={ref} id="trust" className="bg-[#161616] py-16 lg:py-24">
       <div className="container-luxury">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end mb-20">

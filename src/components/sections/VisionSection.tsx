@@ -17,9 +17,9 @@ export default function VisionSection() {
   const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   return (
-    <section ref={containerRef} className="bg-[#FAF9F7] py-32 lg:py-48 relative overflow-hidden">
+    <section ref={containerRef} className="bg-[#FAF9F7] py-16 lg:py-24 relative overflow-hidden">
       <div className="container-luxury">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           
           {/* Text Content */}
           <div className="order-2 lg:order-1 relative z-10">
@@ -62,7 +62,7 @@ export default function VisionSection() {
             >
               <motion.div style={{ y, height: "120%" }} className="absolute inset-0 top-[-10%]">
                 <Image
-                  src="/interior_vision.png"
+                  src="/images/2.jpeg"
                   alt="Luxury Interior Design"
                   fill
                   className="object-cover"

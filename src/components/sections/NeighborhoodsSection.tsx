@@ -15,7 +15,7 @@ export default function NeighborhoodsSection() {
   const inView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section ref={containerRef} className="bg-[#EDE9E2] py-32 lg:py-48 relative">
+    <section ref={containerRef} className="bg-[#EDE9E2] py-16 lg:py-24 relative">
       <div className="container-luxury">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <motion.div

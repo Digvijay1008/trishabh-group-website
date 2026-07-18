@@ -34,10 +34,10 @@ const SocialIcons = {
 };
 
 const social = [
-  { Icon: SocialIcons.Instagram, href: "#", label: "Instagram" },
-  { Icon: SocialIcons.LinkedIn, href: "#", label: "LinkedIn" },
-  { Icon: SocialIcons.YouTube, href: "#", label: "YouTube" },
-  { Icon: SocialIcons.Facebook, href: "#", label: "Facebook" },
+  { Icon: SocialIcons.Instagram, href: "https://www.instagram.com/trishabhgroup/", label: "Instagram" },
+  { Icon: SocialIcons.LinkedIn, href: "https://www.linkedin.com/company/trishabhgroup", label: "LinkedIn" },
+  { Icon: SocialIcons.YouTube, href: "https://www.youtube.com/@trishabhgroup3291", label: "YouTube" },
+  { Icon: SocialIcons.Facebook, href: "https://www.facebook.com/trishabhgroup/", label: "Facebook" },
 ];
 
 const navLinks = [
@@ -45,7 +45,7 @@ const navLinks = [
   { label: "Current Projects", href: "/projects/current" },
   { label: "Upcoming Projects", href: "/projects/upcoming" },
   { label: "Completed Projects", href: "/projects/completed" },
-  { label: "Journal & Blogs", href: "/blogs" },
+  { label: "Blogs", href: "/blogs" },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -108,7 +108,7 @@ export default function Footer() {
                 alt="Trishabh Group"
                 width={150}
                 height={50}
-                className="h-10 w-auto object-contain brightness-0 invert opacity-85"
+                className="h-10 w-auto object-contain"
               />
             </Link>
             <p

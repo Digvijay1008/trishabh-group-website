@@ -26,7 +26,7 @@ const projects = [
 ];
 
 const inputCls =
-  "w-full bg-transparent border-0 border-b border-[#E7E2D9] py-3 text-[#161616] placeholder:text-[#3F3F46]/30 focus:outline-none focus:border-[#E86F16] transition-colors duration-300";
+  "w-full bg-[#FAF9F7] border border-[#E7E2D9] rounded-xl px-4 py-3.5 text-[#161616] placeholder:text-[#3F3F46]/50 focus:outline-none focus:border-[#E86F16] focus:bg-white focus:ring-1 focus:ring-[#E86F16]/20 transition-all duration-300";
 
 export default function ContactSection() {
   const ref = useRef<HTMLElement>(null);
@@ -43,7 +43,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section ref={ref} id="contact" className="bg-white py-[120px] border-t border-[#E7E2D9]">
+    <section ref={ref} id="contact" className="bg-white py-16 lg:py-24 border-t border-[#E7E2D9]">
       <div className="container-luxury">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
 
@@ -129,6 +129,7 @@ export default function ContactSection() {
             initial={{ opacity: 0, y: 32 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.9, delay: 0.15, ease: EASE_OUT_EXPO }}
+            className="bg-white rounded-3xl p-8 lg:p-12 shadow-[0_8px_40px_rgb(0,0,0,0.06)] border border-[#E7E2D9]/50"
           >
             {isSubmitSuccessful ? (
               <div className="h-full flex flex-col items-center justify-center py-20 text-center space-y-5">

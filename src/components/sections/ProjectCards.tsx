@@ -49,7 +49,7 @@ export default function ProjectCards() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} id="projects" className="bg-[#FAF9F7] py-[120px] border-t border-[#E7E2D9]">
+    <section ref={ref} id="projects" className="bg-[#FAF9F7] py-16 lg:py-24 border-t border-[#E7E2D9]">
       <div className="container-luxury">
         {/* Header */}
         <div className="flex items-start justify-between mb-16 flex-wrap gap-6">
