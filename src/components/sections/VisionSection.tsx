@@ -19,7 +19,7 @@ export default function VisionSection() {
   return (
     <section ref={containerRef} className="bg-[#FAF9F7] py-16 lg:py-24 relative overflow-hidden">
       <div className="container-luxury">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
           
           {/* Text Content */}
           <div className="order-2 lg:order-1 relative z-10">
@@ -35,7 +35,7 @@ export default function VisionSection() {
                 </span>
               </div>
               
-              <h2 className="text-[#161616] font-cormorant text-5xl lg:text-7xl leading-[1.1] mb-8">
+              <h2 className="text-[#161616] font-cormorant text-4xl sm:text-5xl lg:text-7xl leading-[1.1] mb-8">
                 Designing<br />
                 Tomorrow&apos;s<br />
                 <em className="text-[#E86F16]">Heritage.</em>

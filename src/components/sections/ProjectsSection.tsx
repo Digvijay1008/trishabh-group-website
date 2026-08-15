@@ -338,7 +338,7 @@ export default function ProjectsSection({ initialProjects = [] }: { initialProje
     <section ref={ref} id="projects" className="bg-[#FAF9F7] py-16 lg:py-24 border-t border-[#E7E2D9]">
       <div className="container-luxury">
         {/* Header */}
-        <div className="flex items-start justify-between mb-16 flex-wrap gap-6">
+        <div className="flex items-start justify-between mb-10 lg:mb-16 flex-wrap gap-6">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 16 }}

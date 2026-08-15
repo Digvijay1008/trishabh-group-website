@@ -43,7 +43,7 @@ export default function MetricsSection() {
     <section ref={ref} id="trust" className="bg-[#161616] py-16 lg:py-24">
       <div className="container-luxury">
         {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-end mb-12 lg:mb-20">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -101,7 +101,7 @@ export default function MetricsSection() {
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="bg-[#161616] p-10"
+              className="bg-[#161616] p-6 sm:p-10"
             >
               <div
                 className="text-white leading-none mb-4"

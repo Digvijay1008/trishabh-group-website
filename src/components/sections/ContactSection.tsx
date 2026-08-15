@@ -55,7 +55,7 @@ export default function ContactSection() {
   return (
     <section ref={ref} id="contact" className="bg-white py-16 lg:py-24 border-t border-[#E7E2D9]">
       <div className="container-luxury">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
           {/* Left — contact info */}
           <div>
@@ -160,7 +160,7 @@ export default function ContactSection() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col min-h-[400px]">
+              <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col min-h-[350px] lg:min-h-[400px]">
                 
                 {/* Progress Bar */}
                 <div className="flex gap-2 mb-10">

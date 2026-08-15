@@ -166,9 +166,9 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
       </div>
 
       {/* The Vision & Specs */}
-      <div className="py-[120px]" ref={ref}>
+      <div className="py-12 lg:py-[120px]" ref={ref}>
         <div className="container-luxury">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             
             <motion.div 
               className="lg:col-span-7"
@@ -182,7 +182,7 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
                   The Vision
                 </span>
               </div>
-              <h2 className="text-[#161616] mb-8" style={{ fontFamily: "var(--font-cinzel)", fontSize: "2.5rem", lineHeight: 1.2 }}>
+              <h2 className="text-[#161616] mb-8" style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)", lineHeight: 1.2 }}>
                 Where architecture meets<br />
                 <em style={{ fontStyle: "italic", color: "#E86F16" }}>absolute perfection.</em>
               </h2>
@@ -202,17 +202,17 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
               )}
               
               {project.amenities && project.amenities.length > 0 && (
-                <div className="mt-16">
+                <div className="mt-12 lg:mt-16">
                   <div className="flex items-center gap-4 mb-8">
                     <div className="w-10 h-px bg-[#E86F16]" />
                     <span className="text-[#3F3F46]/50" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.625rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
                       The Lifestyle
                     </span>
                   </div>
-                  <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
                     {project.amenities.map((amenity: string) => (
                       <div key={amenity} className="flex items-center gap-3">
-                        <CheckCircle2 size={16} className="text-[#E86F16]" />
+                        <CheckCircle2 size={16} className="text-[#E86F16] flex-shrink-0" />
                         <span className="text-[#3F3F46]" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.875rem" }}>{amenity}</span>
                       </div>
                     ))}
@@ -220,15 +220,16 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
                 </div>
               )}
               
+              {/* Project Gallery from Sanity */}
               {isSanity && project.gallery && project.gallery.length > 0 && (
-                <div className="mt-16">
+                <div className="mt-12 lg:mt-16">
                   <div className="flex items-center gap-4 mb-8">
                     <div className="w-10 h-px bg-[#E86F16]" />
                     <span className="text-[#3F3F46]/50" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.625rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
                       Gallery
                     </span>
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                     {project.gallery.map((img: any, i: number) => (
                       <div key={i} className="aspect-[4/3] relative overflow-hidden rounded-sm">
@@ -240,7 +241,7 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
               )}
 
               {/* Variety of Floor Plans */}
-              <div className="mt-16 border-t border-[#E7E2D9] pt-16">
+              <div className="mt-12 lg:mt-16 border-t border-[#E7E2D9] pt-12 lg:pt-16">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-10 h-px bg-[#E86F16]" />
                   <span className="text-[#3F3F46]/50" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.625rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
@@ -270,7 +271,7 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2, ease: EASE_OUT_EXPO }}
             >
-              <div className="bg-[#FAF9F7] border border-[#E7E2D9] p-10 sticky top-32">
+              <div className="bg-[#FAF9F7] border border-[#E7E2D9] p-6 sm:p-10 lg:sticky lg:top-32">
                 <h3 className="text-[#161616] mb-8 pb-6 border-b border-[#E7E2D9]" style={{ fontFamily: "var(--font-cinzel)", fontSize: "1.75rem" }}>
                   Project Details
                 </h3>

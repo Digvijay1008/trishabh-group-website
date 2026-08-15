@@ -28,7 +28,7 @@ export default function AmenitiesSection() {
   return (
     <section ref={containerRef} className="bg-[#161616] text-white py-16 lg:py-24 relative overflow-hidden">
       <div className="container-luxury">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           
           {/* Image */}
           <div className="order-1">
@@ -65,12 +65,12 @@ export default function AmenitiesSection() {
                 </span>
               </div>
               
-              <h2 className="font-cormorant text-5xl lg:text-7xl leading-[1.1] mb-12">
+              <h2 className="font-cormorant text-4xl sm:text-5xl lg:text-7xl leading-[1.1] mb-8 lg:mb-12">
                 White-Glove<br />
                 <span className="text-white/60">Amenities.</span>
               </h2>
               
-              <div className="grid grid-cols-2 gap-y-6 gap-x-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 sm:gap-y-6 gap-x-6 sm:gap-x-8">
                 {amenities.map((item, i) => (
                   <motion.div
                     key={item}

@@ -6,10 +6,10 @@ import { ArrowRight } from "lucide-react";
 
 export default function CareersPage() {
   return (
-    <div className="bg-[#FAF9F7] min-h-screen pt-24 pb-32">
+    <div className="bg-[#FAF9F7] min-h-screen pt-16 sm:pt-24 pb-20 sm:pb-32">
       <div className="container-luxury">
         {/* Header */}
-        <div className="mb-20 text-center max-w-3xl mx-auto">
+        <div className="mb-12 lg:mb-20 text-center max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ export default function CareersPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 + index * 0.1, ease: EASE_OUT_EXPO }}
-                className="group bg-white border border-[#E7E2D9] p-8 flex flex-col md:flex-row items-start md:items-center justify-between hover:border-[#E86F16]/50 transition-colors duration-300 cursor-pointer shadow-sm hover:shadow-md"
+                className="group bg-white border border-[#E7E2D9] p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between hover:border-[#E86F16]/50 transition-colors duration-300 cursor-pointer shadow-sm hover:shadow-md"
               >
                 <div>
                   <h4 className="text-[#161616] mb-2" style={{ fontFamily: "var(--font-cinzel)", fontSize: "1.5rem", fontWeight: 600 }}>

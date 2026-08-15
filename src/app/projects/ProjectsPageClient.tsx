@@ -148,7 +148,7 @@ export default function ProjectsPageClient({ category, initialProjects = [] }: P
     <div className="bg-[#FAF9F7] min-h-screen pt-12 pb-32">
       <div className="container-luxury">
         {/* Header */}
-        <div className="mb-20">
+        <div className="mb-10 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -201,7 +201,7 @@ export default function ProjectsPageClient({ category, initialProjects = [] }: P
                 <Link href={`/projects/${project.slug}`}>
                   <div className="bg-white border border-[#E7E2D9] rounded-sm overflow-hidden hover:border-[#E86F16]/25 transition-colors duration-500 shadow-[0_4px_32px_-4px_rgba(22,22,22,0.04)]">
                     {/* Visual Area */}
-                    <div className="h-[360px] relative overflow-hidden" style={{ background: project.bgBase || "#EDE9E2" }}>
+                    <div className="h-[260px] sm:h-[320px] lg:h-[360px] relative overflow-hidden" style={{ background: project.bgBase || "#EDE9E2" }}>
                       {project.image ? (
                         <img src={project.image} alt={project.name} className="w-full h-full object-cover" />
                       ) : (

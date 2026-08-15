@@ -34,7 +34,7 @@ export default function WhySection() {
   return (
     <section ref={ref} id="why" className="bg-[#FAF9F7] py-16 lg:py-24 border-t border-[#E7E2D9]">
       <div className="container-luxury">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left — sticky heading */}
           <div className="lg:sticky lg:top-[100px] lg:self-start">
             <motion.div
@@ -94,9 +94,9 @@ export default function WhySection() {
                 initial={{ opacity: 0, x: 24 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.7, delay: 0.12 + i * 0.1, ease: EASE_OUT_EXPO }}
-                className="py-8 group"
+                className="py-6 lg:py-8 group"
               >
-                <div className="flex items-start gap-6">
+                <div className="flex items-start gap-4 sm:gap-6">
                   <span
                     className="text-[#E86F16] flex-shrink-0 mt-0.5"
                     style={{

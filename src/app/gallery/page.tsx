@@ -16,7 +16,7 @@ const galleryImages = [
 
 export default function GalleryPage() {
   return (
-    <div className="bg-[#FAF9F7] min-h-screen pt-24 pb-32">
+    <div className="bg-[#FAF9F7] min-h-screen pt-16 sm:pt-24 pb-20 sm:pb-32">
       <div className="container-luxury">
         {/* Header */}
         <div className="mb-16 text-center max-w-3xl mx-auto">
@@ -47,7 +47,7 @@ export default function GalleryPage() {
         </div>
 
         {/* BENTO GRID GALLERY */}
-        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[250px] gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[220px] sm:auto-rows-[250px] gap-4">
           {galleryImages.map((img, i) => (
             <motion.div
               key={img.id}

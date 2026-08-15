@@ -161,16 +161,16 @@ export default function Navbar() {
           >
             <nav className="flex flex-col divide-y divide-[#E7E2D9] px-6 overflow-y-auto">
               {navItems.map((item) => (
-                <div key={item.label} className="py-6">
+                <div key={item.label} className="py-4">
                   <Link
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="text-sm tracking-[0.15em] uppercase text-[#161616] block mb-4"
+                    className="text-sm tracking-[0.15em] uppercase text-[#161616] block mb-3 font-medium"
                   >
                     {item.label}
                   </Link>
                   {item.dropdown && (
-                    <div className="flex flex-col gap-4 pl-4 border-l border-[#E7E2D9]">
+                    <div className="flex flex-col gap-3 pl-4 border-l border-[#E7E2D9] my-2">
                       {item.dropdown.map((sub) => (
                         <Link
                           key={sub.label}
@@ -190,7 +190,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center w-full gap-2 bg-[#E86F16] text-white text-[11px] tracking-[0.15em] uppercase font-medium px-6 py-4 rounded-sm"
+                className="flex items-center justify-center w-full gap-2 bg-[#E86F16] text-white text-[11px] tracking-[0.15em] uppercase font-medium px-6 py-3.5 rounded-full shadow-md"
               >
                 Schedule Site Visit
               </Link>

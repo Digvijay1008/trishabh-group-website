@@ -72,8 +72,8 @@ export default function HeroSection() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="flex flex-col"
-          style={{ gap: "clamp(1rem, 2.5vh, 1.75rem)", maxWidth: "min(600px, 55vw)" }}
+          className="flex flex-col w-full max-w-[600px]"
+          style={{ gap: "clamp(1rem, 2.5vh, 1.75rem)" }}
         >
 
           {/* Eyebrow */}

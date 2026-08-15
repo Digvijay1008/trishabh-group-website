@@ -17,7 +17,7 @@ export default function NeighborhoodsSection() {
   return (
     <section ref={containerRef} className="bg-[#EDE9E2] py-16 lg:py-24 relative">
       <div className="container-luxury">
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -35,7 +35,7 @@ export default function NeighborhoodsSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.1, ease: EASE_OUT_EXPO }}
-            className="font-cormorant text-5xl lg:text-7xl leading-[1.1] text-[#161616] mb-8"
+            className="font-cormorant text-4xl sm:text-5xl lg:text-7xl leading-[1.1] text-[#161616] mb-6 lg:mb-8"
           >
             Dominating Mumbai&apos;s<br />
             Finest <em className="text-[#E86F16]">Pincodes.</em>
@@ -49,7 +49,7 @@ export default function NeighborhoodsSection() {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.2 + i * 0.1, ease: EASE_OUT_EXPO }}
-              className="bg-white p-12 text-center border border-[#E7E2D9] group hover:border-[#E86F16]/30 transition-colors duration-500"
+              className="bg-white p-8 lg:p-12 text-center border border-[#E7E2D9] group hover:border-[#E86F16]/30 transition-colors duration-500"
             >
               <h3 className="font-cormorant text-3xl text-[#161616] mb-4 group-hover:text-[#E86F16] transition-colors duration-500">{loc.name}</h3>
               <p className="font-inter text-sm text-[#3F3F46]/70 leading-relaxed max-w-[200px] mx-auto">

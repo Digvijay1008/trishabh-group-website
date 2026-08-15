@@ -8,7 +8,7 @@ export default function RedevelopmentPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-32 bg-[#161616] text-white overflow-hidden">
+      <section className="relative pt-20 sm:pt-32 pb-16 sm:pb-32 bg-[#161616] text-white overflow-hidden">
         <div className="absolute inset-0 bg-[#E8E2D8]/10" />
         <div className="container-luxury relative z-10">
           <div className="max-w-3xl">
@@ -66,7 +66,7 @@ export default function RedevelopmentPage() {
       </section>
 
       {/* Why Us */}
-      <section className="py-[120px] bg-[#FAF9F7]">
+      <section className="py-16 lg:py-[120px] bg-[#FAF9F7]">
         <div className="container-luxury">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -97,7 +97,7 @@ export default function RedevelopmentPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact" className="py-[120px] bg-white border-t border-[#E7E2D9]">
+      <section id="contact" className="py-16 lg:py-[120px] bg-white border-t border-[#E7E2D9]">
         <div className="container-luxury max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-[#161616] mb-4" style={{ fontFamily: "var(--font-cinzel)", fontSize: "2.5rem" }}>

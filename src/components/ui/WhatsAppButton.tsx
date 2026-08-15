@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function WhatsAppButton() {
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
       <Link
         href="https://wa.me/919800000000" // Replace with actual number
         target="_blank"
@@ -15,7 +15,7 @@ export default function WhatsAppButton() {
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-[#25D366] text-white p-3.5 rounded-full shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center relative group"
+          className="bg-[#25D366] text-white p-3 sm:p-3.5 rounded-full shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center relative group"
         >
           {/* SVG WhatsApp Icon */}
           <svg

@@ -12,7 +12,7 @@ export default function AboutSection() {
   return (
     <section ref={ref} id="about" className="bg-white py-16 lg:py-24 border-t border-[#E7E2D9]">
       <div className="container-luxury">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
           {/* Left — copy */}
           <div>
