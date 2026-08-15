@@ -131,29 +131,25 @@ export default function AboutSection() {
             </div>
 
             {/* Small block 1 */}
-            <div className="h-[160px] rounded-sm overflow-hidden" style={{ background: "#E8E2D8" }}>
-              <svg className="w-full h-full" viewBox="0 0 240 160" preserveAspectRatio="xMidYMid slice">
-                <rect width="240" height="160" fill="#D8D0C0" />
-                {/* Stone / marble texture suggestion */}
-                <path d="M20,40 Q80,20 120,60 Q160,100 220,50" stroke="#C4B8A4" strokeWidth="1.5" fill="none" opacity="0.5" />
-                <path d="M0,80 Q60,60 100,100 Q140,140 200,90" stroke="#C4B8A4" strokeWidth="1" fill="none" opacity="0.35" />
-                <path d="M50,0 Q90,40 80,80 Q70,120 120,140" stroke="#C4B8A4" strokeWidth="0.8" fill="none" opacity="0.3" />
-                <rect x="0" y="130" width="240" height="30" fill="#C4B49A" opacity="0.4" />
-              </svg>
+            <div className="h-[160px] rounded-sm overflow-hidden relative" style={{ background: "#E8E2D8" }}>
+              <Image
+                src="/images/Trishabh_Signet.jpg"
+                alt="Trishabh Signet"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 50vw, 16vw"
+              />
             </div>
 
             {/* Small block 2 */}
-            <div className="h-[160px] rounded-sm overflow-hidden" style={{ background: "#EDE4D8" }}>
-              <svg className="w-full h-full" viewBox="0 0 240 160" preserveAspectRatio="xMidYMid slice">
-                <rect width="240" height="160" fill="#E0D4C0" />
-                {/* Travertine / warm stone texture */}
-                {[...Array(10)].map((_, i) => (
-                  <line key={i} x1="0" y1={i * 16} x2="240" y2={i * 16 + 4} stroke="#C8BC9A" strokeWidth="0.8" opacity="0.35" />
-                ))}
-                <ellipse cx="80" cy="70" rx="25" ry="15" fill="#C8BC9A" opacity="0.15" />
-                <ellipse cx="170" cy="100" rx="18" ry="10" fill="#C8BC9A" opacity="0.12" />
-                <rect x="0" y="130" width="240" height="30" fill="#C8B49A" opacity="0.35" />
-              </svg>
+            <div className="h-[160px] rounded-sm overflow-hidden relative" style={{ background: "#EDE4D8" }}>
+              <Image
+                src="/images/One_Meraki.jpg"
+                alt="One Meraki"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 50vw, 16vw"
+              />
             </div>
           </motion.div>
         </div>
