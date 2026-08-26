@@ -1,10 +1,14 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useEffect } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, MapPin } from "lucide-react";
 import Link from "next/link";
 import { EASE_OUT_EXPO } from "@/lib/easing";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
@@ -328,17 +332,45 @@ function ProjectCard({
 }
 
 export default function ProjectsSection({ initialProjects = [] }: { initialProjects?: SanityProject[] }) {
-  const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const wrapRef = useRef<HTMLElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(wrapRef, { once: true, margin: "-80px" });
+  const reduce = useReducedMotion();
 
   const displayProjects = initialProjects.length > 0 ? initialProjects : projects;
   const isSanity = initialProjects.length > 0;
 
+  useEffect(() => {
+    if (reduce || !wrapRef.current || !trackRef.current) return;
+    const ctx = gsap.context(() => {
+      // Calculate how far to scroll the track horizontally
+      const track = trackRef.current!;
+      const distance = track.scrollWidth - window.innerWidth;
+      
+      // We only apply this on desktop where there's room to horizontal scroll
+      if (window.innerWidth > 1024) {
+        gsap.to(track, {
+          x: -distance,
+          ease: "none",
+          scrollTrigger: {
+            trigger: wrapRef.current,
+            start: "top top",
+            end: () => `+=${distance + 400}`, // Add a little extra scroll room
+            pin: true,
+            scrub: 1,
+            invalidateOnRefresh: true,
+          },
+        });
+      }
+    }, wrapRef);
+    return () => ctx.revert();
+  }, [reduce]);
+
   return (
-    <section ref={ref} id="projects" className="bg-[#FAF9F7] py-16 lg:py-24 border-t border-[#E7E2D9]">
-      <div className="container-luxury">
-        {/* Header */}
-        <div className="flex items-start justify-between mb-10 lg:mb-16 flex-wrap gap-6">
+    <section ref={wrapRef} id="projects" className="bg-[#FAF9F7] border-t border-[#E7E2D9] overflow-hidden lg:h-[100dvh] flex items-center">
+      <div ref={trackRef} className="w-full py-16 lg:py-0 lg:flex lg:flex-nowrap lg:items-center px-6 md:px-12 lg:pl-16 xl:pl-24" style={{ gap: "3rem" }}>
+        {/* Header Block */}
+        <div className="w-full lg:min-w-[400px] lg:w-[400px] flex-shrink-0 mb-10 lg:mb-0">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -363,7 +395,7 @@ export default function ProjectsSection({ initialProjects = [] }: { initialProje
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.08, ease: EASE_OUT_EXPO }}
-              className="text-[#161616]"
+              className="text-[#161616] mb-10"
               style={{
                 fontFamily: "var(--font-cinzel)",
                 fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
@@ -380,7 +412,6 @@ export default function ProjectsSection({ initialProjects = [] }: { initialProje
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="self-end"
           >
             <Link
               href="/projects"
@@ -399,11 +430,13 @@ export default function ProjectsSection({ initialProjects = [] }: { initialProje
           </motion.div>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Cards Track */}
+        <div className="flex flex-col lg:flex-row gap-6 lg:flex-shrink-0 pb-8 lg:pb-0 pr-[10vw]">
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {displayProjects.map((project: any, i) => (
-            <ProjectCard key={project.title || project.name} project={project} index={i} inView={inView} isSanity={isSanity} />
+            <div key={project.title || project.name} className="w-full lg:w-[420px] xl:w-[480px]">
+              <ProjectCard project={project} index={i} inView={inView} isSanity={isSanity} />
+            </div>
           ))}
         </div>
       </div>

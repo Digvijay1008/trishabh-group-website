@@ -7,72 +7,60 @@ import { EASE_OUT_EXPO } from "@/lib/easing";
 
 export default function VisionSection() {
   const containerRef = useRef<HTMLElement>(null);
-  const inView = useInView(containerRef, { once: true, margin: "-100px" });
-  
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  // Dramatic parallax for the full-bleed background
+  const y = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
 
   return (
-    <section ref={containerRef} className="bg-[#FAF9F7] py-16 lg:py-24 relative overflow-hidden">
-      <div className="container-luxury">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+    <section ref={containerRef} className="relative h-[90vh] md:h-[100svh] overflow-hidden bg-[#161616]">
+      {/* Full Bleed Parallax Background */}
+      <motion.div style={{ y, height: "130%" }} className="absolute inset-0 top-[-15%] w-full">
+        <Image
+          src="/images/2.jpeg"
+          alt="Luxury Interior Design"
+          fill
+          className="object-cover opacity-50"
+          sizes="100vw"
+        />
+      </motion.div>
+      
+      {/* Heavy Vignette & Gradient for text legibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#161616]/80 via-[#161616]/40 to-[#161616]/90" />
+      <div className="absolute inset-0 shadow-[inset_0_0_150px_rgba(22,22,22,0.9)]" />
+
+      {/* Centered Manifesto Content */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto">
+        <motion.div
+          style={{ opacity }}
+          className="flex flex-col items-center"
+        >
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-12 h-px bg-[#E86F16]" />
+            <span className="text-white/60 text-[0.6875rem] tracking-[0.25em] uppercase font-josefin">
+              The Vision
+            </span>
+            <div className="w-12 h-px bg-[#E86F16]" />
+          </div>
           
-          {/* Text Content */}
-          <div className="order-2 lg:order-1 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 1, ease: EASE_OUT_EXPO }}
-            >
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-10 h-px bg-[#E86F16]" />
-                <span className="text-[#3F3F46]/60 text-[10px] tracking-[0.2em] uppercase font-inter">
-                  The Vision
-                </span>
-              </div>
-              
-              <h2 className="text-[#161616] font-cormorant text-4xl sm:text-5xl lg:text-7xl leading-[1.1] mb-8">
-                Designing<br />
-                Tomorrow&apos;s<br />
-                <em className="text-[#E86F16]">Heritage.</em>
-              </h2>
-              
-              <div className="space-y-6 text-[#3F3F46] font-inter text-[15px] leading-relaxed max-w-md">
-                <p>
-                  At Trishabh Group, we view real estate not as construction, but as the curation of life&apos;s finest moments. Every line drawn and every material selected serves a singular purpose: elevating the human experience.
-                </p>
-                <p>
-                  Our interiors are sanctuaries of light, space, and serenity. We collaborate with world-renowned architects to ensure that crossing the threshold of a Trishabh residence feels like arriving at a masterpiece you can call home.
-                </p>
-              </div>
-            </motion.div>
+          <h2 
+            className="text-white font-cinzel text-5xl md:text-6xl lg:text-8xl leading-[1.0] mb-8"
+            style={{ fontWeight: 400, letterSpacing: "-0.02em" }}
+          >
+            Designing<br />
+            <em className="text-[#E86F16]" style={{ fontStyle: "italic" }}>Heritage.</em>
+          </h2>
+          
+          <div className="space-y-6 text-white/70 font-josefin text-base md:text-lg leading-relaxed max-w-2xl">
+            <p>
+              At Trishabh Group, we view real estate not as construction, but as the curation of life&apos;s finest moments. Every line drawn and every material selected serves a singular purpose: elevating the human experience.
+            </p>
           </div>
-
-          {/* Image */}
-          <div className="order-1 lg:order-2">
-            <motion.div
-              initial={{ opacity: 0, clipPath: "inset(10% 0 0 0)" }}
-              animate={inView ? { opacity: 1, clipPath: "inset(0 0 0 0)" } : {}}
-              transition={{ duration: 1.4, ease: EASE_OUT_EXPO }}
-              className="relative aspect-[4/5] w-full overflow-hidden"
-            >
-              <motion.div style={{ y, height: "120%" }} className="absolute inset-0 top-[-10%]">
-                <Image
-                  src="/images/2.jpeg"
-                  alt="Luxury Interior Design"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </motion.div>
-            </motion.div>
-          </div>
-
-        </div>
+        </motion.div>
       </div>
     </section>
   );
