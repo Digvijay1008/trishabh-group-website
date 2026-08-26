@@ -342,28 +342,30 @@ export default function ProjectsSection({ initialProjects = [] }: { initialProje
 
   useEffect(() => {
     if (reduce || !wrapRef.current || !trackRef.current) return;
-    const ctx = gsap.context(() => {
+    
+    const mm = gsap.matchMedia();
+    
+    mm.add("(min-width: 1024px)", () => {
       // Calculate how far to scroll the track horizontally
       const track = trackRef.current!;
       const distance = track.scrollWidth - window.innerWidth;
       
-      // We only apply this on desktop where there's room to horizontal scroll
-      if (window.innerWidth > 1024) {
-        gsap.to(track, {
-          x: -distance,
-          ease: "none",
-          scrollTrigger: {
-            trigger: wrapRef.current,
-            start: "top top",
-            end: () => `+=${distance + 400}`, // Add a little extra scroll room
-            pin: true,
-            scrub: 1,
-            invalidateOnRefresh: true,
-          },
-        });
-      }
-    }, wrapRef);
-    return () => ctx.revert();
+      gsap.to(track, {
+        x: -distance,
+        ease: "none",
+        scrollTrigger: {
+          trigger: wrapRef.current,
+          start: "top top",
+          end: () => `+=${distance + 400}`, // Add a little extra scroll room
+          pin: true,
+          scrub: 0.5,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+    });
+
+    return () => mm.revert();
   }, [reduce]);
 
   return (
