@@ -65,33 +65,70 @@ export default function RedevelopmentPage() {
         </div>
       </section>
 
-      {/* Why Us */}
-      <section className="py-16 lg:py-[120px] bg-[#FAF9F7]">
-        <div className="container-luxury">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { title: "100% OC Track Record", desc: "Every project delivered with complete legal compliance and OC." },
-              { title: "Zero Cost Overruns", desc: "Transparent financial planning with no hidden costs for society members." },
-              { title: "Premium Amenities", desc: "Upgrading your lifestyle with state-of-the-art facilities." },
-              { title: "Timely Delivery", desc: "Strict adherence to timelines backed by strong financial health." },
-            ].map((feature, i) => (
+      {/* Why Us - Editorial Split */}
+      <section className="py-[120px] lg:py-[180px] bg-[#FAF9F7] overflow-hidden">
+        <div className="container-luxury max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-24">
+            
+            {/* Left - Massive Typography */}
+            <div className="lg:w-1/2 flex flex-col justify-start">
               <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: i * 0.1, ease: EASE_OUT_EXPO }}
-                className="bg-white p-8 border border-[#E7E2D9]"
+                transition={{ duration: 0.6, ease: EASE_OUT_EXPO }}
+                className="sticky top-40"
               >
-                <div className="w-12 h-12 rounded-full bg-[#E8E2D8] text-[#E86F16] flex items-center justify-center mb-6 font-bold font-cinzel">
-                  0{i+1}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-10 h-px bg-[#E86F16]" />
+                  <span className="text-[#3F3F46]/50" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+                    The Trishabh Advantage
+                  </span>
                 </div>
-                <h3 className="text-[#161616] mb-4" style={{ fontFamily: "var(--font-cinzel)", fontSize: "1.25rem", fontWeight: 600 }}>{feature.title}</h3>
-                <p className="text-[#3F3F46]/70 leading-relaxed" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.875rem" }}>
-                  {feature.desc}
+                <h2 className="text-[#161616] mb-8" style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(3rem, 5vw, 4.5rem)", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+                  Why we are the <em style={{ fontStyle: "italic", color: "#E86F16" }}>gold standard</em> for redevelopment.
+                </h2>
+                <p className="text-[#3F3F46]/70 leading-relaxed max-w-md text-lg" style={{ fontFamily: "var(--font-josefin)" }}>
+                  Rebuilding your society requires immense trust. We honor that trust with flawless execution, premium material selection, and zero financial surprises.
                 </p>
               </motion.div>
-            ))}
+            </div>
+
+            {/* Right - Staggered Cards */}
+            <div className="lg:w-1/2 flex flex-col gap-6 lg:pt-32">
+              {[
+                { title: "100% OC Track Record", desc: "Every project delivered with complete legal compliance and OC." },
+                { title: "Zero Cost Overruns", desc: "Transparent financial planning with no hidden costs for society members." },
+                { title: "Premium Amenities", desc: "Upgrading your lifestyle with state-of-the-art facilities." },
+                { title: "Timely Delivery", desc: "Strict adherence to timelines backed by strong financial health." },
+              ].map((feature, i) => {
+                // Apply a slight offset to alternating cards for the organic staggered look
+                const offsetClass = i % 2 !== 0 ? "lg:-ml-12" : "lg:ml-12";
+                
+                return (
+                  <motion.div
+                    key={feature.title}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, delay: i * 0.1, ease: EASE_OUT_EXPO }}
+                    className={`bg-white p-8 sm:p-10 border border-[#E7E2D9] rounded-[2rem] shadow-[0_8px_30px_-4px_rgba(22,22,22,0.04)] hover:shadow-2xl hover:border-[#E86F16]/30 transition-all duration-500 relative group ${offsetClass}`}
+                  >
+                    <div className="absolute inset-0 shadow-[inset_0_1px_1px_rgba(255,255,255,1)] pointer-events-none rounded-[2rem]" />
+                    <div className="w-14 h-14 rounded-full bg-[#FAF9F7] text-[#E86F16] flex items-center justify-center mb-8 font-medium font-josefin border border-[#E7E2D9] group-hover:bg-[#E86F16] group-hover:text-white transition-colors duration-500">
+                      0{i+1}
+                    </div>
+                    <h3 className="text-[#161616] mb-4" style={{ fontFamily: "var(--font-cinzel)", fontSize: "1.5rem", fontWeight: 500 }}>
+                      {feature.title}
+                    </h3>
+                    <p className="text-[#3F3F46]/70 leading-relaxed text-[0.9375rem]" style={{ fontFamily: "var(--font-josefin)" }}>
+                      {feature.desc}
+                    </p>
+                  </motion.div>
+                );
+              })}
+            </div>
+
           </div>
         </div>
       </section>
