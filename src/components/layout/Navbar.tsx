@@ -46,16 +46,16 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ y: -100, opacity: 0, x: "-50%" }}
+        animate={{ y: 0, opacity: 1, x: "-50%" }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-white/95 backdrop-blur-xl border-b border-[#E7E2D9] shadow-[0_2px_20px_-4px_rgba(22,22,22,0.06)]"
-            : "bg-transparent"
-        }`}
+        className={`fixed top-6 left-1/2 z-50 transition-all duration-500 w-full max-w-5xl px-4 lg:px-0`}
       >
-        <div className="container-luxury flex items-center justify-between" style={{ height: "clamp(64px, 8vh, 88px)" }}>
+        <div className={`rounded-full p-2 pl-6 pr-2.5 flex items-center justify-between border transition-all duration-500 ${
+          scrolled 
+            ? "bg-white/80 backdrop-blur-2xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] border-white/40" 
+            : "bg-white/10 backdrop-blur-md shadow-2xl border-white/20"
+        }`}>
           {/* Logo */}
           <Link href="/" className="inline-flex items-center group flex-shrink-0">
             <Image
@@ -124,17 +124,22 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-[#E86F16] text-white rounded-full hover:bg-[#D4610F] transition-all duration-300 hover:gap-3 group flex-shrink-0"
-              style={{
-                fontSize: "11px",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                fontWeight: 500,
-                padding: "10px 20px",
-              }}
+              className="group flex items-center gap-4 bg-[#E86F16] text-white rounded-full hover:bg-[#D4610F] transition-all duration-300 active:scale-[0.98]"
+              style={{ padding: "6px 6px 6px 20px" }}
             >
-              Schedule Site Visit
-              <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+              <span 
+                style={{
+                  fontSize: "11px",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  fontWeight: 500,
+                }}
+              >
+                Schedule Site Visit
+              </span>
+              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 group-hover:translate-x-1 group-hover:-translate-y-[1px]">
+                <ArrowRight size={14} className="text-white" />
+              </div>
             </Link>
           </div>
 
