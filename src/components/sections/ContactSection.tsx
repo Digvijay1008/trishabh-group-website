@@ -211,7 +211,6 @@ export default function ContactSection() {
                             className={inputCls}
                             placeholder="Your full name"
                             style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
-                            autoFocus
                           />
                           {errors.name && (
                             <p className="text-[#E86F16]" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.75rem" }}>
@@ -249,7 +248,6 @@ export default function ContactSection() {
                             className={inputCls}
                             placeholder="your@email.com"
                             style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
-                            autoFocus
                           />
                           {errors.email && (
                             <p className="text-[#E86F16]" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.75rem" }}>
@@ -295,7 +293,6 @@ export default function ContactSection() {
                             className={inputCls}
                             placeholder="+91 98XXX XXXXX"
                             style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
-                            autoFocus
                           />
                           {errors.phone && (
                             <p className="text-[#E86F16]" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.75rem" }}>
@@ -390,7 +387,6 @@ export default function ContactSection() {
                             className={`${inputCls} resize-none`}
                             placeholder="Tell us what you're looking for..."
                             style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
-                            autoFocus
                           />
                         </div>
                         
