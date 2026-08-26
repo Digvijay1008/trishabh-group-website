@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true);
@@ -64,14 +65,16 @@ export default function Preloader() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[#E86F16] mb-4"
-              style={{
-                fontFamily: "var(--font-cinzel)",
-                fontSize: "clamp(2rem, 5vw, 3.5rem)",
-                letterSpacing: "0.15em",
-              }}
+              className="mb-6 flex justify-center"
             >
-              TRISHABH
+              <Image
+                src="/logo.png"
+                alt="Trishabh Group"
+                width={200}
+                height={60}
+                className="w-auto h-10 sm:h-12 object-contain brightness-0 invert"
+                priority
+              />
             </motion.div>
             
             <div className="flex items-center gap-4 w-64">
