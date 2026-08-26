@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
+import Magnetic from "@/components/ui/Magnetic";
 
 const navItems = [
   {
@@ -78,21 +79,23 @@ export default function Navbar() {
                 onMouseEnter={() => item.dropdown && openDropdown(item.label)}
                 onMouseLeave={closeDropdown}
               >
-                <Link
-                  href={item.href}
-                  className="flex items-center gap-1 transition-colors duration-200 text-[#3F3F46] hover:text-[#161616]"
-                  style={{ fontSize: "11px", letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 500 }}
-                >
-                  {item.label}
-                  {item.dropdown && (
-                    <ChevronDown
-                      size={10}
-                      className={`transition-transform duration-200 ${
-                        activeDropdown === item.label ? "rotate-180" : ""
-                      }`}
-                    />
-                  )}
-                </Link>
+                <Magnetic intensity={0.1}>
+                  <Link
+                    href={item.href}
+                    className="flex items-center gap-1 transition-colors duration-200 text-[#3F3F46] hover:text-[#161616]"
+                    style={{ fontSize: "11px", letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 500 }}
+                  >
+                    {item.label}
+                    {item.dropdown && (
+                      <ChevronDown
+                        size={10}
+                        className={`transition-transform duration-200 ${
+                          activeDropdown === item.label ? "rotate-180" : ""
+                        }`}
+                      />
+                    )}
+                  </Link>
+                </Magnetic>
                 <AnimatePresence>
                   {item.dropdown && activeDropdown === item.label && (
                     <motion.div
@@ -122,26 +125,28 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden lg:flex items-center">
-            <Link
-              href="/contact"
-              className="group flex items-center gap-4 bg-[#E86F16] text-white rounded-full hover:bg-[#D4610F] transition-all duration-300 active:scale-[0.98]"
-              style={{ padding: "6px 6px 6px 20px" }}
-            >
-              <span 
-                className="mt-0.5"
-                style={{
-                  fontSize: "11px",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  fontWeight: 600,
-                }}
+            <Magnetic intensity={0.15}>
+              <Link
+                href="/contact"
+                className="group flex items-center gap-4 bg-[#E86F16] text-white rounded-full hover:bg-[#D4610F] transition-all duration-300 active:scale-[0.98]"
+                style={{ padding: "6px 6px 6px 20px" }}
               >
-                Schedule Site Visit
-              </span>
-              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 group-hover:translate-x-1 group-hover:-translate-y-[1px]">
-                <ArrowRight size={14} className="text-white" />
-              </div>
-            </Link>
+                <span 
+                  className="mt-0.5"
+                  style={{
+                    fontSize: "11px",
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    fontWeight: 600,
+                  }}
+                >
+                  Schedule Site Visit
+                </span>
+                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 group-hover:translate-x-1 group-hover:-translate-y-[1px]">
+                  <ArrowRight size={14} className="text-white" />
+                </div>
+              </Link>
+            </Magnetic>
           </div>
 
           {/* Mobile Menu Toggle */}
