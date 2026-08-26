@@ -53,8 +53,8 @@ export default function Navbar() {
       >
         <div className={`rounded-full p-2 pl-6 pr-2.5 flex items-center justify-between border transition-all duration-500 ${
           scrolled 
-            ? "bg-white/80 backdrop-blur-lg shadow-[0_8px_30px_rgba(0,0,0,0.04)] border-white/40" 
-            : "bg-white/10 backdrop-blur-md shadow-2xl border-white/20"
+            ? "bg-white/95 backdrop-blur-lg shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-white" 
+            : "bg-white/80 backdrop-blur-md shadow-lg border-white/60"
         }`}>
           {/* Logo */}
           <Link href="/" className="inline-flex items-center group flex-shrink-0">
@@ -128,11 +128,12 @@ export default function Navbar() {
               style={{ padding: "6px 6px 6px 20px" }}
             >
               <span 
+                className="mt-0.5"
                 style={{
                   fontSize: "11px",
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
-                  fontWeight: 500,
+                  fontWeight: 600,
                 }}
               >
                 Schedule Site Visit
