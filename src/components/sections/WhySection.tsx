@@ -87,18 +87,19 @@ export default function WhySection() {
           </div>
 
           {/* Right — pillars */}
-          <div className="space-y-0 divide-y divide-[#E7E2D9]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mt-12 lg:mt-0">
             {pillars.map(({ no, title, body }, i) => (
               <motion.div
                 key={no}
-                initial={{ opacity: 0, x: 24 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.7, delay: 0.12 + i * 0.1, ease: EASE_OUT_EXPO }}
-                className="py-6 lg:py-8 group"
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.12 + i * 0.1, ease: EASE_OUT_EXPO }}
+                className="bg-white border border-[#E7E2D9] p-6 lg:p-8 rounded-2xl group hover:border-[#E86F16]/30 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between"
+                style={{ minHeight: "220px" }}
               >
-                <div className="flex items-start gap-4 sm:gap-6">
+                <div>
                   <span
-                    className="text-[#E86F16] flex-shrink-0 mt-0.5"
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#FAF9F7] text-[#E86F16] mb-6 border border-[#E7E2D9] group-hover:bg-[#E86F16] group-hover:text-white transition-colors duration-500"
                     style={{
                       fontFamily: "var(--font-josefin)",
                       fontSize: "0.6875rem",
@@ -107,26 +108,24 @@ export default function WhySection() {
                   >
                     {no}
                   </span>
-                  <div>
-                    <h3
-                      className="text-[#161616] mb-3"
-                      style={{
-                        fontFamily: "var(--font-cinzel)",
-                        fontSize: "1.375rem",
-                        fontWeight: 400,
-                        lineHeight: 1.2,
-                      }}
-                    >
-                      {title}
-                    </h3>
-                    <p
-                      className="text-[#3F3F46]/60 leading-relaxed"
-                      style={{ fontFamily: "var(--font-josefin)", fontSize: "0.875rem" }}
-                    >
-                      {body}
-                    </p>
-                  </div>
+                  <h3
+                    className="text-[#161616] mb-3"
+                    style={{
+                      fontFamily: "var(--font-cinzel)",
+                      fontSize: "1.25rem",
+                      fontWeight: 500,
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    {title}
+                  </h3>
                 </div>
+                <p
+                  className="text-[#3F3F46]/70 leading-relaxed"
+                  style={{ fontFamily: "var(--font-josefin)", fontSize: "0.875rem" }}
+                >
+                  {body}
+                </p>
               </motion.div>
             ))}
           </div>

@@ -74,29 +74,42 @@ export default function AboutPageClient() {
       <MetricsSection />
 
       {/* Philosophy Section */}
-      <section className="py-[120px] bg-white">
-        <div className="container-luxury max-w-4xl mx-auto text-center">
-          <span className="text-[#E86F16] mb-6 block" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
-            The 100% OC Promise
-          </span>
-          <h2 className="text-[#161616] mb-10" style={{ fontFamily: "var(--font-cinzel)", fontSize: "3rem", lineHeight: 1.1 }}>
-            Exemplary Excellence in Every Project.
+      <section className="py-[120px] bg-white border-y border-[#E7E2D9]">
+        <div className="container-luxury max-w-5xl">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-10 h-px bg-[#E86F16]" />
+            <span 
+              className="text-[#E86F16]" 
+              style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.2em", textTransform: "uppercase" }}
+            >
+              The 100% OC Promise
+            </span>
+          </div>
+          <h2 
+            className="text-[#161616] mb-10" 
+            style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(2.5rem, 4vw, 4rem)", lineHeight: 1.05, letterSpacing: "-0.02em" }}
+          >
+            Exemplary Excellence<br />
+            <em style={{ fontStyle: "italic", color: "#E86F16" }}>in Every Project.</em>
           </h2>
-          <p className="text-[#3F3F46]/70 leading-relaxed text-lg" style={{ fontFamily: "var(--font-josefin)" }}>
+          <p className="text-[#3F3F46]/70 leading-relaxed text-lg max-w-2xl" style={{ fontFamily: "var(--font-josefin)" }}>
             Our epitomes of excellence are a testament to our teamwork and sound management. We adhere to strict ethical standards and strive to deliver benchmark quality, breathing life into dreams and erecting high-rises that epitomize class and sophistication. Our unwavering commitment to quality and timely delivery has fostered a strong bond of trust with our clients for over 25 years.
           </p>
         </div>
       </section>
 
       {/* Leadership Section */}
-      <section className="py-[120px] bg-[#E8E2D8]">
+      <section className="py-[120px] bg-[#FAF9F7]">
         <div className="container-luxury">
-          <div className="text-center mb-16">
-             <span className="text-[#E86F16] mb-4 block" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
-               Board of Directors
-             </span>
-             <h2 className="text-[#161616]" style={{ fontFamily: "var(--font-cinzel)", fontSize: "2.5rem", lineHeight: 1.1 }}>
-               Our Leadership
+          <div className="mb-16">
+             <div className="flex items-center gap-4 mb-8">
+                <div className="w-10 h-px bg-[#E86F16]" />
+                <span className="text-[#3F3F46]/50" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+                  Board of Directors
+                </span>
+             </div>
+             <h2 className="text-[#161616]" style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(2.5rem, 4vw, 3.5rem)", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+               Our <em style={{ fontStyle: "italic" }}>Leadership</em>
              </h2>
           </div>
           
@@ -117,22 +130,22 @@ export default function AboutPageClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: EASE_OUT_EXPO }}
-                className="group flex flex-col items-center text-center"
+                className="group flex flex-col items-start"
               >
-                <div className="w-[180px] h-[220px] mb-6 overflow-hidden bg-[#D8D0C0] grayscale group-hover:grayscale-0 transition-all duration-500 relative">
+                <div className="w-full h-[280px] sm:h-[320px] mb-6 overflow-hidden bg-[#E8E2D8] grayscale group-hover:grayscale-0 transition-all duration-700 relative rounded-sm">
                   {/* Luxury placeholder image pattern */}
                   <svg className="w-full h-full opacity-30" viewBox="0 0 100 100" preserveAspectRatio="none">
                      <rect x="0" y="0" width="100" height="100" fill="#7A6B5B" />
                      <path d="M 0 100 Q 50 20 100 100" fill="#B89860" opacity="0.4" />
                      <circle cx="50" cy="40" r="15" fill="#E86F16" opacity="0.3" />
                   </svg>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#161616]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#161616]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
-                <h4 className="text-[#161616] mb-1" style={{ fontFamily: "var(--font-cinzel)", fontSize: "1.25rem", fontWeight: 600 }}>
+                <h4 className="text-[#161616] mb-1" style={{ fontFamily: "var(--font-cinzel)", fontSize: "1.25rem", fontWeight: 500 }}>
                   {name}
                 </h4>
-                <div className="w-8 h-px bg-[#E86F16] mt-2 mb-2" />
-                <span className="text-[#3F3F46]/70" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+                <div className="w-8 h-px bg-[#E86F16] mt-2 mb-2 group-hover:w-16 transition-all duration-500" />
+                <span className="text-[#3F3F46]/50" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.15em", textTransform: "uppercase" }}>
                   Director
                 </span>
               </motion.div>
@@ -144,30 +157,41 @@ export default function AboutPageClient() {
       {/* Mission, Vision, Values */}
       <section className="py-[120px] bg-[#161616] text-white">
         <div className="container-luxury">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-              <h3 className="text-2xl mb-6 text-[#E86F16]" style={{ fontFamily: "var(--font-cinzel)" }}>Our Mission</h3>
-              <ul className="text-white/70 space-y-4 text-sm leading-relaxed" style={{ fontFamily: "var(--font-josefin)" }}>
-                <li>&bull; Providing superior developments to our customers through leadership, experience and knowledge.</li>
-                <li>&bull; Engaging in honest, loyal and ethical business practices.</li>
-                <li>&bull; Committing to passionately exceed our customer&apos;s expectations.</li>
-              </ul>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-[#1C1C1C] p-8 md:p-12 border border-white/5 rounded-2xl flex flex-col justify-between group hover:border-[#E86F16]/30 transition-colors duration-500">
+              <div>
+                <span className="text-[#E86F16] font-josefin text-[0.625rem] tracking-[0.2em] uppercase mb-6 block">Our Purpose</span>
+                <h3 className="text-3xl mb-8" style={{ fontFamily: "var(--font-cinzel)", fontWeight: 400 }}>Mission</h3>
+                <div className="text-white/60 space-y-5 text-sm leading-relaxed" style={{ fontFamily: "var(--font-josefin)" }}>
+                  <p>Providing superior developments to our customers through leadership, experience and knowledge.</p>
+                  <p>Engaging in honest, loyal and ethical business practices.</p>
+                  <p>Committing to passionately exceed our customer&apos;s expectations.</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <h3 className="text-2xl mb-6 text-[#E86F16]" style={{ fontFamily: "var(--font-cinzel)" }}>Our Vision</h3>
-              <ul className="text-white/70 space-y-4 text-sm leading-relaxed" style={{ fontFamily: "var(--font-josefin)" }}>
-                <li>&bull; To serve our customers&apos; needs and consistently produce developments of lasting value.</li>
-                <li>&bull; To be flexible, entrepreneurial, and aggressive, both as individuals and as a company.</li>
-                <li>&bull; To believe in teamwork, innovation, professionalism, and long-term decision-making.</li>
-              </ul>
+
+            <div className="bg-[#1C1C1C] p-8 md:p-12 border border-white/5 rounded-2xl flex flex-col justify-between group hover:border-[#E86F16]/30 transition-colors duration-500">
+              <div>
+                <span className="text-[#E86F16] font-josefin text-[0.625rem] tracking-[0.2em] uppercase mb-6 block">Our Future</span>
+                <h3 className="text-3xl mb-8" style={{ fontFamily: "var(--font-cinzel)", fontWeight: 400 }}>Vision</h3>
+                <div className="text-white/60 space-y-5 text-sm leading-relaxed" style={{ fontFamily: "var(--font-josefin)" }}>
+                  <p>To serve our customers&apos; needs and consistently produce developments of lasting value.</p>
+                  <p>To be flexible, entrepreneurial, and aggressive, both as individuals and as a company.</p>
+                  <p>To believe in teamwork, innovation, professionalism, and long-term decision-making.</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <h3 className="text-2xl mb-6 text-[#E86F16]" style={{ fontFamily: "var(--font-cinzel)" }}>Core Values</h3>
-              <ul className="text-white/70 space-y-4 text-sm leading-relaxed" style={{ fontFamily: "var(--font-josefin)" }}>
-                <li>&bull; <strong>Honesty:</strong> We always do what is right, fair, and ethical.</li>
-                <li>&bull; <strong>Integrity:</strong> Respect and value all individuals, maintaining client confidentiality.</li>
-                <li>&bull; <strong>Teamwork:</strong> We encourage and reward teamwork to deliver the best.</li>
-              </ul>
+
+            <div className="bg-[#1C1C1C] p-8 md:p-12 border border-white/5 rounded-2xl flex flex-col justify-between group hover:border-[#E86F16]/30 transition-colors duration-500">
+              <div>
+                <span className="text-[#E86F16] font-josefin text-[0.625rem] tracking-[0.2em] uppercase mb-6 block">Our Code</span>
+                <h3 className="text-3xl mb-8" style={{ fontFamily: "var(--font-cinzel)", fontWeight: 400 }}>Core Values</h3>
+                <div className="text-white/60 space-y-5 text-sm leading-relaxed" style={{ fontFamily: "var(--font-josefin)" }}>
+                  <p><strong className="text-white/90">Honesty:</strong> We always do what is right, fair, and ethical.</p>
+                  <p><strong className="text-white/90">Integrity:</strong> Respect and value all individuals, maintaining client confidentiality.</p>
+                  <p><strong className="text-white/90">Teamwork:</strong> We encourage and reward teamwork to deliver the best.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

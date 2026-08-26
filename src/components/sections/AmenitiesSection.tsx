@@ -5,13 +5,18 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import Image from "next/image";
 import { EASE_OUT_EXPO } from "@/lib/easing";
 
+import { 
+  Droplets, Film, CarFront, Leaf, 
+  Briefcase, Sparkles 
+} from "lucide-react";
+
 const amenities = [
-  "Infinity Sky Pools",
-  "Private Cinema Rooms",
-  "Automated Valet Parking",
-  "Zen Gardens",
-  "Business Lounges",
-  "Spa & Wellness Centers"
+  { name: "Infinity Sky Pools", icon: Droplets, span: "sm:col-span-2", bg: "bg-white/5", delay: 0.4 },
+  { name: "Private Cinema Rooms", icon: Film, span: "sm:col-span-1", bg: "bg-[#E86F16]/10", delay: 0.5 },
+  { name: "Automated Valet Parking", icon: CarFront, span: "sm:col-span-1", bg: "bg-white/5", delay: 0.6 },
+  { name: "Zen Gardens", icon: Leaf, span: "sm:col-span-1", bg: "bg-white/5", delay: 0.7 },
+  { name: "Business Lounges", icon: Briefcase, span: "sm:col-span-1", bg: "bg-[#E86F16]/10", delay: 0.8 },
+  { name: "Spa & Wellness Centers", icon: Sparkles, span: "sm:col-span-2", bg: "bg-white/5", delay: 0.9 }
 ];
 
 export default function AmenitiesSection() {
@@ -70,17 +75,27 @@ export default function AmenitiesSection() {
                 <span className="text-white/60">Amenities.</span>
               </h2>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 sm:gap-y-6 gap-x-6 sm:gap-x-8">
-                {amenities.map((item, i) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {amenities.map(({ name, icon: Icon, span, bg, delay }) => (
                   <motion.div
-                    key={item}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8, delay: 0.4 + i * 0.1, ease: EASE_OUT_EXPO }}
-                    className="flex items-center gap-3"
+                    key={name}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={inView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.8, delay, ease: EASE_OUT_EXPO }}
+                    className={`flex items-start gap-4 p-5 rounded-2xl border border-white/10 ${bg} ${span} group hover:border-[#E86F16]/50 transition-colors duration-500 backdrop-blur-sm`}
                   >
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#E86F16]" />
-                    <span className="font-inter text-sm text-white/80 tracking-wide">{item}</span>
+                    <div className="flex-shrink-0 mt-0.5">
+                      <Icon size={20} className="text-[#E86F16] opacity-80 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                    <div>
+                      <h4 
+                        className="text-white/90 group-hover:text-white transition-colors font-medium mb-1"
+                        style={{ fontFamily: "var(--font-cinzel)", fontSize: "1.125rem" }}
+                      >
+                        {name}
+                      </h4>
+                      <div className="w-6 h-px bg-[#E86F16]/30 group-hover:w-12 transition-all duration-500" />
+                    </div>
                   </motion.div>
                 ))}
               </div>
