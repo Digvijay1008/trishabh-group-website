@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { EASE_OUT_EXPO } from "@/lib/easing";
 
 const projects = [
@@ -213,7 +214,8 @@ export default function ProjectsPageClient({ category, initialProjects = [] }: P
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className={`group cursor-pointer w-full max-w-4xl relative z-[${index * 10}] ${translateClass} ${rotClass} hover:z-[999] transition-transform duration-700`}
+                className={`group cursor-pointer w-full max-w-4xl relative z-[${index * 10}] ${translateClass} ${rotClass} hover:z-[999] transition-transform duration-700 will-change-transform`}
+                style={{ transform: "translateZ(0)" }}
               >
                 <Link href={`/projects/${project.slug}`}>
                   <div className="bg-white rounded-[2rem] p-2 sm:p-3 overflow-hidden shadow-[0_20px_60px_-15px_rgba(22,22,22,0.1)] hover:shadow-[0_30px_80px_-20px_rgba(232,111,22,0.15)] border border-[#E7E2D9] transition-all duration-700 bg-clip-padding">
@@ -221,7 +223,7 @@ export default function ProjectsPageClient({ category, initialProjects = [] }: P
                       {/* Visual Area */}
                       <div className="h-[300px] sm:h-[450px] relative overflow-hidden" style={{ background: project.bgBase || "#EDE9E2" }}>
                         {project.image ? (
-                          <img src={project.image} alt={project.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                          <Image src={project.image} alt={project.name} fill className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]" sizes="(max-width: 768px) 100vw, 80vw" />
                         ) : (
                         <svg className="w-full h-full group-hover:scale-105 transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]" viewBox="0 0 500 360" preserveAspectRatio="xMidYMid slice">
                           {/* Dynamic SVG graphic matching the project colors */}

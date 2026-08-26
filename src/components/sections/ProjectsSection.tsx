@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, MapPin } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { EASE_OUT_EXPO } from "@/lib/easing";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -97,16 +98,16 @@ function ProjectCard({
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.14, ease: EASE_OUT_EXPO }}
-      className="group bg-white border border-[#E7E2D9] rounded-sm overflow-hidden hover:border-[#E86F16]/25 transition-colors duration-500"
-      style={{ boxShadow: "0 4px 32px -4px rgba(22,22,22,0.06)" }}
+      className="group bg-white border border-[#E7E2D9] rounded-sm overflow-hidden hover:border-[#E86F16]/25 transition-colors duration-500 will-change-transform"
+      style={{ boxShadow: "0 4px 32px -4px rgba(22,22,22,0.06)", transform: "translateZ(0)" }}
     >
       <Link href={project.slug ? `/projects/${project.slug}` : "#"} className="block h-full">
         {/* Image panel — architectural illustration */}
         <div className="h-[260px] relative overflow-hidden" style={{ background: project.bgBase }}>
           {isSanity && project.mainImage?.asset?.url ? (
-            <img src={project.mainImage.asset.url} alt={project.title} className="w-full h-full object-cover" />
+            <Image src={project.mainImage.asset.url} alt={project.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
           ) : project.image ? (
-            <img src={project.image} alt={project.name} className="w-full h-full object-cover" />
+            <Image src={project.image} alt={project.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
           ) : (
             <svg className="w-full h-full" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice">
               <defs>
@@ -370,7 +371,7 @@ export default function ProjectsSection({ initialProjects = [] }: { initialProje
 
   return (
     <section ref={wrapRef} id="projects" className="bg-[#FAF9F7] border-t border-[#E7E2D9] overflow-hidden lg:h-[100dvh] flex items-center">
-      <div ref={trackRef} className="w-full py-16 lg:py-0 lg:flex lg:flex-nowrap lg:items-center px-6 md:px-12 lg:pl-16 xl:pl-24" style={{ gap: "3rem" }}>
+      <div ref={trackRef} className="w-full py-16 lg:py-0 lg:flex lg:flex-nowrap lg:items-center px-6 md:px-12 lg:pl-16 xl:pl-24 will-change-transform" style={{ gap: "3rem" }}>
         {/* Header Block */}
         <div className="w-full lg:min-w-[400px] lg:w-[400px] flex-shrink-0 mb-10 lg:mb-0">
           <div>

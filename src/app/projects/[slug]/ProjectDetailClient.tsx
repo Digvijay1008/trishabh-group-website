@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowLeft, CheckCircle2, ChevronRight, Download, MapPin } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { EASE_OUT_EXPO } from "@/lib/easing";
 import { notFound } from "next/navigation";
 
@@ -124,7 +125,7 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
       {/* Immersive Hero */}
       <div className="relative h-[80vh] min-h-[600px] w-full flex items-end pb-24" style={{ background: project.bgBase || "#EDE9E2" }}>
         {project.image ? (
-          <img src={project.image} alt={project.name} className="absolute inset-0 w-full h-full object-cover" />
+          <Image src={project.image} alt={project.name} fill className="object-cover" priority sizes="100vw" />
         ) : (
           <div className="absolute inset-0 opacity-20 flex items-center justify-center">
               <svg width="80%" height="80%" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -233,7 +234,7 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
                     {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                     {project.gallery.map((img: any, i: number) => (
                       <div key={i} className="aspect-[4/3] relative overflow-hidden rounded-sm">
-                         <img src={img.asset.url} alt="Gallery" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                         <Image src={img.asset.url} alt="Gallery" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
                       </div>
                     ))}
                   </div>

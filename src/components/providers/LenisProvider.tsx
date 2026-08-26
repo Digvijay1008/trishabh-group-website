@@ -2,6 +2,12 @@
 
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function LenisProvider({
   children,
@@ -16,17 +22,16 @@ export default function LenisProvider({
       smoothWheel: true,
     });
 
-    let rafId: number;
+    lenis.on('scroll', ScrollTrigger.update);
 
-    function raf(time: number) {
-      lenis.raf(time);
-      rafId = requestAnimationFrame(raf);
-    }
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
 
-    rafId = requestAnimationFrame(raf);
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
-      cancelAnimationFrame(rafId);
+      gsap.ticker.remove(lenis.raf);
       lenis.destroy();
     };
   }, []);

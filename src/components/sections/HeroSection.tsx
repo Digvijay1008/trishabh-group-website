@@ -153,6 +153,7 @@ export default function HeroSection() {
             loop
             muted
             playsInline
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-screen"
           >
             <source src="/hero-video.mp4" type="video/mp4" />
