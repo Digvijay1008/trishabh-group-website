@@ -53,10 +53,15 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#111111] text-white">
+    <footer className="relative bg-[#111111] text-white overflow-hidden">
+      {/* Noise overlay for texture */}
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
+        style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')" }}
+      />
 
       {/* ── Top CTA Strip ── */}
-      <div className="border-b border-white/8">
+      <div className="relative border-b border-white/8">
         <div className="container-luxury py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
             <p
@@ -97,18 +102,18 @@ export default function Footer() {
       </div>
 
       {/* ── Main Footer Grid ── */}
-      <div className="container-luxury pt-16 pb-10">
+      <div className="relative container-luxury pt-16 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-14 border-b border-white/8">
 
           {/* Brand */}
           <div className="lg:col-span-4 flex flex-col gap-6">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-block group">
               <Image
                 src="/logo.png"
                 alt="Trishabh Group"
                 width={150}
                 height={50}
-                className="h-10 w-auto object-contain"
+                className="h-10 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
               />
             </Link>
             <p
@@ -124,7 +129,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 rounded-full border border-white/12 flex items-center justify-center text-white/45 hover:border-[#E86F16] hover:text-[#E86F16] transition-all duration-300"
+                  className="w-9 h-9 rounded-full border border-white/12 flex items-center justify-center text-white/45 hover:border-[#E86F16] hover:text-[#E86F16] hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <Icon />
                 </Link>
@@ -145,11 +150,12 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-white/60 hover:text-white text-sm transition-colors duration-200 inline-flex items-center gap-2 group"
+                    className="relative text-white/60 hover:text-white text-sm transition-colors duration-300 inline-flex items-center group w-fit"
                     style={{ fontFamily: "var(--font-josefin)" }}
                   >
-                    <span className="w-0 group-hover:w-3 h-px bg-[#E86F16] transition-all duration-300 flex-shrink-0" />
                     {link.label}
+                    {/* Animated Underline */}
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#E86F16] transition-all duration-500 ease-out group-hover:w-full" />
                   </Link>
                 </li>
               ))}
@@ -165,8 +171,10 @@ export default function Footer() {
               Get In Touch
             </h4>
             <ul className="flex flex-col gap-5">
-              <li className="flex items-start gap-3.5">
-                <MapPin size={14} className="text-[#E86F16] mt-0.5 flex-shrink-0" />
+              <li className="flex items-start gap-4">
+                <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-[0_0_15px_rgba(232,111,22,0.15)] group-hover:bg-[#E86F16]/10 transition-colors">
+                  <MapPin size={13} className="text-[#E86F16]" />
+                </div>
                 <span
                   className="text-white/55 text-sm leading-relaxed"
                   style={{ fontFamily: "var(--font-josefin)" }}

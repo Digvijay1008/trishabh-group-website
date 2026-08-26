@@ -57,8 +57,8 @@ export default function ContactSection() {
       <div className="container-luxury">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
-          {/* Left — contact info */}
-          <div>
+          {/* Left — contact info & Map */}
+          <div className="flex flex-col h-full">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -83,7 +83,7 @@ export default function ContactSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.08, ease: EASE_OUT_EXPO }}
-              className="text-[#161616] mb-8"
+              className="text-[#161616] mb-6"
               style={{
                 fontFamily: "var(--font-cinzel)",
                 fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
@@ -93,44 +93,61 @@ export default function ContactSection() {
               }}
             >
               Begin your<br />
-              <em style={{ fontStyle: "italic" }}>journey home.</em>
+              <em style={{ fontStyle: "italic", color: "#E86F16" }}>journey home.</em>
             </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.16, ease: EASE_OUT_EXPO }}
-              className="text-[#3F3F46]/60 leading-relaxed mb-12 max-w-sm"
+              className="text-[#3F3F46]/60 leading-relaxed mb-8 max-w-sm"
               style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
             >
               Share your details and our relationship manager will connect
               with you within 24 hours to schedule a personalised site visit.
             </motion.p>
 
-            {/* Contact details */}
+            {/* Interactive Map with Glassmorphic Contact Details */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.24, ease: EASE_OUT_EXPO }}
-              className="space-y-5"
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.9, delay: 0.24, ease: EASE_OUT_EXPO }}
+              className="relative flex-1 min-h-[350px] w-full rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#E7E2D9]/60 group"
             >
-              {[
-                { Icon: Phone, text: "+91 22 XXX XXXXX" },
-                { Icon: Mail, text: "info@trishabh.com" },
-                { Icon: MapPin, text: "Trishabh House, Chembur, Mumbai — 400071" },
-              ].map(({ Icon, text }) => (
-                <div key={text} className="flex items-start gap-4">
-                  <div className="w-9 h-9 rounded-full border border-[#E7E2D9] flex items-center justify-center flex-shrink-0">
-                    <Icon size={14} className="text-[#3F3F46]/50" />
-                  </div>
-                  <span
-                    className="text-[#3F3F46] pt-2 leading-snug"
-                    style={{ fontFamily: "var(--font-josefin)", fontSize: "0.875rem" }}
-                  >
-                    {text}
-                  </span>
+              {/* Grayscale Google Maps Embed */}
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15082.90967341857!2d72.89423696504288!3d19.075775836894086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c5e227976e19%3A0xc3c6b245041a774c!2sChembur%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: "grayscale(100%) contrast(1.1) opacity(0.8)" }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
+              />
+              
+              {/* Frosted Glass Contact Info Overlay */}
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-white shadow-xl">
+                <div className="space-y-4">
+                  {[
+                    { Icon: Phone, text: "+91 22 XXX XXXXX" },
+                    { Icon: Mail, text: "info@trishabh.com" },
+                    { Icon: MapPin, text: "Trishabh House, Chembur, Mumbai" },
+                  ].map(({ Icon, text }) => (
+                    <div key={text} className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full border border-[#E7E2D9]/80 bg-white/50 flex items-center justify-center flex-shrink-0">
+                        <Icon size={14} className="text-[#E86F16]" />
+                      </div>
+                      <span
+                        className="text-[#161616] pt-1.5 leading-snug"
+                        style={{ fontFamily: "var(--font-josefin)", fontSize: "0.875rem" }}
+                      >
+                        {text}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </motion.div>
           </div>
 
