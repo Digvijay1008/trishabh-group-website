@@ -1,10 +1,32 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { EASE_OUT_EXPO } from "@/lib/easing";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowLeft, Check } from "lucide-react";
 
 export default function RedevelopmentPage() {
+  const [step, setStep] = useState(0);
+  const [formData, setFormData] = useState({
+    societyName: "",
+    location: "",
+    contactName: "",
+    phone: "",
+    details: ""
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleNext = () => setStep((s) => Math.min(s + 1, 2));
+  const handlePrev = () => setStep((s) => Math.max(s - 1, 0));
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (step < 2) {
+      handleNext();
+    } else {
+      setIsSubmitted(true);
+    }
+  };
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
@@ -144,35 +166,149 @@ export default function RedevelopmentPage() {
               Submit your society details below and our redevelopment experts will get in touch with you.
             </p>
           </div>
-          <form className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/50 mb-2 font-josefin">Society Name</label>
-                <input type="text" className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 outline-none focus:border-[#E86F16] transition-colors font-josefin" />
-              </div>
-              <div>
-                <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/50 mb-2 font-josefin">Location</label>
-                <input type="text" className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 outline-none focus:border-[#E86F16] transition-colors font-josefin" />
-              </div>
+          <div className="bg-[#FAF9F7] p-10 lg:p-14 border border-[#E7E2D9] rounded-sm shadow-sm">
+            <div className="h-[320px] flex flex-col justify-between">
+              <AnimatePresence mode="wait">
+                {isSubmitted ? (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="flex flex-col items-center justify-center h-full text-center space-y-6"
+                  >
+                    <div className="w-16 h-16 rounded-full bg-[#E86F16]/10 flex items-center justify-center text-[#E86F16] mb-4">
+                      <Check size={32} />
+                    </div>
+                    <h3 className="font-cormorant text-3xl text-[#161616]">Details Submitted</h3>
+                    <p className="font-josefin text-[#3F3F46] max-w-sm mx-auto text-sm leading-relaxed">
+                      Thank you. Our redevelopment experts will review your society's details and contact you shortly.
+                    </p>
+                  </motion.div>
+                ) : (
+                  <motion.form
+                    key={step}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.4, ease: EASE_OUT_EXPO }}
+                    className="space-y-8 h-full flex flex-col"
+                    onSubmit={handleSubmit}
+                  >
+                    {/* Step Indicators */}
+                    <div className="flex items-center gap-2 mb-6">
+                      {[0, 1, 2].map((i) => (
+                        <div
+                          key={i}
+                          className={`h-1 flex-1 rounded-full transition-colors duration-500 ${
+                            i <= step ? "bg-[#E86F16]" : "bg-[#E7E2D9]"
+                          }`}
+                        />
+                      ))}
+                    </div>
+
+                    <div className="flex-grow flex flex-col justify-center">
+                      {step === 0 && (
+                        <div className="space-y-6">
+                          <label className="font-cormorant text-3xl text-[#161616] block mb-2">
+                            Tell us about your society
+                          </label>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input
+                              type="text"
+                              autoFocus
+                              value={formData.societyName}
+                              onChange={(e) => setFormData({ ...formData, societyName: e.target.value })}
+                              placeholder="Society Name"
+                              className="w-full bg-transparent border-b border-[#E7E2D9] px-0 py-4 font-josefin text-lg text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors placeholder:text-[#3F3F46]/30"
+                              required
+                            />
+                            <input
+                              type="text"
+                              value={formData.location}
+                              onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                              placeholder="Location (e.g. Chembur)"
+                              className="w-full bg-transparent border-b border-[#E7E2D9] px-0 py-4 font-josefin text-lg text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors placeholder:text-[#3F3F46]/30"
+                              required
+                            />
+                          </div>
+                        </div>
+                      )}
+
+                      {step === 1 && (
+                        <div className="space-y-6">
+                          <label className="font-cormorant text-3xl text-[#161616] block mb-2">
+                            Who should we contact?
+                          </label>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input
+                              type="text"
+                              autoFocus
+                              value={formData.contactName}
+                              onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
+                              placeholder="Contact Person Name"
+                              className="w-full bg-transparent border-b border-[#E7E2D9] px-0 py-4 font-josefin text-lg text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors placeholder:text-[#3F3F46]/30"
+                              required
+                            />
+                            <input
+                              type="tel"
+                              value={formData.phone}
+                              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                              placeholder="Phone Number"
+                              className="w-full bg-transparent border-b border-[#E7E2D9] px-0 py-4 font-josefin text-lg text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors placeholder:text-[#3F3F46]/30"
+                              required
+                            />
+                          </div>
+                        </div>
+                      )}
+
+                      {step === 2 && (
+                        <div className="space-y-6">
+                          <label className="font-cormorant text-3xl text-[#161616] block mb-2">
+                            Property Details
+                          </label>
+                          <textarea
+                            autoFocus
+                            rows={3}
+                            value={formData.details}
+                            onChange={(e) => setFormData({ ...formData, details: e.target.value })}
+                            placeholder="Brief details about the property, plot size, etc."
+                            className="w-full bg-transparent border-b border-[#E7E2D9] px-0 py-4 font-josefin text-lg text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors resize-none placeholder:text-[#3F3F46]/30"
+                          />
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="flex items-center justify-between pt-6">
+                      {step > 0 ? (
+                        <button
+                          type="button"
+                          onClick={handlePrev}
+                          className="flex items-center gap-2 text-[#3F3F46] hover:text-[#161616] font-josefin text-xs tracking-widest uppercase transition-colors"
+                        >
+                          <ArrowLeft size={14} /> Back
+                        </button>
+                      ) : (
+                        <div />
+                      )}
+                      
+                      <button
+                        type="submit"
+                        className="group flex items-center gap-4 bg-[#161616] text-white rounded-full hover:bg-[#E86F16] transition-all duration-300"
+                        style={{ padding: "8px 8px 8px 24px" }}
+                      >
+                        <span className="font-josefin text-[11px] tracking-[0.15em] uppercase font-medium">
+                          {step === 2 ? "Submit Details" : "Next Step"}
+                        </span>
+                        <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 group-hover:translate-x-1 group-hover:-translate-y-[1px]">
+                          <ArrowRight size={14} className="text-white" />
+                        </div>
+                      </button>
+                    </div>
+                  </motion.form>
+                )}
+              </AnimatePresence>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/50 mb-2 font-josefin">Contact Person Name</label>
-                <input type="text" className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 outline-none focus:border-[#E86F16] transition-colors font-josefin" />
-              </div>
-              <div>
-                <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/50 mb-2 font-josefin">Phone Number</label>
-                <input type="tel" className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 outline-none focus:border-[#E86F16] transition-colors font-josefin" />
-              </div>
-            </div>
-            <div>
-              <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/50 mb-2 font-josefin">Brief details about the property</label>
-              <textarea rows={4} className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 outline-none focus:border-[#E86F16] transition-colors font-josefin resize-none" />
-            </div>
-            <button type="submit" className="w-full bg-[#161616] text-white py-4 uppercase tracking-widest text-xs font-medium hover:bg-[#E86F16] transition-colors duration-300 font-josefin">
-              Submit Details
-            </button>
-          </form>
+          </div>
         </div>
       </section>
     </div>

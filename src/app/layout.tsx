@@ -5,6 +5,7 @@ import LenisProvider from "@/components/providers/LenisProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body>
         <LenisProvider>
           <Navbar />
+          <CustomCursor />
           <main className="min-h-screen" style={{ paddingTop: "clamp(64px, 8vh, 88px)" }}>
             {children}
           </main>
