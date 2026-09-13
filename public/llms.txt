@@ -1,0 +1,41 @@
+# Trishabh Group
+
+> Premium real estate developers based in Chembur, Mumbai. Delivering luxury residential and redevelopment projects with a focus on trust, transparency, and timely delivery.
+
+Trishabh Group is a leading real estate developer headquartered in Chembur, Mumbai. Founded over 20 years ago by Mr. K.K. Ahuja and Mr. T.B. Ahuja, the group has successfully delivered numerous premium residential and commercial spaces across Mumbai.
+
+## Key Information
+- **Founders:** Mr. K.K. Ahuja & Mr. T.B. Ahuja
+- **Specialization:** Luxury Residences, Redevelopment Projects
+- **Office Location:** 4, Rishabh Shopping Centre, Chembur, Mumbai 400071
+- **Contact:** +91 99203 87722 | info@trishabhgroup.com
+
+## Current Projects
+### Trishabh Miraya
+- **Location:** Chembur, Mumbai
+- **Type:** Ultra-luxury 3 & 4 BHK Residences
+- **Highlights:** Vastu compliant, panoramic views, world-class amenities, premium connectivity.
+- **Dedicated Website:** https://trishabhmiraya.com
+
+### Trishabh Aura
+- **Location:** Ghatkopar East, Mumbai
+- **Type:** Premium 2 & 3 BHK Apartments
+- **Highlights:** Smart homes, extensive podium amenities.
+
+### Trishabh Greens
+- **Location:** Deonar, Mumbai
+- **Type:** 2.5 & 3 BHK Eco-luxury Homes
+- **Highlights:** IGBC Green Certified, sprawling landscapes.
+
+## Completed Projects
+- Tulsi Meadows (Chembur)
+- Trishabh Signet (Ghatkopar)
+- Tulsi Classic (Sion)
+- Tulsi Majestic (Chembur)
+
+## Official Links
+- **Website:** https://trishabhgroup.vercel.app
+- **Projects:** https://trishabhgroup.vercel.app/projects
+- **Redevelopment:** https://trishabhgroup.vercel.app/redevelopment
+- **Contact:** https://trishabhgroup.vercel.app/contact
+- **Careers:** https://trishabhgroup.vercel.app/careers

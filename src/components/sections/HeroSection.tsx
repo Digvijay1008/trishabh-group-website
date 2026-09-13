@@ -154,9 +154,11 @@ export default function HeroSection() {
             muted
             playsInline
             preload="auto"
+            aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-screen"
           >
             <source src="/hero-video.mp4" type="video/mp4" />
+            <track kind="captions" srcLang="en" label="English" />
           </video>
           {/* Subtle vignette for the video */}
           <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.5)] pointer-events-none" />

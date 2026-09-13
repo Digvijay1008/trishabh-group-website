@@ -91,6 +91,7 @@ export default function ContactPageClient() {
             {/* Real Map Integration */}
             <div className="w-full h-64 rounded-sm relative overflow-hidden border border-[#E7E2D9] group">
               <iframe
+                title="Google Maps Location - Trishabh Group"
                 src="https://maps.google.com/maps?q=Trishabh+Group,+4,+Rishabh+shopping+centre,+Chembur&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"

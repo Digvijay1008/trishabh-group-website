@@ -209,6 +209,27 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
     notFound();
   }
 
+  // If a dedicated website exists, hijack the entire page view
+  if (project.dedicatedWebsite) {
+    return (
+      <div className="fixed inset-0 z-[99999] bg-white w-screen h-[100dvh]">
+        <iframe
+          title={`Dedicated website for ${project.name}`}
+          src={project.dedicatedWebsite}
+          className="w-full h-full border-none"
+          allowFullScreen
+        />
+        <Link 
+          href="/projects" 
+          className="absolute top-4 left-4 md:top-6 md:left-6 z-[100000] bg-black/80 hover:bg-black text-white px-5 py-2.5 rounded-full text-xs tracking-wider uppercase transition-colors flex items-center gap-2 backdrop-blur-md border border-white/10"
+          style={{ fontFamily: "var(--font-josefin)" }}
+        >
+          <ArrowLeft size={14} /> Back to Projects
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white min-h-[100dvh]">
       {/* Immersive Hero */}
@@ -254,32 +275,6 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
           </motion.div>
         </div>
       </div>
-
-      {/* Embedded Dedicated Website */}
-      {project.dedicatedWebsite && (
-        <div className="border-t border-[#E7E2D9]">
-          <div className="container-luxury py-12 md:py-16">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-10 h-px bg-[#E86F16]" />
-              <span className="text-[#3F3F46]/50" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.625rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
-                Explore {project.name}
-              </span>
-            </div>
-          </div>
-          <div className="w-full" style={{ height: "100vh" }}>
-            <iframe
-              src={project.dedicatedWebsite}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              title={`${project.name} - Dedicated Website`}
-              loading="lazy"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      )}
-
       {/* The Vision & Specs */}
       <div className="py-12 lg:py-[120px]" ref={ref}>
         <div className="container-luxury">
@@ -420,6 +415,7 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
                   </div>
                   <div className="w-full aspect-square sm:aspect-video rounded-sm overflow-hidden border border-[#E7E2D9]">
                     <iframe 
+                      title="Project Location on Google Maps"
                       src={project.mapEmbedUrl} 
                       width="100%" 
                       height="100%" 

@@ -48,7 +48,7 @@ export default function AboutPageClient() {
                   className="text-[#3F3F46] leading-relaxed max-w-lg italic"
                   style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.5rem" }}
                 >
-                  "When a family runs a business, it becomes a legacy, and that legacy lives on in every home we create"
+                  &quot;When a family runs a business, it becomes a legacy, and that legacy lives on in every home we create&quot;
                 </p>
               </motion.div>
 

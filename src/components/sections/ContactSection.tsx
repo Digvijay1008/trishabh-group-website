@@ -125,6 +125,7 @@ export default function ContactSection() {
             >
               {/* Clean Google Maps Embed */}
               <iframe
+                title="Google Maps Location - Trishabh Group"
                 src="https://maps.google.com/maps?q=Trishabh+Group,+4,+Rishabh+shopping+centre,+Chembur&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
