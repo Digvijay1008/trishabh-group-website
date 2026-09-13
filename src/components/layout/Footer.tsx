@@ -60,46 +60,7 @@ export default function Footer() {
         style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')" }}
       />
 
-      {/* ── Top CTA Strip ── */}
-      <div className="relative border-b border-white/8">
-        <div className="container-luxury py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div>
-            <p
-              className="text-white/40 text-[10px] tracking-[0.2em] uppercase mb-2"
-              style={{ fontFamily: "var(--font-josefin)" }}
-            >
-              Ready to Begin?
-            </p>
-            <p
-              className="text-white"
-              style={{
-                fontFamily: "var(--font-cinzel)",
-                fontSize: "clamp(1.5rem, 2.5vw, 2.2rem)",
-                fontWeight: 400,
-                letterSpacing: "-0.01em",
-              }}
-            >
-              Schedule a <em style={{ color: "#E86F16", fontStyle: "italic" }}>Private Site Visit</em>
-            </p>
-          </div>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2.5 bg-[#E86F16] text-white rounded-full hover:bg-[#D4610F] transition-all duration-300 group flex-shrink-0"
-            style={{
-              fontFamily: "var(--font-josefin)",
-              fontSize: "10px",
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              fontWeight: 500,
-              padding: "14px 28px",
-              boxShadow: "0 4px 24px -4px rgba(232,111,22,0.4)",
-            }}
-          >
-            Book Now
-            <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
-      </div>
+
 
       {/* ── Main Footer Grid ── */}
       <div className="relative container-luxury pt-16 pb-10">
