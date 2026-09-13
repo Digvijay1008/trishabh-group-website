@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { EASE_OUT_EXPO } from "@/lib/easing";
 import MetricsSection from "@/components/sections/MetricsSection";
+import Image from "next/image";
 
 export default function AboutPageClient() {
   return (
@@ -10,8 +11,8 @@ export default function AboutPageClient() {
       {/* Hero Section */}
       <section className="pt-24 pb-32">
         <div className="container-luxury">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-7">
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -23,7 +24,7 @@ export default function AboutPageClient() {
                   className="text-[#3F3F46]/50"
                   style={{ fontFamily: "var(--font-josefin)", fontSize: "0.625rem", letterSpacing: "0.2em", textTransform: "uppercase" }}
                 >
-                  The Legacy
+                  Our Legacy
                 </span>
               </motion.div>
               
@@ -32,19 +33,33 @@ export default function AboutPageClient() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.08, ease: EASE_OUT_EXPO }}
                 className="text-[#161616] mb-8"
-                style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(3rem, 5vw, 4.5rem)", fontWeight: 400, lineHeight: 1.05 }}
+                style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(2.5rem, 4vw, 4rem)", fontWeight: 400, lineHeight: 1.1 }}
               >
-                Building Mumbai&apos;s most <em style={{ fontStyle: "italic", color: "#E86F16" }}>exclusive addresses.</em>
+                A Legacy That Defines Sign of Experience & <em style={{ fontStyle: "italic", color: "#E86F16" }}>Tradition of Trust.</em>
               </motion.h1>
+
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.16, ease: EASE_OUT_EXPO }}
+                className="border-l-2 border-[#E86F16]/30 pl-6 mb-8"
+              >
+                <p
+                  className="text-[#3F3F46] leading-relaxed max-w-lg italic"
+                  style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.5rem" }}
+                >
+                  "When a family runs a business, it becomes a legacy, and that legacy lives on in every home we create"
+                </p>
+              </motion.div>
 
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.16, ease: EASE_OUT_EXPO }}
-                className="text-[#3F3F46] leading-relaxed max-w-lg mb-6"
-                style={{ fontFamily: "var(--font-josefin)", fontSize: "1.125rem" }}
+                transition={{ duration: 0.8, delay: 0.22, ease: EASE_OUT_EXPO }}
+                className="text-[#3F3F46]/80 leading-relaxed max-w-xl"
+                style={{ fontFamily: "var(--font-josefin)", fontSize: "1.0625rem" }}
               >
-                Established in 1999, Trishabh Group, a renowned real estate developer in Mumbai and Navi Mumbai, was founded by the visionary Jain family. Over the years, we have been dedicated to creating architectural marvels and luxurious living spaces, establishing a remarkable track record of achieving 100% Occupation Certificates (OC) for all our projects to date.
+                Trishabh Group, established in 1999 by the visionary Jain family, is a premier real estate developer rooted in Mumbai and Navi Mumbai. For over two decades, we have been shaping skylines and lifestyles through architectural excellence, ethical practices, and unwavering commitment to quality.
               </motion.p>
             </div>
             
@@ -52,19 +67,15 @@ export default function AboutPageClient() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2, ease: EASE_OUT_EXPO }}
-              className="relative aspect-square max-w-md ml-auto"
+              className="lg:col-span-5 relative h-[500px] w-full rounded-[2rem] overflow-hidden shadow-2xl"
             >
-              {/* Abstract luxury building illustration */}
-              <div className="absolute inset-0 bg-[#E8E2D8] shadow-2xl">
-                 <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <rect x="20" y="10" width="60" height="90" fill="#7A6B5B" />
-                    <rect x="20" y="10" width="10" height="90" fill="#B89860" opacity="0.3" />
-                    <rect x="35" y="30" width="10" height="15" fill="#fff" opacity="0.4" />
-                    <rect x="55" y="30" width="10" height="15" fill="#fff" opacity="0.4" />
-                    <rect x="35" y="60" width="10" height="15" fill="#fff" opacity="0.4" />
-                    <rect x="55" y="60" width="10" height="15" fill="#fff" opacity="0.4" />
-                 </svg>
-              </div>
+              <Image 
+                src="/images/elevations/trishabh-miraya.jpg" 
+                alt="Trishabh Group Legacy" 
+                fill 
+                className="object-cover"
+              />
+              <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(22,22,22,0.3)] pointer-events-none" />
             </motion.div>
           </div>
         </div>
@@ -73,129 +84,122 @@ export default function AboutPageClient() {
       {/* Metrics Section from homepage perfectly fits the About page as trust markers */}
       <MetricsSection />
 
-      {/* Philosophy Section */}
+      {/* Trishabh Principles Section */}
       <section className="py-[120px] bg-white border-y border-[#E7E2D9]">
-        <div className="container-luxury max-w-5xl">
-          <div className="flex items-center gap-4 mb-8">
+        <div className="container-luxury max-w-6xl">
+          <div className="flex items-center gap-4 mb-16">
             <div className="w-10 h-px bg-[#E86F16]" />
             <span 
               className="text-[#E86F16]" 
               style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.2em", textTransform: "uppercase" }}
             >
-              The 100% OC Promise
+              Trishabh Principles
             </span>
           </div>
-          <h2 
-            className="text-[#161616] mb-10" 
-            style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(2.5rem, 4vw, 4rem)", lineHeight: 1.05, letterSpacing: "-0.02em" }}
-          >
-            Exemplary Excellence<br />
-            <em style={{ fontStyle: "italic", color: "#E86F16" }}>in Every Project.</em>
-          </h2>
-          <p className="text-[#3F3F46]/70 leading-relaxed text-lg max-w-2xl" style={{ fontFamily: "var(--font-josefin)" }}>
-            Our epitomes of excellence are a testament to our teamwork and sound management. We adhere to strict ethical standards and strive to deliver benchmark quality, breathing life into dreams and erecting high-rises that epitomize class and sophistication. Our unwavering commitment to quality and timely delivery has fostered a strong bond of trust with our clients for over 25 years.
-          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
+            <div className="flex flex-col gap-4">
+              <h3 className="text-2xl text-[#161616]" style={{ fontFamily: "var(--font-cinzel)", fontWeight: 500 }}>Dedication & Discipline</h3>
+              <p className="text-[#3F3F46]/70 leading-relaxed text-sm" style={{ fontFamily: "var(--font-josefin)" }}>
+                Our journey is defined by dedication, discipline, & innovation—pillars that have helped us deliver landmark projects across the residential, commercial, and hospitality sectors. Every development is a reflection of our belief in harmonizing luxury with functionality, and aesthetics with sustainability.
+              </p>
+            </div>
+            
+            <div className="flex flex-col gap-4">
+              <h3 className="text-2xl text-[#161616]" style={{ fontFamily: "var(--font-cinzel)", fontWeight: 500 }}>100% Track Record</h3>
+              <p className="text-[#3F3F46]/70 leading-relaxed text-sm" style={{ fontFamily: "var(--font-josefin)" }}>
+                We take pride in our 100% track record of Occupation Certificates (OC), a testament to our timely delivery and regulatory compliance. Each project is personally overseen by our leadership and executed by a team of seasoned professionals, ensuring meticulous attention to detail and superior construction standards.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <h3 className="text-2xl text-[#161616]" style={{ fontFamily: "var(--font-cinzel)", fontWeight: 500 }}>Building Trust</h3>
+              <p className="text-[#3F3F46]/70 leading-relaxed text-sm" style={{ fontFamily: "var(--font-josefin)" }}>
+                At Trishabh Group, we don’t just build structures—we build trust. Our clients, partners, and communities know us for our transparency, reliability, and ability to turn dreams into enduring realities.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Leadership Section */}
+      {/* Leadership Section - Purely Typographic & Editorial */}
       <section className="py-[120px] bg-[#FAF9F7]">
-        <div className="container-luxury">
-          <div className="mb-16">
-             <div className="flex items-center gap-4 mb-8">
+        <div className="container-luxury max-w-5xl">
+          <div className="mb-20 text-center flex flex-col items-center">
+             <div className="flex items-center gap-4 mb-6">
                 <div className="w-10 h-px bg-[#E86F16]" />
                 <span className="text-[#3F3F46]/50" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
-                  Board of Directors
+                  Our Team
                 </span>
+                <div className="w-10 h-px bg-[#E86F16]" />
              </div>
-             <h2 className="text-[#161616]" style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(2.5rem, 4vw, 3.5rem)", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
-               Our <em style={{ fontStyle: "italic" }}>Leadership</em>
+             <h2 className="text-[#161616] max-w-2xl mx-auto mb-6" style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(2rem, 3vw, 2.75rem)", lineHeight: 1.2, letterSpacing: "-0.01em" }}>
+               Led by a legacy of entrepreneurial vision and <em style={{ fontStyle: "italic", color: "#E86F16" }}>strategic growth</em>
              </h2>
+             <p className="text-[#3F3F46]/60 max-w-xl mx-auto" style={{ fontFamily: "var(--font-josefin)", fontSize: "1rem", lineHeight: 1.6 }}>
+               Anchored by its founding and next-generation leaders.
+             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 gap-y-12">
+          <div className="flex flex-col gap-12">
             {[
-              "Shantilal Badala",
-              "Jaipal Jain",
-              "Surendra Jain",
-              "Raj Jain",
-              "Komal Jain",
-              "Mannan Jain",
-              "Ria Jain",
-              "Neha Kachhara"
-            ].map((name, i) => (
+              {
+                name: "Mr. Shantilal Haraklal Badala (Jain)",
+                desc: "A science graduate from Guru Nanak Khalsa College, Mr. Shantilal began his career in jewellery retail in 1986, managing the renowned Bhawani Jewellers in Chembur along with his brothers until 2009. He entered the real estate industry in 1999, and for over 26 years has been a driving force behind the Group’s development initiatives."
+              },
+              {
+                name: "Mr. Jaipal Haraklal Jain",
+                desc: "With a background in commerce, Mr. Jaipal started in jewellery retail in 1990 and transitioned into real estate development in 1999. His leadership and deep industry experience have been instrumental in expanding the Group’s footprint."
+              },
+              {
+                name: "Mr. Surendra Haraklal Jain",
+                desc: "An alumnus of R. A. Podar College, Mr. Surendra joined the family’s jewellery business in 1994 and ventured into real estate in 1999. With over two decades of hands-on involvement, he remains a key contributor to the Group’s success."
+              },
+              {
+                name: "Raj Shantilal Jain",
+                desc: "A graduate of R. A. Podar College and MBA from Narsee Monjee, Mr. Raj Jain joined the Group in 2009 and has since contributed extensively to the strategic growth and operations of all group real estate companies over the last 15 years."
+              },
+              {
+                name: "Mrs. Neha Kachara",
+                desc: "An accomplished Interior Designer, joined Trishabh Group in 2012. Her 14 years of expertise in interior design has helped transform the group's real estate ventures into thoughtfully curated living and working spaces that blend aesthetics with functionality."
+              },
+              {
+                name: "CA Mrs. Komal Raj Jain",
+                desc: "A qualified Chartered Accountant, Mrs. Komal Jain entered the Group in 2014 and continues to play a pivotal role in financial strategy, compliance, and operational excellence."
+              },
+              {
+                name: "Mr. Mannan Jaipal Jain",
+                desc: "A commerce graduate from Lala Lajpatrai College, Mr. Mannan Jain joined the business in 2022. His forward-looking approach and enthusiasm mark the promising next chapter of leadership."
+              },
+              {
+                name: "Mrs. Ria Jain",
+                desc: "An LLB graduate, has been serving as our trusted legal advisor since 2016. As a valued member of the Trishabh family, her legal expertise and unwavering dedication have played a pivotal role in successfully executing several of our most ambitious projects."
+              }
+            ].map((leader, i) => (
               <motion.div 
-                key={name}
+                key={leader.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: i * 0.1, ease: EASE_OUT_EXPO }}
-                className="group flex flex-col items-start"
+                transition={{ duration: 0.6, delay: 0.1, ease: EASE_OUT_EXPO }}
+                className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 items-start py-8 border-b border-[#E7E2D9] last:border-b-0 group"
               >
-                <div className="w-full h-[280px] sm:h-[320px] mb-6 overflow-hidden bg-[#E8E2D8] grayscale group-hover:grayscale-0 transition-all duration-700 relative rounded-sm">
-                  {/* Luxury placeholder image pattern */}
-                  <svg className="w-full h-full opacity-30" viewBox="0 0 100 100" preserveAspectRatio="none">
-                     <rect x="0" y="0" width="100" height="100" fill="#7A6B5B" />
-                     <path d="M 0 100 Q 50 20 100 100" fill="#B89860" opacity="0.4" />
-                     <circle cx="50" cy="40" r="15" fill="#E86F16" opacity="0.3" />
-                  </svg>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#161616]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="md:col-span-5">
+                  <h4 className="text-[#161616] text-2xl group-hover:text-[#E86F16] transition-colors duration-300" style={{ fontFamily: "var(--font-cinzel)", fontWeight: 500 }}>
+                    {leader.name}
+                  </h4>
                 </div>
-                <h4 className="text-[#161616] mb-1" style={{ fontFamily: "var(--font-cinzel)", fontSize: "1.25rem", fontWeight: 500 }}>
-                  {name}
-                </h4>
-                <div className="w-8 h-px bg-[#E86F16] mt-2 mb-2 group-hover:w-16 transition-all duration-500" />
-                <span className="text-[#3F3F46]/50" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-                  Director
-                </span>
+                <div className="md:col-span-7">
+                  <p className="text-[#3F3F46]/70 leading-relaxed text-sm md:text-base" style={{ fontFamily: "var(--font-josefin)" }}>
+                    {leader.desc}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Mission, Vision, Values */}
-      <section className="py-[120px] bg-[#161616] text-white">
-        <div className="container-luxury">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-[#1C1C1C] p-8 md:p-12 border border-white/5 rounded-2xl flex flex-col justify-between group hover:border-[#E86F16]/30 transition-colors duration-500">
-              <div>
-                <span className="text-[#E86F16] font-josefin text-[0.625rem] tracking-[0.2em] uppercase mb-6 block">Our Purpose</span>
-                <h3 className="text-3xl mb-8" style={{ fontFamily: "var(--font-cinzel)", fontWeight: 400 }}>Mission</h3>
-                <div className="text-white/60 space-y-5 text-sm leading-relaxed" style={{ fontFamily: "var(--font-josefin)" }}>
-                  <p>Providing superior developments to our customers through leadership, experience and knowledge.</p>
-                  <p>Engaging in honest, loyal and ethical business practices.</p>
-                  <p>Committing to passionately exceed our customer&apos;s expectations.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-[#1C1C1C] p-8 md:p-12 border border-white/5 rounded-2xl flex flex-col justify-between group hover:border-[#E86F16]/30 transition-colors duration-500">
-              <div>
-                <span className="text-[#E86F16] font-josefin text-[0.625rem] tracking-[0.2em] uppercase mb-6 block">Our Future</span>
-                <h3 className="text-3xl mb-8" style={{ fontFamily: "var(--font-cinzel)", fontWeight: 400 }}>Vision</h3>
-                <div className="text-white/60 space-y-5 text-sm leading-relaxed" style={{ fontFamily: "var(--font-josefin)" }}>
-                  <p>To serve our customers&apos; needs and consistently produce developments of lasting value.</p>
-                  <p>To be flexible, entrepreneurial, and aggressive, both as individuals and as a company.</p>
-                  <p>To believe in teamwork, innovation, professionalism, and long-term decision-making.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-[#1C1C1C] p-8 md:p-12 border border-white/5 rounded-2xl flex flex-col justify-between group hover:border-[#E86F16]/30 transition-colors duration-500">
-              <div>
-                <span className="text-[#E86F16] font-josefin text-[0.625rem] tracking-[0.2em] uppercase mb-6 block">Our Code</span>
-                <h3 className="text-3xl mb-8" style={{ fontFamily: "var(--font-cinzel)", fontWeight: 400 }}>Core Values</h3>
-                <div className="text-white/60 space-y-5 text-sm leading-relaxed" style={{ fontFamily: "var(--font-josefin)" }}>
-                  <p><strong className="text-white/90">Honesty:</strong> We always do what is right, fair, and ethical.</p>
-                  <p><strong className="text-white/90">Integrity:</strong> Respect and value all individuals, maintaining client confidentiality.</p>
-                  <p><strong className="text-white/90">Teamwork:</strong> We encourage and reward teamwork to deliver the best.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
