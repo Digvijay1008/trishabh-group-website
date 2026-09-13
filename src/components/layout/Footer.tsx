@@ -60,7 +60,7 @@ export default function Footer() {
       {/* Noise overlay for texture */}
       <div 
         className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
-        style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')" }}
+        style={{ backgroundImage: "url('/noise.svg')" }}
       />
 
 
