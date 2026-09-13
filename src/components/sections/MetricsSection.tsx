@@ -15,7 +15,7 @@ const metrics = [
 function Counter({ target }: { target: number }) {
   const ref = useRef<HTMLSpanElement>(null);
   const hasRun = useRef(false);
-  const inView = useInView(ref, { once: true });
+  const inView = useInView(ref, { once: true, amount: "some" });
 
   useEffect(() => {
     if (!inView || hasRun.current || !ref.current) return;
@@ -37,10 +37,10 @@ function Counter({ target }: { target: number }) {
 
 export default function MetricsSection() {
   const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const inView = useInView(ref, { once: true, margin: "-20%" });
 
   return (
-    <section ref={ref} id="trust" className="bg-[#161616] py-16 lg:py-24">
+    <section ref={ref} id="trust" className="bg-[#161616] pt-16 pb-32 lg:pt-24 lg:pb-40">
       <div className="container-luxury">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-end mb-12 lg:mb-20">

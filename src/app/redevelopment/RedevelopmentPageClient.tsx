@@ -14,7 +14,7 @@ export default function RedevelopmentPageClient() {
     email: "",
     totalUnits: "",
     plotArea: "",
-    message: ""
+    remarks: ""
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -228,11 +228,11 @@ export default function RedevelopmentPageClient() {
                   </div>
 
                   <div>
-                    <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/60 mb-2 font-inter">Additional Details</label>
+                    <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/60 mb-2 font-inter">Remarks</label>
                     <textarea
                       rows={3}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      value={formData.remarks}
+                      onChange={(e) => setFormData({ ...formData, remarks: e.target.value })}
                       placeholder="Any specific requirements or current stage of redevelopment..."
                       className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 font-inter text-sm text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors resize-none rounded-sm placeholder:text-[#3F3F46]/30"
                     />

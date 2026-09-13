@@ -10,8 +10,7 @@ export default function ContactPageClient() {
     name: "",
     phone: "",
     email: "",
-    project: "General Inquiry",
-    message: ""
+    remarks: ""
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -159,40 +158,25 @@ export default function ContactPageClient() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/60 mb-2 font-inter">Email Address *</label>
-                      <input
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="john@example.com"
-                        className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 font-inter text-sm text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors rounded-sm placeholder:text-[#3F3F46]/30"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/60 mb-2 font-inter">Project of Interest</label>
-                      <select
-                        value={formData.project}
-                        onChange={(e) => setFormData({ ...formData, project: e.target.value })}
-                        className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 font-inter text-sm text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors appearance-none cursor-pointer rounded-sm"
-                      >
-                        <option>General Inquiry</option>
-                        <option>Trishabh Miraya (Ongoing)</option>
-                        <option>Trishabh Greens (Completed)</option>
-                        <option>Tulsi Meadows (Completed)</option>
-                      </select>
-                    </div>
+                  <div>
+                    <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/60 mb-2 font-inter">Email Address *</label>
+                    <input
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="john@example.com"
+                      className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 font-inter text-sm text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors rounded-sm placeholder:text-[#3F3F46]/30"
+                      required
+                    />
                   </div>
 
                   <div>
-                    <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/60 mb-2 font-inter">Message</label>
+                    <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/60 mb-2 font-inter">Remarks</label>
                     <textarea
                       rows={4}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="How can we assist you?"
+                      value={formData.remarks}
+                      onChange={(e) => setFormData({ ...formData, remarks: e.target.value })}
+                      placeholder="Any specific requirements or questions..."
                       className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 font-inter text-sm text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors resize-none rounded-sm placeholder:text-[#3F3F46]/30"
                     />
                   </div>

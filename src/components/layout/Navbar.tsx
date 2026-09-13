@@ -54,8 +54,8 @@ export default function Navbar() {
       >
         <div className={`rounded-full p-2 pl-6 pr-2.5 flex items-center justify-between border transition-all duration-500 ${
           scrolled 
-            ? "bg-white/85 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-white/60" 
-            : "bg-white/70 backdrop-blur-md shadow-lg border-white/50"
+            ? "bg-white/30 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] border-white/40" 
+            : "bg-white/20 backdrop-blur-lg shadow-lg border-white/30"
         }`}>
           {/* Logo */}
           <Link href="/" className="inline-flex items-center group flex-shrink-0">
@@ -122,32 +122,6 @@ export default function Navbar() {
               </div>
             ))}
           </nav>
-
-          {/* CTA */}
-          <div className="hidden lg:flex items-center">
-            <Magnetic intensity={0.15}>
-              <Link
-                href="/contact"
-                className="group flex items-center gap-4 bg-[#E86F16] text-white rounded-full hover:bg-[#D4610F] transition-all duration-300 active:scale-[0.98]"
-                style={{ padding: "6px 6px 6px 20px" }}
-              >
-                <span 
-                  className="mt-0.5"
-                  style={{
-                    fontSize: "11px",
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    fontWeight: 600,
-                  }}
-                >
-                  Schedule Site Visit
-                </span>
-                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 group-hover:translate-x-1 group-hover:-translate-y-[1px]">
-                  <ArrowRight size={14} className="text-white" />
-                </div>
-              </Link>
-            </Magnetic>
-          </div>
 
           {/* Mobile Menu Toggle */}
           <button
