@@ -8,7 +8,7 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import { client } from "@/sanity/lib/client";
 
 async function getFeaturedProjects() {
-  const query = `*[_type == "project"] | order(_createdAt desc)[0...3] {
+  const query = `*[_type == "project" && status == "Ongoing"] | order(_createdAt desc)[0...2] {
     title,
     "slug": slug.current,
     status,
