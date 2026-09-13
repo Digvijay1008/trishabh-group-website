@@ -50,12 +50,12 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0, x: "-50%" }}
         animate={{ y: 0, opacity: 1, x: "-50%" }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-6 left-1/2 z-50 transition-all duration-500 w-full max-w-5xl px-4 lg:px-0`}
+        className={`fixed top-6 left-1/2 z-50 transition-all duration-500 w-full lg:w-max px-4 lg:px-0`}
       >
-        <div className={`rounded-full p-2 pl-6 pr-2.5 flex items-center justify-between border transition-all duration-500 ${
+        <div className={`rounded-full p-2 pl-6 pr-2.5 flex items-center justify-between lg:justify-start lg:gap-16 border border-white/80 transition-all duration-500 ${
           scrolled 
-            ? "bg-white/95 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] border-white" 
-            : "bg-white/90 backdrop-blur-md shadow-lg border-white/80"
+            ? "bg-white/95 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.12)]" 
+            : "bg-white/90 backdrop-blur-md shadow-lg"
         }`}>
           {/* Logo */}
           <Link href="/" className="inline-flex items-center group flex-shrink-0">
