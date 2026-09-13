@@ -77,9 +77,10 @@ const projectsData = {
   "trishabh-signet": {
     name: "Trishabh Signet",
     location: "Chembur, Mumbai",
-    type: "3 & 4 BHK Luxury Residences",
+    type: "3 & 4 BHK Apartments",
     price: "Price on Request",
     status: "Completed",
+    statusDetailed: "O.C. Received",
     area: "12 Floors",
     units: "Exclusive",
     completion: "Completed",
@@ -87,8 +88,16 @@ const projectsData = {
     towerColor: "#6B7A75",
     highlight: "#98B8AC",
     image: "/images/elevations/trishabh-signet.jpg",
-    vision: "A stand-alone luxury tower offering for just a selected few with lavish 3 and 4 bedroom residences that serve as the perfect extension of your personality. Enjoys close proximity to all conveniences.",
+    vision: "Trishabh Signet a stand-alone luxury tower, located in heart of Chembur, on D.K. Sandu Marg. A luxurious offering for just a selected few with Lavish 3 & 4 Bedroom Residences that serve as the perfect extension of your personality. Location that ensures your travelling time stays at a minimum and your peace of mind is not compromised by the demands of life. Well-connected with Sion-Trombay Road and Eastern Express Highway, just minutes away from Eastern Freeway and Chembur-Santacruz Link Road and walking distance to Jain Mandir, Zen Multi-Specialty Hospital and Joy Hospital.",
     amenities: ["Luxury Residences", "Premium Location", "Advanced Security"],
+    siteAddress: "Trishabh Signet, Plot no. 414 A, D. K. Sandu Marg, Off. Sion-Trombay Road, Near Sandu Garden, Chembur (E), Mum - 71",
+    maharera: "P51800001222 | www.maharera.mahaonline.gov.in",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2159660853777!2d72.89438787336792!3d19.05423995265889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c90028cf9153%3A0xc34ab1c439c47245!2sTrishabh%20Signet!5e0!3m2!1sen!2sin!4v1789297719962!5m2!1sen!2sin",
+    floorPlans: [
+      { name: "3 BHK - 1129 sq.ft.", image: "/images/floor-plans/signet/3bhk-1129sqft.jpg" },
+      { name: "4 BHK - 1267 sq.ft.", image: "/images/floor-plans/signet/4bhk.jpg" },
+      { name: "4 BHK - 1355 sq.ft.", image: "/images/floor-plans/signet/4bhk-l-full.jpg" }
+    ]
   },
   "tulsi-pride": {
     name: "Tulsi Pride",
@@ -314,20 +323,60 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
                   </span>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {["2 BHK Premium", "3 BHK Luxury", "4 BHK Deck Residence"].map((plan) => (
-                    <div key={plan} className="border border-[#E7E2D9] p-6 group hover:border-[#E86F16] transition-colors cursor-pointer flex justify-between items-center bg-[#FAF9F7]">
-                      <div>
-                        <h4 className="text-[#161616] mb-1" style={{ fontFamily: "var(--font-cinzel)", fontSize: "1.25rem", fontWeight: 600 }}>{plan}</h4>
-                        <span className="text-[#3F3F46]/60" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.875rem" }}>Request Floor Plan</span>
+                {project.floorPlans && project.floorPlans.length > 0 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                    {project.floorPlans.map((plan: any, idx: number) => (
+                      <div key={idx} className="border border-[#E7E2D9] rounded-sm overflow-hidden bg-white group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500">
+                        <div className="aspect-[4/3] relative bg-[#FAF9F7]">
+                          <Image src={plan.image} alt={plan.name} fill className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <div className="p-4 border-t border-[#E7E2D9] bg-white flex justify-between items-center">
+                          <h4 className="text-[#161616]" style={{ fontFamily: "var(--font-josefin)", fontWeight: 600 }}>{plan.name}</h4>
+                          <Download size={16} className="text-[#E86F16]" />
+                        </div>
                       </div>
-                      <div className="w-10 h-10 rounded-full border border-[#E7E2D9] flex items-center justify-center text-[#161616] group-hover:bg-[#E86F16] group-hover:text-white group-hover:border-[#E86F16] transition-all">
-                        <Download size={14} />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {["2 BHK Premium", "3 BHK Luxury", "4 BHK Deck Residence"].map((plan) => (
+                      <div key={plan} className="border border-[#E7E2D9] p-6 group hover:border-[#E86F16] transition-colors cursor-pointer flex justify-between items-center bg-[#FAF9F7]">
+                        <div>
+                          <h4 className="text-[#161616] mb-1" style={{ fontFamily: "var(--font-cinzel)", fontSize: "1.25rem", fontWeight: 600 }}>{plan}</h4>
+                          <span className="text-[#3F3F46]/60" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.875rem" }}>Request Floor Plan</span>
+                        </div>
+                        <div className="w-10 h-10 rounded-full border border-[#E7E2D9] flex items-center justify-center text-[#161616] group-hover:bg-[#E86F16] group-hover:text-white group-hover:border-[#E86F16] transition-all">
+                          <Download size={14} />
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </div>
+              
+              {/* Location Map */}
+              {project.mapEmbedUrl && (
+                <div className="mt-12 lg:mt-16 border-t border-[#E7E2D9] pt-12 lg:pt-16">
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-10 h-px bg-[#E86F16]" />
+                    <span className="text-[#3F3F46]/50" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.625rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+                      Location Map
+                    </span>
+                  </div>
+                  <div className="w-full aspect-square sm:aspect-video rounded-sm overflow-hidden border border-[#E7E2D9]">
+                    <iframe 
+                      src={project.mapEmbedUrl} 
+                      width="100%" 
+                      height="100%" 
+                      style={{ border: 0 }} 
+                      allowFullScreen 
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                    />
+                  </div>
+                </div>
+              )}
             </motion.div>
 
             <motion.div 
@@ -343,16 +392,20 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
                 
                 <div className="space-y-6 mb-10">
                   {[
+                    { label: "Site Address", value: project.siteAddress },
+                    { label: "Configuration Available", value: project.configurations || project.type },
+                    { label: "Current Status", value: project.statusDetailed || project.status },
                     { label: "Starting Price", value: project.price },
                     { label: "Land Parcel", value: project.area },
                     { label: "Total Residences", value: project.units },
-                    { label: "Completion Date", value: project.completion },
-                  ].map(stat => (
+                    { label: "Completion Date", value: project.completion !== "Completed" ? project.completion : null },
+                    { label: "MahaRERA Number", value: project.maharera },
+                  ].filter(stat => stat.value).map(stat => (
                     <div key={stat.label}>
                       <div className="text-[#3F3F46]/40 mb-1" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.625rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
                         {stat.label}
                       </div>
-                      <div className="text-[#161616]" style={{ fontFamily: "var(--font-josefin)", fontSize: "1rem", fontWeight: 500 }}>
+                      <div className="text-[#161616]" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.875rem", fontWeight: 500, lineHeight: 1.5 }}>
                         {stat.value}
                       </div>
                     </div>
