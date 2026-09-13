@@ -10,8 +10,7 @@ import { EASE_OUT_EXPO } from "@/lib/easing";
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your full name"),
-  email: z.string().email("Please enter a valid email"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
+  phone: z.string().min(10, "Please enter a valid mobile number"),
   remarks: z.string().optional(),
 });
 
@@ -91,47 +90,50 @@ export default function ContactSection() {
               with you within 24 hours to schedule a personalised site visit.
             </motion.p>
 
-            {/* Interactive Map with Glassmorphic Contact Details */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.18, ease: EASE_OUT_EXPO }}
+              className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-6"
+            >
+              <div className="flex items-start gap-3">
+                <MapPin size={16} className="text-[#E86F16] mt-1 shrink-0" />
+                <span className="text-[#3F3F46] font-josefin text-sm leading-relaxed">
+                  4, Rishabh shopping centre,<br />
+                  Opp. Gulmarg society, Nr. VNP & RC marg,<br />
+                  Chembur naka, Chembur (E), Mumbai 400071
+                </span>
+              </div>
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center gap-3">
+                  <Phone size={16} className="text-[#E86F16] shrink-0" />
+                  <span className="text-[#3F3F46] font-josefin text-sm">+91 99203 87722</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Mail size={16} className="text-[#E86F16] shrink-0" />
+                  <span className="text-[#3F3F46] font-josefin text-sm">sales@trishabh.com</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Clean Map */}
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.9, delay: 0.24, ease: EASE_OUT_EXPO }}
-              className="relative flex-1 min-h-[350px] w-full rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#E7E2D9]/60 group"
+              className="relative flex-1 min-h-[300px] w-full rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#E7E2D9]/60 group"
             >
-              {/* Grayscale Google Maps Embed */}
+              {/* Clean Google Maps Embed */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15082.90967341857!2d72.89423696504288!3d19.075775836894086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c5e227976e19%3A0xc3c6b245041a774c!2sChembur%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                src="https://maps.google.com/maps?q=Trishabh+Group,+4,+Rishabh+shopping+centre,+Chembur&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
-                style={{ border: 0, filter: "grayscale(100%) contrast(1.1) opacity(0.8)" }}
+                style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
               />
-              
-              {/* Frosted Glass Contact Info Overlay */}
-              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-white shadow-xl">
-                <div className="space-y-4">
-                  {[
-                    { Icon: Phone, text: "+91 22 XXX XXXXX" },
-                    { Icon: Mail, text: "info@trishabh.com" },
-                    { Icon: MapPin, text: "Trishabh House, Chembur, Mumbai" },
-                  ].map(({ Icon, text }) => (
-                    <div key={text} className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full border border-[#E7E2D9]/80 bg-white/50 flex items-center justify-center flex-shrink-0">
-                        <Icon size={14} className="text-[#E86F16]" />
-                      </div>
-                      <span
-                        className="text-[#161616] pt-1.5 leading-snug"
-                        style={{ fontFamily: "var(--font-josefin)", fontSize: "0.875rem" }}
-                      >
-                        {text}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </motion.div>
           </div>
 
@@ -182,12 +184,12 @@ export default function ContactSection() {
                     )}
                   </div>
                   
-                  <div className="space-y-2">
+                  <div className="space-y-2 col-span-1 sm:col-span-2">
                     <input
                       {...register("phone")}
                       type="tel"
                       className={inputCls}
-                      placeholder="Phone number"
+                      placeholder="Mobile number"
                       style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
                     />
                     {errors.phone && (
@@ -196,21 +198,6 @@ export default function ContactSection() {
                       </p>
                     )}
                   </div>
-                </div>
-
-                <div className="space-y-2">
-                  <input
-                    {...register("email")}
-                    type="email"
-                    className={inputCls}
-                    placeholder="Email address"
-                    style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
-                  />
-                  {errors.email && (
-                    <p className="text-[#E86F16]" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.75rem" }}>
-                      {errors.email.message}
-                    </p>
-                  )}
                 </div>
 
                 <div className="space-y-2">

@@ -5,7 +5,6 @@ import LenisProvider from "@/components/providers/LenisProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
-import Concierge from "@/components/ui/Concierge";
 import CustomCursor from "@/components/ui/CustomCursor";
 import Preloader from "@/components/ui/Preloader";
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -69,7 +68,6 @@ export default function RootLayout({
           <main className="min-h-screen">
             {children}
           </main>
-          <Concierge />
           <WhatsAppButton />
           <Footer />
         </LenisProvider>

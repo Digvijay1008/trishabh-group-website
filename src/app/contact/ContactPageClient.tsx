@@ -9,7 +9,6 @@ export default function ContactPageClient() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    email: "",
     remarks: ""
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -71,30 +70,36 @@ export default function ContactPageClient() {
               <div className="flex items-start gap-4">
                 <MapPin className="text-[#E86F16] mt-1 shrink-0" size={20} />
                 <p className="font-inter text-[#3F3F46] leading-relaxed">
-                  Trishabh Group Headquarters<br />
-                  12th Floor, The Capital Building<br />
-                  Bandra Kurla Complex (BKC)<br />
-                  Mumbai, Maharashtra 400051
+                  4, Rishabh shopping centre,<br />
+                  Opp. Gulmarg society, Nr. VNP & RC marg,<br />
+                  monorail station, Chembur naka,<br />
+                  Chembur (E), Mumbai 400 071.
                 </p>
               </div>
 
               <div className="flex items-center gap-4">
                 <Phone className="text-[#E86F16] shrink-0" size={20} />
-                <p className="font-inter text-[#3F3F46]">+91 22 6600 8800</p>
+                <p className="font-inter text-[#3F3F46]">+91 99203 87722</p>
               </div>
 
               <div className="flex items-center gap-4">
                 <Mail className="text-[#E86F16] shrink-0" size={20} />
-                <p className="font-inter text-[#3F3F46]">sales@trishabhgroup.com</p>
+                <p className="font-inter text-[#3F3F46]">sales@trishabh.com</p>
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="w-full h-64 bg-[#EBE7E0] rounded-sm relative overflow-hidden border border-[#E7E2D9] group">
-              <div className="absolute inset-0 flex items-center justify-center flex-col gap-2">
-                <MapPin className="text-[#161616]/20 group-hover:text-[#E86F16] transition-colors duration-500" size={32} />
-                <span className="font-inter text-[10px] tracking-widest text-[#161616]/40 uppercase">Interactive Map Integration</span>
-              </div>
+            {/* Real Map Integration */}
+            <div className="w-full h-64 rounded-sm relative overflow-hidden border border-[#E7E2D9] group">
+              <iframe
+                src="https://maps.google.com/maps?q=Trishabh+Group,+4,+Rishabh+shopping+centre,+Chembur&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
+              />
             </div>
           </motion.div>
 
@@ -146,28 +151,16 @@ export default function ContactPageClient() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/60 mb-2 font-inter">Phone Number *</label>
+                      <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/60 mb-2 font-inter">Mobile Number *</label>
                       <input
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 99999 99999"
+                        placeholder="+91 99203 87722"
                         className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 font-inter text-sm text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors rounded-sm placeholder:text-[#3F3F46]/30"
                         required
                       />
                     </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/60 mb-2 font-inter">Email Address *</label>
-                    <input
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="john@example.com"
-                      className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 font-inter text-sm text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors rounded-sm placeholder:text-[#3F3F46]/30"
-                      required
-                    />
                   </div>
 
                   <div>

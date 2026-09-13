@@ -23,7 +23,7 @@ const projectsData = {
     towerColor: "#8C7B6B",
     highlight: "#C8A870",
     image: "/images/elevations/trishabh-miraya.jpg",
-    vision: "Designed for the modern connoisseur, Miraya is an architectural triumph standing tall in the heart of Chembur. It seamlessly blends biophilic design principles with unparalleled luxury.",
+    vision: "Designed for the modern connoisseur, Miraya stands as an architectural landmark in Chembur. It seamlessly balances biophilic design principles with refined, uncompromising quality.",
     amenities: ["Infinity Edge Pool", "Private Cinema", "Sky Lounge", "State-of-the-art Gym", "Zen Garden"],
   },
   "trishabh-aura": {
@@ -56,9 +56,9 @@ const projectsData = {
     highlight: "#B89860",
     image: "/images/elevations/trishabh-greens.jpg",
     vision: [
-      "Venture into the realm of unimagined space that offers an unparalleled experience of grandeur and exclusivity encompassed with boundless greenery along with the fresh breeze of air that stirs your inner soul with contentment, pleasure and sheer-joy.",
-      "We are not referring to any distant or remote land but a place amidst the throbbing city of Mumbai, Chembur that offers tranquility, contentment and luxury.",
-      "Introducing Trishabh Greens, deluxe residencies that are curated to offer fine luxury and utmost comfort that makes every day enlivening and re-energizing. With 3 exclusive towers that offers a fine view of Bombay Presidency Golf Club and engulfs you in the ocean of opulence and grandeur.",
+      "Discover a living experience defined by expansive space and privacy, surrounded by deep, mature greenery that brings a rare sense of quiet to everyday life.",
+      "This is not a distant retreat, but a private enclave positioned right in the active center of Chembur, offering absolute tranquility without compromising on connectivity.",
+      "Introducing Trishabh Greens—three distinct residential towers engineered for comfort and scale. Overlooking the prestigious Bombay Presidency Golf Club, it delivers an everyday environment that feels both grounded and highly exclusive.",
       "Crystal - 1 BHK | Riviera - 2 & 2.5 BHK | Cypress - 3 BHK"
     ],
     amenities: ["Golf View Garden", "Swimming Pool", "Indoor Games", "Banquet Hall", "Gymnasium"],

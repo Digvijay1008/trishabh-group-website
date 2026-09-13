@@ -46,6 +46,9 @@ const navLinks = [
   { label: "Upcoming Projects", href: "/projects/upcoming" },
   { label: "Completed Projects", href: "/projects/completed" },
   { label: "Redevelopment", href: "/redevelopment" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Careers", href: "/careers" },
+  { label: "Blogs", href: "/blogs" },
   { label: "Contact Us", href: "/contact" },
 ];
 

@@ -108,7 +108,7 @@ export default function AboutPageClient() {
             <div className="flex flex-col gap-4">
               <h3 className="text-2xl text-[#161616]" style={{ fontFamily: "var(--font-cinzel)", fontWeight: 500 }}>100% Track Record</h3>
               <p className="text-[#3F3F46]/70 leading-relaxed text-sm" style={{ fontFamily: "var(--font-josefin)" }}>
-                We take pride in our 100% track record of Occupation Certificates (OC), a testament to our timely delivery and regulatory compliance. Each project is personally overseen by our leadership and executed by a team of seasoned professionals, ensuring meticulous attention to detail and superior construction standards.
+                We hold a 100% track record of securing Occupation Certificates (OC)—a rare benchmark of absolute compliance and timely delivery in Mumbai's real estate. Every property is overseen directly by our founders and executed by specialist teams, guaranteeing uncompromising structural integrity and refined finishes.
               </p>
             </div>
 
