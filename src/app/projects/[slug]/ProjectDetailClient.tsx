@@ -57,6 +57,16 @@ const projectsData = {
     image: "/images/elevations/trishabh-greens.jpg",
     vision: "Comprising of 3 magnificent towers offers breath-taking view of Golf Club right from the 1st floor offering sprawling residences with modern amenities.",
     amenities: ["Golf View Garden", "Swimming Pool", "Indoor Games", "Banquet Hall", "Gymnasium"],
+    siteAddress: "Opp Hanuman Temple, near VNP and RC Marg Monorail Station, Chembur East, Chembur, Mumbai, Maharashtra 400071",
+    maharera: "Wing A: P51800018331 | Wing B: P51800018350 | Wing C: P51800026305",
+    mapEmbedUrl: "https://maps.google.com/maps?q=Trishabh%20Greens%20Chembur&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    floorPlans: [
+      { name: "Cypress - 3 BHK (985 sq.ft)", image: "/images/floor-plans/greens/cypress_carpet_area_985_sqft.jpg" },
+      { name: "Cypress - 3 BHK (1069 sq.ft)", image: "/images/floor-plans/greens/cypress_carpet_area_1069_sqft.jpg" },
+      { name: "Riviera - 2 BHK", image: "/images/floor-plans/greens/riviera_2_bhk_new.jpg" },
+      { name: "Riviera - 2.5 BHK (613 sq.ft)", image: "/images/floor-plans/greens/riviera_carpet_area_613_sqft.jpg" },
+      { name: "Crystal - 1 BHK", image: "/images/floor-plans/greens/crystal_1_bhk_new.jpg" }
+    ]
   },
   "tulsi-meadows": {
     name: "Tulsi Meadows",
