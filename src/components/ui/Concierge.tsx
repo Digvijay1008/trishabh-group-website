@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, X, Building2, MapPin, Calendar, Smartphone, ExternalLink } from "lucide-react";
+import { MessageSquare, X, Building2, MapPin, Calendar, Smartphone, ExternalLink, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -64,7 +64,7 @@ export default function Concierge() {
           );
           break;
         case "visit":
-          botResponse.text = "Excellent. You can schedule a private site visit using our online booking system.";
+          botResponse.text = "Excellent. You can schedule a private site visit by contacting us.";
           botResponse.component = (
             <Link href="/contact" className="mt-2 inline-flex items-center gap-2 bg-[#E86F16] text-white text-[10px] uppercase tracking-wider px-4 py-2 rounded-full hover:bg-[#D4610F] transition-colors">
               <Calendar size={12} /> Book Now
@@ -73,13 +73,18 @@ export default function Concierge() {
           break;
         case "whatsapp":
           botResponse.text = "Connecting you to our Sales Team on WhatsApp...";
-          // Automatically trigger WhatsApp in a new tab after a brief delay
           setTimeout(() => {
-            window.open("https://wa.me/919999999999?text=Hello,%20I%20am%20interested%20in%20Trishabh%20Group%20projects.", "_blank");
+            window.open("https://wa.me/919920387722?text=Hello,%20I%20am%20interested%20in%20Trishabh%20Group%20projects.", "_blank");
           }, 1000);
           break;
+        case "call":
+          botResponse.text = "Calling our sales team at +91 99203 87722...";
+          setTimeout(() => {
+            window.open("tel:+919920387722", "_self");
+          }, 800);
+          break;
         case "redevelopment":
-          botResponse.text = "We are pioneers in redevelopment. Please fill out our specialized inquiry form so we can evaluate your property.";
+          botResponse.text = "We are pioneers in redevelopment. Visit our dedicated page to learn more.";
           botResponse.component = (
             <Link href="/redevelopment" className="mt-2 inline-flex items-center gap-2 bg-[#E86F16] text-white text-[10px] uppercase tracking-wider px-4 py-2 rounded-full hover:bg-[#D4610F] transition-colors">
               <Building2 size={12} /> Redevelopment Inquiry
@@ -185,6 +190,9 @@ export default function Concierge() {
                     </button>
                     <button onClick={() => handleOptionClick("Speak to Sales (WhatsApp)", "whatsapp")} className="text-left w-full p-3 rounded-xl bg-[#222222] hover:bg-[#2A2A2A] border border-white/5 text-white/80 text-xs transition-colors flex items-center gap-3">
                       <Smartphone size={14} className="text-[#E86F16]" /> Speak to Sales (WhatsApp)
+                    </button>
+                    <button onClick={() => handleOptionClick("Call Sales Team", "call")} className="text-left w-full p-3 rounded-xl bg-[#222222] hover:bg-[#2A2A2A] border border-white/5 text-white/80 text-xs transition-colors flex items-center gap-3">
+                      <Phone size={14} className="text-[#E86F16]" /> Call Sales Team
                     </button>
                     <button onClick={() => handleOptionClick("Redevelopment Inquiry", "redevelopment")} className="text-left w-full p-3 rounded-xl bg-[#222222] hover:bg-[#2A2A2A] border border-white/5 text-white/80 text-xs transition-colors flex items-center gap-3">
                       <MapPin size={14} className="text-[#E86F16]" /> Redevelopment Inquiry

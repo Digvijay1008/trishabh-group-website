@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import CustomCursor from "@/components/ui/CustomCursor";
 import Preloader from "@/components/ui/Preloader";
+import Concierge from "@/components/ui/Concierge";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from "next/script";
 
@@ -69,6 +70,7 @@ export default function RootLayout({
             {children}
           </main>
           <WhatsAppButton />
+          <Concierge />
           <Footer />
         </LenisProvider>
       </body>
