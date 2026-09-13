@@ -252,7 +252,7 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
       {/* The Vision & Specs */}
       <div className="py-12 lg:py-[120px]" ref={ref}>
         <div className="container-luxury">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             
             <motion.div 
               className="lg:col-span-7"
@@ -343,7 +343,17 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
                         </div>
                         <div className="p-4 border-t border-[#E7E2D9] bg-white flex justify-between items-center">
                           <h4 className="text-[#161616]" style={{ fontFamily: "var(--font-josefin)", fontWeight: 600 }}>{plan.name}</h4>
-                          <Download size={16} className="text-[#E86F16]" />
+                          <a 
+                            href={plan.image} 
+                            download 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="p-2 -mr-2 hover:bg-[#FAF9F7] rounded-full transition-colors cursor-pointer"
+                            title={`Download ${plan.name} Floor Plan`}
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <Download size={16} className="text-[#E86F16]" />
+                          </a>
                         </div>
                       </div>
                     ))}
@@ -390,12 +400,12 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
             </motion.div>
 
             <motion.div 
-              className="lg:col-span-4 lg:col-start-9"
+              className="lg:col-span-4 lg:col-start-9 lg:sticky lg:top-32"
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2, ease: EASE_OUT_EXPO }}
             >
-              <div className="bg-[#FAF9F7] border border-[#E7E2D9] p-6 sm:p-10 lg:sticky lg:top-32">
+              <div className="bg-[#FAF9F7] border border-[#E7E2D9] p-6 sm:p-10">
                 <h3 className="text-[#161616] mb-8 pb-6 border-b border-[#E7E2D9]" style={{ fontFamily: "var(--font-cinzel)", fontSize: "1.75rem" }}>
                   Project Details
                 </h3>
@@ -424,20 +434,13 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
 
                 <div className="space-y-4">
                   <Link
-                    href="/#contact"
+                    href="/contact"
                     className="w-full flex items-center justify-between bg-[#E86F16] text-white px-6 py-4 rounded-sm hover:bg-[#D4610F] transition-colors"
                     style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.15em", textTransform: "uppercase", fontWeight: 500 }}
                   >
                     Request Viewing
                     <ChevronRight size={14} />
                   </Link>
-                  <button
-                    className="w-full flex items-center justify-between bg-transparent border border-[#E7E2D9] text-[#161616] px-6 py-4 rounded-sm hover:border-[#161616] transition-colors"
-                    style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.15em", textTransform: "uppercase", fontWeight: 500 }}
-                  >
-                    Download Brochure
-                    <Download size={14} />
-                  </button>
                 </div>
               </div>
             </motion.div>
