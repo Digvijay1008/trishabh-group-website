@@ -45,7 +45,7 @@ const navLinks = [
   { label: "Current Projects", href: "/projects/current" },
   { label: "Upcoming Projects", href: "/projects/upcoming" },
   { label: "Completed Projects", href: "/projects/completed" },
-  { label: "Blogs", href: "/blogs" },
+  { label: "Redevelopment", href: "/redevelopment" },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -140,31 +140,30 @@ export default function Footer() {
                   className="text-white/55 text-sm leading-relaxed"
                   style={{ fontFamily: "var(--font-josefin)" }}
                 >
-                  Trishabh Group,<br />
-                  Mumbai, Maharashtra<br />
-                  <span className="text-white/30 text-xs">(Full address to be updated)</span>
+                  4, Rishabh shopping centre,<br />
+                  Opp. Gulmarg society, Nr. VNP & RC marg,<br />
+                  monorail station, Chembur naka,<br />
+                  Chembur (E), Mumbai 400 071.
                 </span>
               </li>
               <li>
                 <a
-                  href="tel:+919999999999"
+                  href="tel:+919920387722"
                   className="flex items-center gap-3.5 text-white/55 hover:text-white text-sm transition-colors duration-200"
                   style={{ fontFamily: "var(--font-josefin)" }}
                 >
                   <Phone size={14} className="text-[#E86F16] flex-shrink-0" />
-                  +91 XXXXX XXXXX
-                  <span className="text-white/25 text-xs">(Update with real number)</span>
+                  +91 99203 87722
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@trishabhgroup.com"
+                  href="mailto:sales@trishabh.com"
                   className="flex items-center gap-3.5 text-white/55 hover:text-white text-sm transition-colors duration-200"
                   style={{ fontFamily: "var(--font-josefin)" }}
                 >
                   <Mail size={14} className="text-[#E86F16] flex-shrink-0" />
-                  info@trishabhgroup.com
-                  <span className="text-white/25 text-xs">(Update)</span>
+                  sales@trishabh.com
                 </a>
               </li>
             </ul>

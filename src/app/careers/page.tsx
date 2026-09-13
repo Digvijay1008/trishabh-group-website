@@ -145,7 +145,7 @@ export default function CareersPage() {
               </p>
             </div>
             <a 
-              href="mailto:careers@trishabh.com" 
+              href="mailto:careers@trishabhgroup.com" 
               className="relative z-10 group/btn flex items-center justify-center gap-4 bg-[#161616] text-white rounded-full hover:bg-[#E86F16] transition-all duration-300 active:scale-[0.98]"
               style={{ padding: "8px 8px 8px 24px" }}
             >
