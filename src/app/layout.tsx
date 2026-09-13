@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
-import LenisProvider from "@/components/providers/LenisProvider";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
-import CustomCursor from "@/components/ui/CustomCursor";
-import Preloader from "@/components/ui/Preloader";
-import Concierge from "@/components/ui/Concierge";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from "next/script";
 
@@ -62,17 +55,7 @@ export default function RootLayout({
       </head>
       <body>
         <GoogleAnalytics gaId="G-YOUR-GA-MEASUREMENT-ID" />
-        <Preloader />
-        <LenisProvider>
-          <Navbar />
-          <CustomCursor />
-          <main className="min-h-[100dvh]">
-            {children}
-          </main>
-          <WhatsAppButton />
-          <Concierge />
-          <Footer />
-        </LenisProvider>
+        {children}
       </body>
     </html>
   );

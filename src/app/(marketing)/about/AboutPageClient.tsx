@@ -45,6 +45,11 @@ export default function AboutPageClient() {
                 className="border-l-2 border-[#E86F16]/30 pl-6 mb-8"
               >
                 <p
+                  className="text-[#3F3F46] leading-relaxed mb-6 font-serif text-lg md:text-xl"
+                >
+                  &quot;Quality is not an act, it is a habit.&quot; This philosophy has been the cornerstone of our journey...
+                </p>
+                <p
                   className="text-[#3F3F46] leading-relaxed max-w-lg italic"
                   style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.5rem" }}
                 >
