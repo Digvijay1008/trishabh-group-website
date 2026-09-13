@@ -376,7 +376,7 @@ export default function ProjectsSection({ initialProjects = [] }: { initialProje
                   textTransform: "uppercase",
                 }}
               >
-                Curated Collection
+                Currently in Development
               </span>
             </motion.div>
             <motion.h2
@@ -392,7 +392,7 @@ export default function ProjectsSection({ initialProjects = [] }: { initialProje
                 letterSpacing: "-0.02em",
               }}
             >
-              The<br /><em style={{ fontStyle: "italic" }}>Masterpieces</em>
+              Ongoing<br /><em style={{ fontStyle: "italic" }}>Projects</em>
             </motion.h2>
           </div>
 

@@ -258,27 +258,24 @@ export default function ProjectsPageClient({ category, initialProjects = [] }: P
           </motion.p>
         </div>
 
-        {/* Z-Axis Cascade Gallery */}
-        <div className="flex flex-col gap-10 md:gap-0 md:-space-y-24 items-center">
+        {/* Normal Stack Gallery */}
+        <div className="flex flex-col gap-16 items-center">
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {filteredProjects.map((project: any, index) => {
             const s = statusStyles[project.status];
-            // Compute rotation to simulate physical photo cards casually tossed on a table.
-            const rotClass = index % 2 === 0 ? "md:-rotate-[2deg]" : "md:rotate-[1.5deg]";
-            const translateClass = index % 2 === 0 ? "md:-translate-x-4" : "md:translate-x-4";
 
             return (
               <motion.div
                 key={project.name}
-                initial={{ opacity: 0, y: 80 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className={`group cursor-pointer w-full max-w-4xl relative z-[${index * 10}] ${translateClass} ${rotClass} hover:z-[999] transition-transform duration-700 will-change-transform`}
+                transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className={`group cursor-pointer w-full max-w-4xl relative transition-transform duration-700 will-change-transform hover:-translate-y-2`}
                 style={{ transform: "translateZ(0)" }}
               >
                 <Link href={`/projects/${project.slug}`}>
-                  <div className="bg-white rounded-[2rem] p-2 sm:p-3 overflow-hidden shadow-[0_20px_60px_-15px_rgba(22,22,22,0.1)] hover:shadow-[0_30px_80px_-20px_rgba(232,111,22,0.15)] border border-[#E7E2D9] transition-all duration-700 bg-clip-padding">
+                  <div className="bg-white rounded-[2rem] p-2 sm:p-3 overflow-hidden shadow-[0_10px_40px_-15px_rgba(22,22,22,0.08)] hover:shadow-[0_20px_60px_-15px_rgba(232,111,22,0.15)] border border-[#E7E2D9] transition-all duration-700 bg-clip-padding">
                     <div className="relative rounded-[calc(2rem-0.75rem)] overflow-hidden border border-black/5">
                       {/* Visual Area */}
                       <div className="h-[300px] sm:h-[450px] relative overflow-hidden" style={{ background: project.bgBase || "#EDE9E2" }}>

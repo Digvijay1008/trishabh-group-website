@@ -118,12 +118,12 @@ export default function AboutSection() {
           >
             {/* Large block */}
             <div
-              className="col-span-2 h-[280px] rounded-sm overflow-hidden relative"
+              className="col-span-2 h-[280px] rounded-[1rem] overflow-hidden relative"
               style={{ background: "#EDE9E2" }}
             >
               <Image
-                src="/lobby_legacy.png"
-                alt="Trishabh Legacy Lobby"
+                src="/images/elevations/trishabh-greens.jpg"
+                alt="Trishabh Greens"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -131,10 +131,10 @@ export default function AboutSection() {
             </div>
 
             {/* Small block 1 */}
-            <div className="h-[160px] rounded-sm overflow-hidden relative" style={{ background: "#E8E2D8" }}>
+            <div className="h-[160px] rounded-[1rem] overflow-hidden relative" style={{ background: "#E8E2D8" }}>
               <Image
-                src="/images/Trishabh_Signet.jpg"
-                alt="Trishabh Signet"
+                src="/images/elevations/trishabh-miraya.jpg"
+                alt="Trishabh Miraya"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 50vw, 16vw"
@@ -142,10 +142,10 @@ export default function AboutSection() {
             </div>
 
             {/* Small block 2 */}
-            <div className="h-[160px] rounded-sm overflow-hidden relative" style={{ background: "#EDE4D8" }}>
+            <div className="h-[160px] rounded-[1rem] overflow-hidden relative" style={{ background: "#EDE4D8" }}>
               <Image
-                src="/images/One_Meraki.jpg"
-                alt="One Meraki"
+                src="/images/elevations/trishabh-signet.jpg"
+                alt="Trishabh Signet"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 50vw, 16vw"
