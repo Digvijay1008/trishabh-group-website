@@ -258,8 +258,8 @@ export default function ProjectsPageClient({ category, initialProjects = [] }: P
           </motion.p>
         </div>
 
-        {/* Normal Stack Gallery */}
-        <div className="flex flex-col gap-16 items-center">
+        {/* 2-Column Grid Gallery */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 w-full">
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {filteredProjects.map((project: any, index) => {
             const s = statusStyles[project.status];
@@ -271,7 +271,7 @@ export default function ProjectsPageClient({ category, initialProjects = [] }: P
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className={`group cursor-pointer w-full max-w-4xl relative transition-transform duration-700 will-change-transform hover:-translate-y-2`}
+                className={`group cursor-pointer w-full relative transition-transform duration-700 will-change-transform hover:-translate-y-2`}
                 style={{ transform: "translateZ(0)" }}
               >
                 <Link href={`/projects/${project.slug}`}>

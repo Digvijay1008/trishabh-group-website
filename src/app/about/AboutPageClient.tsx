@@ -122,80 +122,92 @@ export default function AboutPageClient() {
         </div>
       </section>
 
-      {/* Leadership Section - Purely Typographic & Editorial */}
-      <section className="py-[120px] bg-[#FAF9F7]">
-        <div className="container-luxury max-w-5xl">
-          <div className="mb-20 text-center flex flex-col items-center">
-             <div className="flex items-center gap-4 mb-6">
-                <div className="w-10 h-px bg-[#E86F16]" />
-                <span className="text-[#3F3F46]/50" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
-                  Our Team
-                </span>
-                <div className="w-10 h-px bg-[#E86F16]" />
-             </div>
-             <h2 className="text-[#161616] max-w-2xl mx-auto mb-6" style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(2rem, 3vw, 2.75rem)", lineHeight: 1.2, letterSpacing: "-0.01em" }}>
-               Led by a legacy of entrepreneurial vision and <em style={{ fontStyle: "italic", color: "#E86F16" }}>strategic growth</em>
-             </h2>
-             <p className="text-[#3F3F46]/60 max-w-xl mx-auto" style={{ fontFamily: "var(--font-josefin)", fontSize: "1rem", lineHeight: 1.6 }}>
-               Anchored by its founding and next-generation leaders.
-             </p>
-          </div>
-          
-          <div className="flex flex-col gap-12">
-            {[
-              {
-                name: "Mr. Shantilal Haraklal Badala (Jain)",
-                desc: "A science graduate from Guru Nanak Khalsa College, Mr. Shantilal began his career in jewellery retail in 1986, managing the renowned Bhawani Jewellers in Chembur along with his brothers until 2009. He entered the real estate industry in 1999, and for over 26 years has been a driving force behind the Group’s development initiatives."
-              },
-              {
-                name: "Mr. Jaipal Haraklal Jain",
-                desc: "With a background in commerce, Mr. Jaipal started in jewellery retail in 1990 and transitioned into real estate development in 1999. His leadership and deep industry experience have been instrumental in expanding the Group’s footprint."
-              },
-              {
-                name: "Mr. Surendra Haraklal Jain",
-                desc: "An alumnus of R. A. Podar College, Mr. Surendra joined the family’s jewellery business in 1994 and ventured into real estate in 1999. With over two decades of hands-on involvement, he remains a key contributor to the Group’s success."
-              },
-              {
-                name: "Raj Shantilal Jain",
-                desc: "A graduate of R. A. Podar College and MBA from Narsee Monjee, Mr. Raj Jain joined the Group in 2009 and has since contributed extensively to the strategic growth and operations of all group real estate companies over the last 15 years."
-              },
-              {
-                name: "Mrs. Neha Kachara",
-                desc: "An accomplished Interior Designer, joined Trishabh Group in 2012. Her 14 years of expertise in interior design has helped transform the group's real estate ventures into thoughtfully curated living and working spaces that blend aesthetics with functionality."
-              },
-              {
-                name: "CA Mrs. Komal Raj Jain",
-                desc: "A qualified Chartered Accountant, Mrs. Komal Jain entered the Group in 2014 and continues to play a pivotal role in financial strategy, compliance, and operational excellence."
-              },
-              {
-                name: "Mr. Mannan Jaipal Jain",
-                desc: "A commerce graduate from Lala Lajpatrai College, Mr. Mannan Jain joined the business in 2022. His forward-looking approach and enthusiasm mark the promising next chapter of leadership."
-              },
-              {
-                name: "Mrs. Ria Jain",
-                desc: "An LLB graduate, has been serving as our trusted legal advisor since 2016. As a valued member of the Trishabh family, her legal expertise and unwavering dedication have played a pivotal role in successfully executing several of our most ambitious projects."
-              }
-            ].map((leader, i) => (
-              <motion.div 
-                key={leader.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: 0.1, ease: EASE_OUT_EXPO }}
-                className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 items-start py-8 border-b border-[#E7E2D9] last:border-b-0 group"
-              >
-                <div className="md:col-span-5">
-                  <h4 className="text-[#161616] text-2xl group-hover:text-[#E86F16] transition-colors duration-300" style={{ fontFamily: "var(--font-cinzel)", fontWeight: 500 }}>
-                    {leader.name}
-                  </h4>
-                </div>
-                <div className="md:col-span-7">
-                  <p className="text-[#3F3F46]/70 leading-relaxed text-sm md:text-base" style={{ fontFamily: "var(--font-josefin)" }}>
-                    {leader.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+      {/* Leadership Section - Editorial Split & Staggered Cards */}
+      <section className="py-[120px] bg-[#FAF9F7] relative">
+        <div className="container-luxury max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 relative items-start">
+            
+            {/* Left Side: Sticky Title */}
+            <div className="lg:col-span-4 relative">
+              <div className="sticky top-32">
+                 <div className="flex items-center gap-4 mb-6">
+                    <div className="w-10 h-px bg-[#E86F16]" />
+                    <span className="text-[#3F3F46]/50" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+                      Our Team
+                    </span>
+                 </div>
+                 <h2 className="text-[#161616] mb-6 pr-8" style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(2rem, 3vw, 2.75rem)", lineHeight: 1.2, letterSpacing: "-0.01em" }}>
+                   Led by a legacy of entrepreneurial vision and <em style={{ fontStyle: "italic", color: "#E86F16" }}>strategic growth</em>
+                 </h2>
+                 <p className="text-[#3F3F46]/60 max-w-sm" style={{ fontFamily: "var(--font-josefin)", fontSize: "1rem", lineHeight: 1.6 }}>
+                   Anchored by its founding and next-generation leaders.
+                 </p>
+              </div>
+            </div>
+            
+            {/* Right Side: Staggered Double-Bezel Cards */}
+            <div className="lg:col-span-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10">
+                {[
+                  {
+                    name: "Mr. Shantilal Haraklal Badala (Jain)",
+                    desc: "A science graduate from Guru Nanak Khalsa College, Mr. Shantilal began his career in jewellery retail in 1986, managing the renowned Bhawani Jewellers in Chembur along with his brothers until 2009. He entered the real estate industry in 1999, and for over 26 years has been a driving force behind the Group’s development initiatives."
+                  },
+                  {
+                    name: "Mr. Jaipal Haraklal Jain",
+                    desc: "With a background in commerce, Mr. Jaipal started in jewellery retail in 1990 and transitioned into real estate development in 1999. His leadership and deep industry experience have been instrumental in expanding the Group’s footprint."
+                  },
+                  {
+                    name: "Mr. Surendra Haraklal Jain",
+                    desc: "An alumnus of R. A. Podar College, Mr. Surendra joined the family’s jewellery business in 1994 and ventured into real estate in 1999. With over two decades of hands-on involvement, he remains a key contributor to the Group’s success."
+                  },
+                  {
+                    name: "Raj Shantilal Jain",
+                    desc: "A graduate of R. A. Podar College and MBA from Narsee Monjee, Mr. Raj Jain joined the Group in 2009 and has since contributed extensively to the strategic growth and operations of all group real estate companies over the last 15 years."
+                  },
+                  {
+                    name: "Mrs. Neha Kachara",
+                    desc: "An accomplished Interior Designer, joined Trishabh Group in 2012. Her 14 years of expertise in interior design has helped transform the group's real estate ventures into thoughtfully curated living and working spaces that blend aesthetics with functionality."
+                  },
+                  {
+                    name: "CA Mrs. Komal Raj Jain",
+                    desc: "A qualified Chartered Accountant, Mrs. Komal Jain entered the Group in 2014 and continues to play a pivotal role in financial strategy, compliance, and operational excellence."
+                  },
+                  {
+                    name: "Mr. Mannan Jaipal Jain",
+                    desc: "A commerce graduate from Lala Lajpatrai College, Mr. Mannan Jain joined the business in 2022. His forward-looking approach and enthusiasm mark the promising next chapter of leadership."
+                  },
+                  {
+                    name: "Mrs. Ria Jain",
+                    desc: "An LLB graduate, has been serving as our trusted legal advisor since 2016. As a valued member of the Trishabh family, her legal expertise and unwavering dedication have played a pivotal role in successfully executing several of our most ambitious projects."
+                  }
+                ].map((leader, i) => (
+                  <motion.div 
+                    key={leader.name}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, delay: (i % 2) * 0.1, ease: EASE_OUT_EXPO }}
+                    className={`group w-full ${i % 2 === 1 ? 'sm:mt-24' : ''}`}
+                  >
+                    {/* Outer Shell */}
+                    <div className="bg-white/40 rounded-[2rem] p-2 border border-[#E7E2D9] shadow-sm hover:shadow-[0_20px_60px_-15px_rgba(232,111,22,0.15)] transition-all duration-700 bg-clip-padding backdrop-blur-sm hover:-translate-y-2 h-full">
+                      {/* Inner Core */}
+                      <div className="bg-white rounded-[calc(2rem-0.5rem)] p-8 sm:p-10 border border-black/5 shadow-[inset_0_1px_2px_rgba(255,255,255,0.3)] h-full flex flex-col">
+                        <h4 className="text-[#161616] text-xl mb-4 group-hover:text-[#E86F16] transition-colors duration-500" style={{ fontFamily: "var(--font-cinzel)", fontWeight: 500 }}>
+                          {leader.name}
+                        </h4>
+                        <div className="w-8 h-px bg-[#E7E2D9] group-hover:bg-[#E86F16] group-hover:w-16 mb-6 transition-all duration-500" />
+                        <p className="text-[#3F3F46]/70 leading-relaxed text-[0.875rem]" style={{ fontFamily: "var(--font-josefin)" }}>
+                          {leader.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
