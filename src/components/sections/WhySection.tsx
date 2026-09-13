@@ -7,23 +7,23 @@ import { EASE_OUT_EXPO } from "@/lib/easing";
 const pillars = [
   {
     no: "01",
-    title: "100% OC Guaranteed",
-    body: "Every project we deliver has received Occupancy Certificate. No exceptions, no delays to your possession.",
+    title: "Delivered on Time",
+    body: "We know that waiting for your home is stressful. That's why we stick strictly to our timelines and ensure the Occupancy Certificate (OC) is ready before you move in.",
   },
   {
     no: "02",
-    title: "Zero Compromise Quality",
-    body: "German fittings, Italian marble, structural steel that exceeds BIS standards. We source the best so you live the best.",
+    title: "Built to Last",
+    body: "We never cut corners. From the deep foundation to the final coat of paint, we use high-quality materials because your family's safety and comfort come first.",
   },
   {
     no: "03",
-    title: "Transparent Dealings",
-    body: "No hidden charges. No last-minute surprises. Our agreements are plain-language and legally airtight.",
+    title: "Complete Transparency",
+    body: "No hidden costs and no confusing jargon. We believe in clear, straightforward communication so you always know exactly what you are paying for.",
   },
   {
     no: "04",
-    title: "Post-Handover Care",
-    body: "Our relationship doesn't end at possession. Dedicated after-sales and society management support for 5 years.",
+    title: "Here for You, Always",
+    body: "Handing over the keys isn't the end of our journey together. Our dedicated support team is always just a call away, ready to help you settle in comfortably.",
   },
 ];
 
@@ -32,11 +32,11 @@ export default function WhySection() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} id="why" className="bg-[#FAF9F7] py-16 lg:py-24 border-t border-[#E7E2D9]">
+    <section ref={ref} id="why" className="bg-[#FAF9F7] py-20 lg:py-32 border-t border-[#E7E2D9]">
       <div className="container-luxury">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
           {/* Left — sticky heading */}
-          <div className="lg:sticky lg:top-[100px] lg:self-start">
+          <div className="lg:sticky lg:top-[120px] lg:self-start">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -45,11 +45,11 @@ export default function WhySection() {
             >
               <div className="w-10 h-px bg-[#E86F16]" />
               <span
-                className="text-[#3F3F46]/50"
+                className="text-[#3F3F46]/60"
                 style={{
                   fontFamily: "var(--font-josefin)",
-                  fontSize: "0.625rem",
-                  letterSpacing: "0.2em",
+                  fontSize: "0.6875rem",
+                  letterSpacing: "0.25em",
                   textTransform: "uppercase",
                 }}
               >
@@ -64,57 +64,58 @@ export default function WhySection() {
               className="text-[#161616] mb-8"
               style={{
                 fontFamily: "var(--font-cinzel)",
-                fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
+                fontSize: "clamp(2.25rem, 4vw, 4rem)",
                 fontWeight: 400,
-                lineHeight: 1.05,
-                letterSpacing: "-0.02em",
+                lineHeight: 1.1,
+                letterSpacing: "-0.01em",
               }}
             >
-              Your life&apos;s biggest<br />
-              <em style={{ fontStyle: "italic" }}>investment deserves<br />this level of care.</em>
+              Building homes<br />
+              <em style={{ fontStyle: "italic", color: "#E86F16" }}>you can trust,</em><br />
+              for generations.
             </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.18, ease: EASE_OUT_EXPO }}
-              className="text-[#3F3F46]/60 leading-relaxed max-w-sm"
-              style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
+              className="text-[#3F3F46]/70 leading-relaxed max-w-md"
+              style={{ fontFamily: "var(--font-josefin)", fontSize: "1.0625rem" }}
             >
-              We&apos;ve seen what happens when developers cut corners. We built Trishabh
-              Group to be the antidote — where every promise is a commitment in writing.
+              At Trishabh Group, we know that buying a home is deeply personal. It's not just a transaction; it's a milestone. That's why we focus on absolute transparency, reliable quality, and keeping our word — so you can focus on building memories.
             </motion.p>
           </div>
 
           {/* Right — pillars */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mt-12 lg:mt-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-8 mt-12 lg:mt-0">
             {pillars.map(({ no, title, body }, i) => (
               <motion.div
                 key={no}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.12 + i * 0.1, ease: EASE_OUT_EXPO }}
-                className="bg-white border border-[#E7E2D9] p-6 lg:p-8 rounded-2xl group hover:border-[#E86F16]/30 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between"
-                style={{ minHeight: "220px" }}
+                transition={{ duration: 0.9, delay: 0.15 + i * 0.1, ease: EASE_OUT_EXPO }}
+                className="bg-white border border-[#E7E2D9]/70 p-8 lg:p-10 rounded-[2rem] group hover:-translate-y-1.5 hover:border-[#E86F16]/30 hover:shadow-[0_20px_40px_-12px_rgba(232,111,22,0.08)] transition-all duration-500 flex flex-col justify-between"
+                style={{ minHeight: "260px" }}
               >
                 <div>
                   <span
-                    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#FAF9F7] text-[#E86F16] mb-6 border border-[#E7E2D9] group-hover:bg-[#E86F16] group-hover:text-white transition-colors duration-500"
+                    className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#FAF9F7] text-[#E86F16] mb-8 border border-[#E7E2D9] group-hover:bg-[#E86F16] group-hover:text-white transition-colors duration-500"
                     style={{
                       fontFamily: "var(--font-josefin)",
-                      fontSize: "0.6875rem",
-                      letterSpacing: "0.12em",
+                      fontSize: "0.8125rem",
+                      letterSpacing: "0.15em",
+                      fontWeight: 500,
                     }}
                   >
                     {no}
                   </span>
                   <h3
-                    className="text-[#161616] mb-3"
+                    className="text-[#161616] mb-4"
                     style={{
                       fontFamily: "var(--font-cinzel)",
-                      fontSize: "1.25rem",
+                      fontSize: "1.375rem",
                       fontWeight: 500,
-                      lineHeight: 1.2,
+                      lineHeight: 1.25,
                     }}
                   >
                     {title}
@@ -122,7 +123,7 @@ export default function WhySection() {
                 </div>
                 <p
                   className="text-[#3F3F46]/70 leading-relaxed"
-                  style={{ fontFamily: "var(--font-josefin)", fontSize: "0.875rem" }}
+                  style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}
                 >
                   {body}
                 </p>
