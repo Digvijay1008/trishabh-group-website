@@ -255,6 +255,31 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
         </div>
       </div>
 
+      {/* Embedded Dedicated Website */}
+      {project.dedicatedWebsite && (
+        <div className="border-t border-[#E7E2D9]">
+          <div className="container-luxury py-12 md:py-16">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-10 h-px bg-[#E86F16]" />
+              <span className="text-[#3F3F46]/50" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.625rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+                Explore {project.name}
+              </span>
+            </div>
+          </div>
+          <div className="w-full" style={{ height: "100vh" }}>
+            <iframe
+              src={project.dedicatedWebsite}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              title={`${project.name} - Dedicated Website`}
+              loading="lazy"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
+
       {/* The Vision & Specs */}
       <div className="py-12 lg:py-[120px]" ref={ref}>
         <div className="container-luxury">
