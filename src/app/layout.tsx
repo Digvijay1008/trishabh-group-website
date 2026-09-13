@@ -66,7 +66,7 @@ export default function RootLayout({
         <LenisProvider>
           <Navbar />
           <CustomCursor />
-          <main className="min-h-screen" style={{ paddingTop: "clamp(64px, 8vh, 88px)" }}>
+          <main className="min-h-screen">
             {children}
           </main>
           <Concierge />

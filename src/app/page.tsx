@@ -1,11 +1,8 @@
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
-import VisionSection from "@/components/sections/VisionSection";
-import ProjectsSection from "@/components/sections/ProjectsSection";
-import AmenitiesSection from "@/components/sections/AmenitiesSection";
 import MetricsSection from "@/components/sections/MetricsSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
 import WhySection from "@/components/sections/WhySection";
-import NeighborhoodsSection from "@/components/sections/NeighborhoodsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import { client } from "@/sanity/lib/client";
@@ -36,12 +33,9 @@ export default async function Home() {
     <>
       <HeroSection />
       <AboutSection />
-      <VisionSection />
-      <ProjectsSection initialProjects={sanityProjects} />
-      <AmenitiesSection />
       <MetricsSection />
+      <ProjectsSection initialProjects={sanityProjects} />
       <WhySection />
-      <NeighborhoodsSection />
       <TestimonialsSection />
       <ContactSection />
     </>
