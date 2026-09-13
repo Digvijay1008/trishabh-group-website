@@ -16,7 +16,7 @@ const galleryImages = [
   { id: 6, src: "/images/elevations/trishabh-greens.jpg", category: "Trishabh Greens", span: "md:col-span-2 md:row-span-1" },
   
   // Block 3
-  { id: 7, src: "/images/One_Meraki.jpg", category: "One Meraki", span: "md:col-span-2 md:row-span-1" },
+  { id: 7, src: "/images/5.jpg", category: "Modern Residences", span: "md:col-span-2 md:row-span-1" },
   { id: 8, src: "/images/Tulsi Meadows Photo for Picture frame.jpg", category: "Tulsi Meadows", span: "md:col-span-1 md:row-span-2" },
   { id: 9, src: "/images/Raj Jain Front View 01.jpg", category: "Raj Jain", span: "md:col-span-1 md:row-span-1" },
   
