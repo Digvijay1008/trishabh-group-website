@@ -55,7 +55,12 @@ const projectsData = {
     towerColor: "#7A6B5B",
     highlight: "#B89860",
     image: "/images/elevations/trishabh-greens.jpg",
-    vision: "Comprising of 3 magnificent towers offers breath-taking view of Golf Club right from the 1st floor offering sprawling residences with modern amenities.",
+    vision: [
+      "Venture into the realm of unimagined space that offers an unparalleled experience of grandeur and exclusivity encompassed with boundless greenery along with the fresh breeze of air that stirs your inner soul with contentment, pleasure and sheer-joy.",
+      "We are not referring to any distant or remote land but a place amidst the throbbing city of Mumbai, Chembur that offers tranquility, contentment and luxury.",
+      "Introducing Trishabh Greens, deluxe residencies that are curated to offer fine luxury and utmost comfort that makes every day enlivening and re-energizing. With 3 exclusive towers that offers a fine view of Bombay Presidency Golf Club and engulfs you in the ocean of opulence and grandeur.",
+      "Crystal - 1 BHK | Riviera - 2 & 2.5 BHK | Cypress - 3 BHK"
+    ],
     amenities: ["Golf View Garden", "Swimming Pool", "Indoor Games", "Banquet Hall", "Gymnasium"],
     siteAddress: "Opp Hanuman Temple, near VNP and RC Marg Monorail Station, Chembur East, Chembur, Mumbai, Maharashtra 400071",
     maharera: "Wing A: P51800018331 | Wing B: P51800018350 | Wing C: P51800026305",
@@ -81,7 +86,7 @@ const projectsData = {
     towerColor: "#9A8A7A",
     highlight: "#D4B888",
     image: "/images/elevations/tulsi-meadows.jpg",
-    vision: "Chembur's first ever 7 storey building with Rooftop swimming pool, Gymnasium, Steam room, Yoga & Meditation room Banquet hall & much more.",
+    vision: "Tulsi Meadows, a contemporary 7-storey building with stilt plus podium, is one of the most exclusive creations of Trishabh Group. This imperial residential complex, located in a peaceful neighbourhood, is totally devoid of vehicular movement. It comprises lavish 3 BHK apartments with four flats per floor, offering state-of-the-art amenities in an earthquake resistant design.",
     amenities: ["Yoga & Meditation Room", "Swimming Pool", "Steam Room", "Banquet Hall", "Gymnasium"],
   },
   "trishabh-signet": {
@@ -138,7 +143,7 @@ const projectsData = {
     towerColor: "#7A6B5B",
     highlight: "#B89860",
     image: "/images/elevations/prabhat.jpg",
-    vision: "A 6-storey residential cum commercial building with well plan layout offering 2 & 3 BHK Residences located on most prime location of Chembur.",
+    vision: "A 7-storey residential cum commercial building with a well-planned layout offering 2 & 3 BHK residences located in a prime location, Off Sion-Trombay road, Chembur (E).",
     amenities: ["Prime Location", "Commercial Spaces", "Well-Planned Layout"],
   },
   "tulsi-villa": {
@@ -154,7 +159,7 @@ const projectsData = {
     towerColor: "#707A8A",
     highlight: "#88A2C2",
     image: "/images/elevations/tulsi-villa.jpg",
-    vision: "A beautiful residential development offering premium 2 BHK homes in the heart of Chembur with top-class construction.",
+    vision: "Tulsi Villa celebrates the joys of living in tastefully designed spaces, right next to Tulsi Classic. Offering skillfully designed 3 BHK with maximum useable space. Each home is a blend of bespoke luxury and contemporary design, resulting in a holistic experience that is beyond compare.",
     amenities: ["Residential Complex", "Premium Finish"],
   },
   "tulsi-classic": {
@@ -170,7 +175,7 @@ const projectsData = {
     towerColor: "#8C7B6B",
     highlight: "#C8A870",
     image: "/images/elevations/tulsi-classic.jpg",
-    vision: "A classic creation complete with top-of-the-line amenities and facilities combined with a liberal sprinkling of greenery.",
+    vision: "Tulsi Classic at the Postal Colony in Chembur is a classic creation complete with top-of-the-line amenities and facilities combined with a liberal sprinkling of greenery. A contemporary 7-storey building with a well-planned layout, Tulsi Classic offers two 2 BHK flats per storey. Enjoy the experience of living in these aesthetically appointed apartments laced with comforts.",
     amenities: ["Top-of-the-line Facilities", "Greenery & Landscaping"],
   },
   "tulsi-majestic": {
@@ -280,9 +285,12 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
                   })}
                 </div>
               ) : (
-                <p className="text-[#3F3F46]/70 leading-relaxed text-lg" style={{ fontFamily: "var(--font-josefin)" }}>
-                  {project.vision || project.shortDescription}
-                </p>
+                <div className="text-[#3F3F46]/70 leading-relaxed text-[1.0625rem] space-y-6" style={{ fontFamily: "var(--font-josefin)" }}>
+                  {Array.isArray(project.vision) 
+                    ? project.vision.map((p: string, i: number) => <p key={i}>{p}</p>)
+                    : <p>{project.vision || project.shortDescription}</p>
+                  }
+                </div>
               )}
               
               {project.amenities && project.amenities.length > 0 && (
