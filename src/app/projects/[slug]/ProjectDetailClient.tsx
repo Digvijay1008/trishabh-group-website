@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowLeft, CheckCircle2, ChevronRight, Download, MapPin } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ChevronRight, Download, ExternalLink, MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { EASE_OUT_EXPO } from "@/lib/easing";
@@ -25,6 +25,7 @@ const projectsData = {
     image: "/images/elevations/trishabh-miraya.jpg",
     vision: "Designed for the modern connoisseur, Miraya stands as an architectural landmark in Chembur. It seamlessly balances biophilic design principles with refined, uncompromising quality.",
     amenities: ["Infinity Edge Pool", "Private Cinema", "Sky Lounge", "State-of-the-art Gym", "Zen Garden"],
+    dedicatedWebsite: "https://trishabhmiraya.com/",
   },
   "trishabh-aura": {
     name: "Trishabh Aura",
@@ -449,6 +450,18 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
                     Request Viewing
                     <ChevronRight size={14} />
                   </Link>
+                  {project.dedicatedWebsite && (
+                    <a
+                      href={project.dedicatedWebsite}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-between bg-[#161616] text-white px-6 py-4 rounded-sm hover:bg-[#2a2a2a] transition-colors"
+                      style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.15em", textTransform: "uppercase", fontWeight: 500 }}
+                    >
+                      Visit Dedicated Website
+                      <ExternalLink size={14} />
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
