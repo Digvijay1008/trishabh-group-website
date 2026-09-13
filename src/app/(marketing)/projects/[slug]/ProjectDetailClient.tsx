@@ -219,13 +219,6 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
           className="w-full h-full border-none"
           allowFullScreen
         />
-        <Link 
-          href="/projects" 
-          className="absolute top-4 left-4 md:top-6 md:left-6 z-[100000] bg-black/80 hover:bg-black text-white px-5 py-2.5 rounded-full text-xs tracking-wider uppercase transition-colors flex items-center gap-2 backdrop-blur-md border border-white/10"
-          style={{ fontFamily: "var(--font-josefin)" }}
-        >
-          <ArrowLeft size={14} /> Back to Projects
-        </Link>
       </div>
     );
   }
