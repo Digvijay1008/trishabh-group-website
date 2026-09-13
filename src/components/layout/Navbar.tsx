@@ -54,8 +54,8 @@ export default function Navbar() {
       >
         <div className={`rounded-full p-2 pl-6 pr-2.5 flex items-center justify-between border transition-all duration-500 ${
           scrolled 
-            ? "bg-white/30 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] border-white/40" 
-            : "bg-white/20 backdrop-blur-lg shadow-lg border-white/30"
+            ? "bg-white/85 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-white/60" 
+            : "bg-white/70 backdrop-blur-md shadow-lg border-white/50"
         }`}>
           {/* Logo */}
           <Link href="/" className="inline-flex items-center group flex-shrink-0">

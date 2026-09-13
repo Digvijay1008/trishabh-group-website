@@ -163,27 +163,6 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Minimal Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.0, duration: 1 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 lg:left-12 lg:translate-x-0 z-10 flex flex-col items-center gap-2"
-      >
-        <span 
-          className="text-white/30 tracking-[0.3em] uppercase"
-          style={{ fontFamily: "var(--font-josefin)", fontSize: "0.5rem" }}
-        >
-          Scroll
-        </span>
-        <div className="w-px h-8 bg-white/10 relative overflow-hidden">
-          <motion.div
-            animate={{ y: ["-100%", "100%"] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 w-full h-full bg-[#E86F16]"
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }

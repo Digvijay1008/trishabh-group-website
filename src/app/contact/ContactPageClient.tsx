@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, MapPin, Phone, Mail, Check } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Mail, Check } from "lucide-react";
 import { EASE_OUT_EXPO } from "@/lib/easing";
 
 export default function ContactPageClient() {
-  const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -16,24 +15,18 @@ export default function ContactPageClient() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleNext = () => setStep((s) => Math.min(s + 1, 3));
-  const handlePrev = () => setStep((s) => Math.max(s - 1, 0));
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (step < 3) {
-      handleNext();
-    } else {
-      // Simulate submission
-      setIsSubmitted(true);
-    }
+    // Simulate submission
+    setIsSubmitted(true);
   };
+
   return (
     <div className="bg-[#FAF9F7] min-h-screen pt-32 pb-24">
       <div className="container-luxury">
         
         {/* Header */}
-        <div className="mb-20 text-center max-w-3xl mx-auto">
+        <div className="mb-16 lg:mb-20 text-center max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,14 +57,14 @@ export default function ContactPageClient() {
           </motion.h1>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
           
           {/* Left Column - Info & Map */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: EASE_OUT_EXPO }}
-            className="space-y-12"
+            className="space-y-12 lg:col-span-2"
           >
             <div className="space-y-8">
               <h3 className="font-cormorant text-3xl text-[#161616]">Corporate Office</h3>
@@ -106,169 +99,125 @@ export default function ContactPageClient() {
             </div>
           </motion.div>
 
-          {/* Right Column - Form */}
+          {/* Right Column - Normal Form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: EASE_OUT_EXPO }}
-            className="bg-white p-10 lg:p-14 border border-[#E7E2D9] rounded-sm shadow-[0_8px_40px_-12px_rgba(22,22,22,0.05)]"
+            className="bg-white p-8 lg:p-12 border border-[#E7E2D9] rounded-sm shadow-[0_8px_40px_-12px_rgba(22,22,22,0.05)] lg:col-span-3"
           >
-            <div className="h-[400px] flex flex-col justify-between">
-              <AnimatePresence mode="wait">
-                {isSubmitted ? (
-                  <motion.div
-                    key="success"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="flex flex-col items-center justify-center h-full text-center space-y-6"
-                  >
-                    <div className="w-16 h-16 rounded-full bg-[#E86F16]/10 flex items-center justify-center text-[#E86F16] mb-4">
-                      <Check size={32} />
+            <AnimatePresence mode="wait">
+              {isSubmitted ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col items-center justify-center text-center space-y-6 py-20"
+                >
+                  <div className="w-16 h-16 rounded-full bg-[#E86F16]/10 flex items-center justify-center text-[#E86F16] mb-4">
+                    <Check size={32} />
+                  </div>
+                  <h3 className="font-cormorant text-3xl text-[#161616]">Inquiry Sent Successfully</h3>
+                  <p className="font-inter text-[#3F3F46] max-w-sm mx-auto text-sm leading-relaxed">
+                    Thank you for reaching out to Trishabh Group. A luxury real estate advisor will contact you shortly.
+                  </p>
+                </motion.div>
+              ) : (
+                <motion.form
+                  key="form"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="space-y-6"
+                  onSubmit={handleSubmit}
+                >
+                  <h3 className="font-cormorant text-2xl text-[#161616] mb-6 border-b border-[#E7E2D9] pb-4">
+                    Send us a message
+                  </h3>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/60 mb-2 font-inter">Full Name *</label>
+                      <input
+                        type="text"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        placeholder="John Doe"
+                        className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 font-inter text-sm text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors rounded-sm placeholder:text-[#3F3F46]/30"
+                        required
+                      />
                     </div>
-                    <h3 className="font-cormorant text-3xl text-[#161616]">Inquiry Sent Successfully</h3>
-                    <p className="font-inter text-[#3F3F46] max-w-sm mx-auto text-sm leading-relaxed">
-                      Thank you for reaching out to Trishabh Group. A luxury real estate advisor will contact you shortly.
-                    </p>
-                  </motion.div>
-                ) : (
-                  <motion.form
-                    key={step}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.4, ease: EASE_OUT_EXPO }}
-                    className="space-y-8 h-full flex flex-col"
-                    onSubmit={handleSubmit}
-                  >
-                    {/* Step Indicators */}
-                    <div className="flex items-center gap-2 mb-8">
-                      {[0, 1, 2, 3].map((i) => (
-                        <div
-                          key={i}
-                          className={`h-1 flex-1 rounded-full transition-colors duration-500 ${
-                            i <= step ? "bg-[#E86F16]" : "bg-[#E7E2D9]"
-                          }`}
-                        />
-                      ))}
+                    <div>
+                      <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/60 mb-2 font-inter">Phone Number *</label>
+                      <input
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="+91 99999 99999"
+                        className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 font-inter text-sm text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors rounded-sm placeholder:text-[#3F3F46]/30"
+                        required
+                      />
                     </div>
+                  </div>
 
-                    <div className="flex-grow flex flex-col justify-center">
-                      {step === 0 && (
-                        <div className="space-y-6">
-                          <label className="font-cormorant text-3xl text-[#161616] block mb-2">
-                            What is your full name?
-                          </label>
-                          <input
-                            type="text"
-                            autoFocus
-                            value={formData.name}
-                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            placeholder="e.g. John Doe"
-                            className="w-full bg-transparent border-b border-[#E7E2D9] px-0 py-4 font-inter text-lg text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors placeholder:text-[#3F3F46]/30"
-                            required
-                          />
-                        </div>
-                      )}
-
-                      {step === 1 && (
-                        <div className="space-y-8">
-                          <label className="font-cormorant text-3xl text-[#161616] block mb-2">
-                            How can we reach you?
-                          </label>
-                          <div className="space-y-6">
-                            <input
-                              type="email"
-                              autoFocus
-                              value={formData.email}
-                              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                              placeholder="Email Address"
-                              className="w-full bg-transparent border-b border-[#E7E2D9] px-0 py-4 font-inter text-lg text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors placeholder:text-[#3F3F46]/30"
-                              required
-                            />
-                            <input
-                              type="tel"
-                              value={formData.phone}
-                              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                              placeholder="Phone Number"
-                              className="w-full bg-transparent border-b border-[#E7E2D9] px-0 py-4 font-inter text-lg text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors placeholder:text-[#3F3F46]/30"
-                              required
-                            />
-                          </div>
-                        </div>
-                      )}
-
-                      {step === 2 && (
-                        <div className="space-y-6">
-                          <label className="font-cormorant text-3xl text-[#161616] block mb-2">
-                            Which project interests you?
-                          </label>
-                          <select
-                            autoFocus
-                            value={formData.project}
-                            onChange={(e) => setFormData({ ...formData, project: e.target.value })}
-                            className="w-full bg-transparent border-b border-[#E7E2D9] px-0 py-4 font-inter text-lg text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors appearance-none cursor-pointer"
-                          >
-                            <option>General Inquiry</option>
-                            <option>Trishabh Miraya (Ongoing)</option>
-                            <option>Trishabh Greens (Completed)</option>
-                            <option>Tulsi Meadows (Completed)</option>
-                          </select>
-                        </div>
-                      )}
-
-                      {step === 3 && (
-                        <div className="space-y-6">
-                          <label className="font-cormorant text-3xl text-[#161616] block mb-2">
-                            How can we assist you?
-                          </label>
-                          <textarea
-                            autoFocus
-                            rows={3}
-                            value={formData.message}
-                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                            placeholder="Tell us about your requirements..."
-                            className="w-full bg-transparent border-b border-[#E7E2D9] px-0 py-4 font-inter text-lg text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors resize-none placeholder:text-[#3F3F46]/30"
-                          />
-                        </div>
-                      )}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/60 mb-2 font-inter">Email Address *</label>
+                      <input
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="john@example.com"
+                        className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 font-inter text-sm text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors rounded-sm placeholder:text-[#3F3F46]/30"
+                        required
+                      />
                     </div>
-
-                    <div className="flex items-center justify-between pt-8 border-t border-[#E7E2D9]">
-                      {step > 0 ? (
-                        <button
-                          type="button"
-                          onClick={handlePrev}
-                          className="flex items-center gap-2 text-[#3F3F46] hover:text-[#161616] font-inter text-xs tracking-widest uppercase transition-colors"
-                        >
-                          <ArrowLeft size={14} /> Back
-                        </button>
-                      ) : (
-                        <div />
-                      )}
-                      
-                      <button
-                        type="submit"
-                        className="group flex items-center gap-4 bg-[#E86F16] text-white rounded-full hover:bg-[#D4610F] transition-all duration-300"
-                        style={{ padding: "8px 8px 8px 24px" }}
+                    <div>
+                      <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/60 mb-2 font-inter">Project of Interest</label>
+                      <select
+                        value={formData.project}
+                        onChange={(e) => setFormData({ ...formData, project: e.target.value })}
+                        className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 font-inter text-sm text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors appearance-none cursor-pointer rounded-sm"
                       >
-                        <span className="font-inter text-[11px] tracking-[0.15em] uppercase font-semibold mt-0.5">
-                          {step === 3 ? "Submit Inquiry" : "Next Step"}
-                        </span>
-                        <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 group-hover:translate-x-1 group-hover:-translate-y-[1px]">
-                          <ArrowRight size={14} className="text-white" />
-                        </div>
-                      </button>
+                        <option>General Inquiry</option>
+                        <option>Trishabh Miraya (Ongoing)</option>
+                        <option>Trishabh Greens (Completed)</option>
+                        <option>Tulsi Meadows (Completed)</option>
+                      </select>
                     </div>
-                  </motion.form>
-                )}
-              </AnimatePresence>
-            </div>
+                  </div>
 
-            {!isSubmitted && (
-              <p className="text-[10px] text-[#3F3F46]/60 font-inter text-center mt-8 leading-relaxed max-w-sm mx-auto">
-                By submitting this form, you authorize Trishabh Group and its representatives to contact you.
-              </p>
-            )}
+                  <div>
+                    <label className="block text-xs uppercase tracking-widest text-[#3F3F46]/60 mb-2 font-inter">Message</label>
+                    <textarea
+                      rows={4}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="How can we assist you?"
+                      className="w-full bg-[#FAF9F7] border border-[#E7E2D9] px-4 py-3 font-inter text-sm text-[#161616] focus:outline-none focus:border-[#E86F16] transition-colors resize-none rounded-sm placeholder:text-[#3F3F46]/30"
+                    />
+                  </div>
+
+                  <div className="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <p className="text-[10px] text-[#3F3F46]/60 font-inter leading-relaxed max-w-xs">
+                      By submitting this form, you authorize Trishabh Group and its representatives to contact you.
+                    </p>
+                    
+                    <button
+                      type="submit"
+                      className="group flex items-center justify-center gap-3 bg-[#E86F16] text-white rounded-full hover:bg-[#D4610F] transition-all duration-300 w-full sm:w-auto"
+                      style={{ padding: "8px 8px 8px 24px" }}
+                    >
+                      <span className="font-inter text-[11px] tracking-[0.15em] uppercase font-semibold mt-0.5">
+                        Submit Inquiry
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 group-hover:translate-x-1 group-hover:-translate-y-[1px]">
+                        <ArrowRight size={14} className="text-white" />
+                      </div>
+                    </button>
+                  </div>
+                </motion.form>
+              )}
+            </AnimatePresence>
           </motion.div>
 
         </div>
