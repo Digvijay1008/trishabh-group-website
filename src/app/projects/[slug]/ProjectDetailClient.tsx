@@ -209,9 +209,9 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
   }
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-[100dvh]">
       {/* Immersive Hero */}
-      <div className="relative h-[80vh] min-h-[600px] w-full flex items-end pb-24" style={{ background: project.bgBase || "#EDE9E2" }}>
+      <div className="relative h-[80vh] min-h-[600px] w-full flex items-end pb-16 md:pb-24" style={{ background: project.bgBase || "#EDE9E2" }}>
         {project.image ? (
           <Image src={project.image} alt={project.name} fill className="object-cover" priority sizes="100vw" />
         ) : (

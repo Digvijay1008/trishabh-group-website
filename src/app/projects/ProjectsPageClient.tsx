@@ -206,7 +206,7 @@ export default function ProjectsPageClient({ category, initialProjects = [] }: P
     : sourceProjects;
 
   return (
-    <div className="bg-[#FAF9F7] min-h-screen pt-12 pb-32">
+    <div className="bg-[#FAF9F7] min-h-[100dvh] pt-12 pb-20 md:pb-32">
       <div className="container-luxury max-w-6xl">
         {/* Header - Editorial Split Style */}
         <div className="mb-24 lg:mb-32 flex flex-col md:flex-row md:items-end justify-between gap-8 pt-12">

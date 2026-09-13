@@ -7,9 +7,9 @@ import Image from "next/image";
 
 export default function AboutPageClient() {
   return (
-    <div className="bg-[#FAF9F7] min-h-screen">
+    <div className="bg-[#FAF9F7] min-h-[100dvh]">
       {/* Hero Section */}
-      <section className="pt-24 pb-32">
+      <section className="pt-16 md:pt-24 pb-20 md:pb-32">
         <div className="container-luxury">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-7">

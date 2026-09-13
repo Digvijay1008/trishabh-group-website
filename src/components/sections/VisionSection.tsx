@@ -48,7 +48,7 @@ export default function VisionSection() {
           </div>
           
           <h2 
-            className="text-white font-cinzel text-5xl md:text-6xl lg:text-8xl leading-[1.0] mb-8"
+            className="text-white font-cinzel text-4xl md:text-6xl lg:text-8xl leading-[1.0] mb-8"
             style={{ fontWeight: 400, letterSpacing: "-0.02em" }}
           >
             Designing<br />

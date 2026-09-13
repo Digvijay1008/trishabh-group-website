@@ -65,7 +65,7 @@ export default function RootLayout({
         <LenisProvider>
           <Navbar />
           <CustomCursor />
-          <main className="min-h-screen">
+          <main className="min-h-[100dvh]">
             {children}
           </main>
           <WhatsAppButton />

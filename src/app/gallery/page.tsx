@@ -16,7 +16,7 @@ const galleryImages = [
 
 export default function GalleryPage() {
   return (
-    <div className="bg-[#FAF9F7] min-h-screen pt-16 sm:pt-24 pb-20 sm:pb-32">
+    <div className="bg-[#FAF9F7] min-h-[100dvh] pt-16 sm:pt-24 pb-20 sm:pb-32">
       <div className="container-luxury">
         {/* Header */}
         <div className="mb-16 text-center max-w-3xl mx-auto">

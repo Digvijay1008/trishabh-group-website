@@ -37,7 +37,7 @@ const JOBS = [
 
 export default function CareersPage() {
   return (
-    <div className="bg-[#FAF9F7] min-h-screen pt-32 pb-24">
+    <div className="bg-[#FAF9F7] min-h-[100dvh] pt-16 md:pt-24 md:pt-32 pb-16 md:pb-24">
       {/* Enhanced Hero */}
       <section className="container-luxury mb-24">
         <div className="max-w-4xl mx-auto text-center">
@@ -79,7 +79,7 @@ export default function CareersPage() {
       </section>
 
       {/* Why Join Us */}
-      <section className="bg-white py-24 border-y border-[#E7E2D9]">
+      <section className="bg-white py-16 md:py-24 border-y border-[#E7E2D9]">
         <div className="container-luxury">
           <div className="text-center mb-16">
             <h2 className="text-[#161616] text-3xl font-cinzel mb-4">Why Trishabh Group?</h2>
@@ -125,7 +125,7 @@ export default function CareersPage() {
       </section>
 
       {/* Open Positions */}
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="container-luxury max-w-5xl">
           <div className="mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div>

@@ -52,7 +52,7 @@ export default function BlogDetailClient({ post }: { post: Post }) {
     : "";
 
   return (
-    <article className="bg-[#FAF9F7] min-h-screen pb-24">
+    <article className="bg-[#FAF9F7] min-h-[100dvh] pb-16 md:pb-24">
 
       {/* Hero image */}
       <div className="w-full aspect-[21/8] relative bg-[#D4C8B5] overflow-hidden">

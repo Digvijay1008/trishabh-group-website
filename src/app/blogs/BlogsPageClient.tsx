@@ -21,7 +21,7 @@ export default function BlogsPageClient({ posts }: { posts: Post[] }) {
   const hasPosts = posts && posts.length > 0;
 
   return (
-    <div className="bg-[#FAF9F7] min-h-screen pt-32 pb-32">
+    <div className="bg-[#FAF9F7] min-h-[100dvh] pt-16 md:pt-24 md:pt-32 pb-20 md:pb-32">
       <div className="container-luxury">
 
         {/* Header */}
@@ -61,7 +61,7 @@ export default function BlogsPageClient({ posts }: { posts: Post[] }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col items-center justify-center py-32 gap-6 text-center"
+            className="flex flex-col items-center justify-center py-16 md:py-32 gap-6 text-center"
           >
             <Newspaper className="text-[#E7E2D9]" size={56} />
             <h3 className="font-cormorant text-3xl text-[#161616]/40">No articles yet</h3>

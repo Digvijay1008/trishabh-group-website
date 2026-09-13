@@ -25,7 +25,7 @@ export default function RedevelopmentPageClient() {
   };
 
   return (
-    <div className="bg-[#FAF9F7] min-h-screen pt-32 pb-24">
+    <div className="bg-[#FAF9F7] min-h-[100dvh] pt-16 md:pt-24 md:pt-32 pb-16 md:pb-24">
       <div className="container-luxury">
         
         {/* Header */}

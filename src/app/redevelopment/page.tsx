@@ -8,9 +8,9 @@ import Image from "next/image";
 
 export default function RedevelopmentPage() {
   return (
-    <div className="bg-[#FAF9F7] min-h-screen">
+    <div className="bg-[#FAF9F7] min-h-[100dvh]">
       {/* Immersive Hero Section */}
-      <div className="relative h-[85vh] min-h-[600px] w-full flex items-end pb-24 lg:pb-32 overflow-hidden bg-[#161616]">
+      <div className="relative h-[85vh] min-h-[600px] w-full flex items-end pb-16 md:pb-24 lg:pb-32 overflow-hidden bg-[#161616]">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/elevations/trishabh-miraya.jpg" 
@@ -74,7 +74,7 @@ export default function RedevelopmentPage() {
       </div>
 
       {/* The Philosophy - Editorial Block */}
-      <div className="py-24 lg:py-32">
+      <div className="py-16 md:py-24 lg:py-32">
         <div className="container-luxury">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
             <motion.div 
@@ -116,7 +116,7 @@ export default function RedevelopmentPage() {
       </div>
 
       {/* The Trishabh Advantage (Why Us?) */}
-      <div className="bg-[#161616] py-24 lg:py-32 text-white overflow-hidden relative">
+      <div className="bg-[#161616] py-16 md:py-24 lg:py-32 text-white overflow-hidden relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#E86F16]/10 via-[#161616] to-[#161616] pointer-events-none" />
         <div className="container-luxury relative z-10">
           <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
@@ -173,7 +173,7 @@ export default function RedevelopmentPage() {
       </div>
 
       {/* Value Additions Grid */}
-      <div className="py-24 lg:py-32">
+      <div className="py-16 md:py-24 lg:py-32">
         <div className="container-luxury">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -215,7 +215,7 @@ export default function RedevelopmentPage() {
       </div>
 
       {/* Process Timeline */}
-      <div className="py-24 lg:py-32 bg-white border-t border-[#E7E2D9]">
+      <div className="py-16 md:py-24 lg:py-32 bg-white border-t border-[#E7E2D9]">
         <div className="container-luxury">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -264,7 +264,7 @@ export default function RedevelopmentPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="py-24 lg:py-32 bg-[#E8E2D8]">
+      <div className="py-16 md:py-24 lg:py-32 bg-[#E8E2D8]">
         <div className="container-luxury text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
