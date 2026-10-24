@@ -80,6 +80,8 @@
 @layer utilities {
   .font-serif { font-family: var(--font-serif); }
   .font-sans  { font-family: var(--font-sans); }
+  .font-cinzel { font-family: var(--font-cinzel), 'Cinzel', Georgia, serif; }
+  .font-josefin { font-family: var(--font-josefin), 'Josefin Sans', sans-serif; }
 
   /* Editorial text sizes */
   .text-display {
