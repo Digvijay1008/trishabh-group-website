@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowLeft, CheckCircle2, ChevronRight, Download, ExternalLink, MapPin } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ChevronRight, Download, ExternalLink, Eye, MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { EASE_OUT_EXPO } from "@/lib/easing";
@@ -13,7 +13,8 @@ const projectsData = {
   "trishabh-miraya": {
     name: "Trishabh Miraya",
     location: "Chembur, Mumbai",
-    type: "3 & 4 BHK Luxury Residences",
+    type: "2 BHK & Jodi Options (4 & 5 BHK)",
+    configurations: "2 BHK (737 sq.ft) | Jodi Options for 4 & 5 BHK",
     price: "Price on Request",
     status: "Ongoing",
     area: "2.1 Acres",
@@ -23,9 +24,15 @@ const projectsData = {
     towerColor: "#8C7B6B",
     highlight: "#C8A870",
     image: "/images/elevations/trishabh-miraya.jpg",
-    vision: "Designed for the modern connoisseur, Miraya stands as an architectural landmark in Chembur. It seamlessly balances biophilic design principles with refined, uncompromising quality.",
+    vision: "Designed for the modern connoisseur, Miraya stands as an architectural landmark in Chembur. It seamlessly balances biophilic design principles with refined, uncompromising quality. Offering expansive 2 BHK residences with bespoke Jodi options for lavish 4 BHK and 5 BHK custom layouts.",
     amenities: ["Infinity Edge Pool", "Private Cinema", "Sky Lounge", "State-of-the-art Gym", "Zen Garden"],
     dedicatedWebsite: "https://trishabhmiraya.com/",
+    floorPlans: [
+      { name: "2 BHK - 737 sq.ft (Carpet Area)", image: "/images/elevations/trishabh-miraya.jpg" },
+      { name: "4 BHK - Jodi Custom Plan", image: "/images/elevations/trishabh-miraya.jpg" },
+      { name: "4 BHK - Jodi 2 Custom Plan", image: "/images/elevations/trishabh-miraya.jpg" },
+      { name: "4.5 / 5 BHK - Jodi Custom Plan", image: "/images/elevations/trishabh-miraya.jpg" }
+    ]
   },
   "trishabh-aura": {
     name: "Trishabh Aura",
@@ -209,20 +216,6 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
     notFound();
   }
 
-  // If a dedicated website exists, hijack the entire page view
-  if (project.dedicatedWebsite) {
-    return (
-      <div className="fixed inset-0 z-[99999] bg-white w-screen h-[100dvh]">
-        <iframe
-          title={`Dedicated website for ${project.name}`}
-          src={project.dedicatedWebsite}
-          className="w-full h-full border-none"
-          allowFullScreen
-        />
-      </div>
-    );
-  }
-
   return (
     <div className="bg-white min-h-[100dvh]">
       {/* Immersive Hero */}
@@ -236,10 +229,10 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
               </svg>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#161616]/80 via-[#161616]/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#161616]/85 via-[#161616]/30 to-transparent" />
         
         <div className="container-luxury relative z-10 w-full">
-          <Link href="/projects" className="inline-flex items-center gap-2 text-[#161616]/60 hover:text-[#161616] mb-12 transition-colors" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+          <Link href="/projects" className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-10 transition-colors" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.6875rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
             <ArrowLeft size={12} />
             Back to Portfolio
           </Link>
@@ -249,22 +242,63 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: EASE_OUT_EXPO }}
           >
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-white mb-6" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.5625rem", letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 500 }}>
-              {project.status}
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-white" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.5625rem", letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 500 }}>
+                {project.status}
+              </div>
+              {project.dedicatedWebsite && (
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#E86F16]/30 border border-[#E86F16]/50 backdrop-blur-md text-[#F08B3A]" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.5625rem", letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 600 }}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E86F16] animate-pulse" />
+                  Flagship Development
+                </div>
+              )}
             </div>
             
             <h1 className="text-white mb-4" style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(3.5rem, 6vw, 6rem)", fontWeight: 400, lineHeight: 1 }}>
               {project.title || project.name}
             </h1>
             
-            <div className="flex items-center gap-6 text-white/70" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}>
+            <div className="flex flex-wrap items-center gap-6 text-white/70 mb-8" style={{ fontFamily: "var(--font-josefin)", fontSize: "0.9375rem" }}>
               <div className="flex items-center gap-1.5">
-                <MapPin size={16} />
+                <MapPin size={16} className="text-[#E86F16]" />
                 {project.location}
               </div>
               <div className="w-1 h-1 rounded-full bg-white/30" />
               <div>{project.configurations || project.type}</div>
+              {project.area && (
+                <>
+                  <div className="w-1 h-1 rounded-full bg-white/30" />
+                  <div>{project.area}</div>
+                </>
+              )}
             </div>
+
+            {/* Dedicated Microsite Action Bar */}
+            {project.dedicatedWebsite && (
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <a
+                  href={project.dedicatedWebsite}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center gap-3 bg-[#E86F16] hover:bg-[#D4610F] text-white pl-6 pr-2 py-2 rounded-full transition-all duration-300 shadow-[0_8px_30px_rgba(232,111,22,0.35)] active:scale-[0.98]"
+                >
+                  <span style={{ fontFamily: "var(--font-josefin)", fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", fontWeight: 600 }}>
+                    Launch Dedicated Website
+                  </span>
+                  <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:bg-white text-white group-hover:text-[#E86F16]">
+                    <ExternalLink size={12} />
+                  </div>
+                </a>
+                <a
+                  href="#dedicated-preview"
+                  className="inline-flex items-center gap-2 text-white/80 hover:text-white px-5 py-2.5 rounded-full border border-white/20 hover:border-white/50 backdrop-blur-sm transition-all duration-300"
+                  style={{ fontFamily: "var(--font-josefin)", fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase" }}
+                >
+                  <Eye size={13} className="text-[#E86F16]" />
+                  Live Digital Showcase
+                </a>
+              </div>
+            )}
           </motion.div>
         </div>
       </div>
@@ -483,6 +517,73 @@ export default function ProjectDetailClient({ slug, initialProject }: { slug: st
           </div>
         </div>
       </div>
+
+      {/* Bespoke Dedicated Digital Showcase Section */}
+      {project.dedicatedWebsite && (
+        <section id="dedicated-preview" className="py-24 bg-[#141414] text-white relative overflow-hidden border-t border-white/10">
+          <div className="container-luxury max-w-6xl relative z-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-2 h-2 rounded-full bg-[#E86F16] animate-pulse" />
+                  <span className="text-[#E86F16] text-[10px] tracking-[0.2em] uppercase font-medium" style={{ fontFamily: "var(--font-josefin)" }}>
+                    Digital Experience Portal
+                  </span>
+                </div>
+                <h3 className="text-white text-3xl lg:text-4xl" style={{ fontFamily: "var(--font-cinzel)", fontWeight: 400, letterSpacing: "-0.01em" }}>
+                  Interactive <em style={{ color: "#E86F16", fontStyle: "italic" }}>{project.name}</em> Showcase
+                </h3>
+              </div>
+              <a
+                href={project.dedicatedWebsite}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 text-white/70 hover:text-white text-xs uppercase tracking-widest border border-white/20 hover:border-[#E86F16] px-5 py-2.5 rounded-full transition-all duration-300"
+                style={{ fontFamily: "var(--font-josefin)" }}
+              >
+                <span>Open In Fullscreen Window</span>
+                <ExternalLink size={13} className="text-[#E86F16] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+            </div>
+
+            {/* Hardware-Grade Double-Bezel Browser Frame */}
+            <div className="bg-white/5 p-2 md:p-3 rounded-2xl md:rounded-[2rem] border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.5)] backdrop-blur-xl">
+              <div className="bg-[#0B0B0B] rounded-xl md:rounded-[calc(2rem-0.75rem)] overflow-hidden border border-white/5">
+                {/* Browser Header Bar */}
+                <div className="bg-[#181818] px-4 sm:px-6 py-3 flex items-center justify-between border-b border-white/10">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-[#FF5F56]/80" />
+                    <div className="w-3 h-3 rounded-full bg-[#FFBD2E]/80" />
+                    <div className="w-3 h-3 rounded-full bg-[#27C93F]/80" />
+                  </div>
+                  <div className="bg-black/50 text-white/60 text-[11px] px-5 py-1 rounded-full border border-white/10 max-w-xs truncate hidden sm:block" style={{ fontFamily: "var(--font-josefin)" }}>
+                    {project.dedicatedWebsite}
+                  </div>
+                  <a 
+                    href={project.dedicatedWebsite} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-[10px] tracking-wider uppercase text-[#E86F16] hover:underline"
+                    style={{ fontFamily: "var(--font-josefin)" }}
+                  >
+                    Direct Access ↗
+                  </a>
+                </div>
+
+                {/* Embedded Live Web Experience */}
+                <div className="relative w-full h-[520px] md:h-[720px] bg-white">
+                  <iframe
+                    title={`${project.name} Live Portal`}
+                    src={project.dedicatedWebsite}
+                    className="w-full h-full border-none"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   );
 }

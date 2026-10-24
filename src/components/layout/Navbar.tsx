@@ -123,6 +123,31 @@ export default function Navbar() {
             ))}
           </nav>
 
+          {/* Desktop Enquire CTA — Button-in-Button Architecture */}
+          <div className="hidden lg:flex items-center ml-2">
+            <Magnetic intensity={0.15}>
+              <Link
+                href="/contact"
+                className="group relative inline-flex items-center gap-2.5 bg-[#161616] hover:bg-[#E86F16] text-white pl-4 pr-1.5 py-1.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-[0_4px_20px_rgba(232,111,22,0.35)] active:scale-[0.98]"
+              >
+                <span
+                  style={{
+                    fontFamily: "var(--font-josefin)",
+                    fontSize: "10.5px",
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    fontWeight: 600,
+                  }}
+                >
+                  Enquire
+                </span>
+                <div className="w-6 h-6 rounded-full bg-white/15 flex items-center justify-center transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:bg-white text-white group-hover:text-[#E86F16]">
+                  <ArrowRight size={11} className="transition-colors duration-300" />
+                </div>
+              </Link>
+            </Magnetic>
+          </div>
+
           {/* Mobile Menu Toggle */}
           <button
             className="lg:hidden text-[#161616]"

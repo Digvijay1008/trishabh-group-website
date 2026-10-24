@@ -16,7 +16,7 @@ const projects = [
     name: "Trishabh Miraya",
     slug: "trishabh-miraya",
     location: "Chembur, Mumbai",
-    type: "3 & 4 BHK Luxury Residences",
+    type: "2 BHK & Jodi Options (4 & 5 BHK)",
     price: "Price on Request",
     status: "Ongoing" as const,
     area: "2.1 Acres",
